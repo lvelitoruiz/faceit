@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-import { dashboardMenu, demoPages, layoutMenu } from '../menu';
+import { dashboardMenu, demoPages, layoutMenu, userMenu, organizationMenu } from '../menu';
 import Login from '../pages/presentation/auth/Login';
 
 const LANDING = {
@@ -16,6 +16,9 @@ const PAGE_LAYOUTS = {
 	BLANK: lazy(() => import('../pages/presentation/page-layouts/Blank')),
 	ASIDE: lazy(() => import('../pages/presentation/aside-types/DefaultAsidePage')),
 	MINIMIZE_ASIDE: lazy(() => import('../pages/presentation/aside-types/MinimizeAsidePage')),
+	ORGANIZATION: lazy(() => import('../pages/presentation/custom/Organization')),
+	STUDENT: lazy(() => import('../pages/presentation/custom/Student')),
+	ORGANIZATION_ADMIN: lazy(() => import('../pages/presentation/custom/OrganizationAdmin')),
 };
 
 const presentation = [
@@ -81,6 +84,21 @@ const presentation = [
 	{
 		path: layoutMenu.asideTypes.subMenu.minimizeAside.path,
 		element: <PAGE_LAYOUTS.MINIMIZE_ASIDE />,
+		exact: true,
+	},
+	{
+		path: organizationMenu.organization.path,
+		element: <PAGE_LAYOUTS.ORGANIZATION />,
+		exact: true,
+	},
+	{
+		path: userMenu.user.subMenu.students.path,
+		element: <PAGE_LAYOUTS.STUDENT />,
+		exact: true,
+	},
+	{
+		path: userMenu.user.subMenu.organizationAdmin.path,
+		element: <PAGE_LAYOUTS.ORGANIZATION_ADMIN />,
 		exact: true,
 	},
 ];

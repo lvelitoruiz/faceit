@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Brand from '../Brand/Brand';
 import Navigation, { NavigationLine } from '../Navigation/Navigation';
 import User from '../User/User';
-import { dashboardMenu, demoPages, layoutMenu } from '../../menu';
+import { dashboardMenu, demoPages, layoutMenu, userMenu, cmsMenu, organizationMenu } from '../../menu';
 import ThemeContext from '../../contexts/themeContext';
 
 import Icon from '../../components/icon/Icon';
@@ -18,11 +18,11 @@ const Aside = () => {
 
 	const { asideStyle, touchStatus, hasTouchButton, asideWidthWithSpace, x } = useAsideTouch();
 
-	const isModernDesign = process.env.REACT_APP_MODERN_DESGIN === 'true';
+	const isModernDesign = process.env.REACT_APP_MODERN_DESIGN === 'true';
 
 	const constraintsRef = useRef(null);
 
-	const [doc, setDoc] = useState(false);
+	const [doc, setDoc] = useState(true);
 
 	const { t } = useTranslation(['translation', 'menu']);
 
@@ -45,6 +45,13 @@ const Aside = () => {
 				<div className='aside-body'>
 					<Navigation menu={dashboardMenu} id='aside-dashboard' />
 					<NavigationLine />
+					<Navigation menu={organizationMenu} id='aside-organization' />
+					<NavigationLine />
+					<Navigation menu={userMenu} id='aside-menu' />
+					<NavigationLine />
+					<Navigation menu={cmsMenu} id='aside-cms' />
+					<NavigationLine />
+
 					{!doc && (
 						<>
 							<Navigation menu={demoPages} id='aside-demo-pages' />
@@ -73,9 +80,8 @@ const Aside = () => {
 							</nav>
 						</>
 					)}
-
-					{asideStatus && doc && <div className='p-4'>Documentation</div>}
 				</div>
+				{ /* 
 				<div className='aside-foot'>
 					<nav aria-label='aside-bottom-menu'>
 						<div className='navigation'>
@@ -112,7 +118,8 @@ const Aside = () => {
 						</div>
 					</nav>
 					<User />
-				</div>
+				</div> 
+				*/ }
 			</motion.aside>
 			{asideStatus && hasTouchButton && isModernDesign && (
 				<>
