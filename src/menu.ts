@@ -40,6 +40,49 @@ export const dashboardMenu = {
 	},
 };
 
+export const userMenu = {
+	user: {
+		id: 'user',
+		text: 'User',
+		path: 'user',
+		icon: 'CustomApple',
+		subMenu: {
+			students: {
+				id: 'students',
+				text: 'Students',
+				path: 'user/students',
+				icon: 'ViewAgenda',
+			},
+			organizationAdmin: {
+				id: 'organizationAdmin',
+				text: 'Organization Admin',
+				path: 'user/organization-admin',
+				icon: 'WebAsset',
+			},
+		},
+	},
+};
+
+export const organizationMenu = {
+	organization: {
+		id: 'organization',
+		text: 'Organizations',
+		path: '/organization',
+		icon: 'CustomGoogle',
+		subMenu: null,
+	},
+};
+
+export const cmsMenu = {
+	cms: {
+		id: 'cms',
+		text: 'CMS',
+		path: '/',
+		icon: 'Code',
+		subMenu: null,
+	},
+};
+
 export const demoPages = {
 	auth: {
 		id: 'auth',

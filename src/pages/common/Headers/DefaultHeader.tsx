@@ -10,13 +10,7 @@ const DefaultHeader = () => {
 	return (
 		<Header>
 			<HeaderLeft>
-				<Navigation
-					menu={{ ...layoutMenu }}
-					id='header-top-menu'
-					horizontal={
-						!!width && width >= Number(process.env.REACT_APP_MOBILE_BREAKPOINT_SIZE)
-					}
-				/>
+				<div></div>
 			</HeaderLeft>
 			<HeaderRight>
 				<Popovers
