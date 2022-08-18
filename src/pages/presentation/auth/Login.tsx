@@ -14,7 +14,7 @@ import { useFormik } from 'formik';
 import AuthContext from '../../../contexts/authContext';
 import USERS, { getUserDataWithUsername } from '../../../common/data/userDummyData';
 import Spinner from '../../../components/bootstrap/Spinner';
-import Alert from '../../../components/bootstrap/Alert';
+// import Alert from '../../../components/bootstrap/Alert';
 
 interface ILoginHeaderProps {
 	isNewUser?: boolean;
@@ -30,8 +30,8 @@ const LoginHeader: FC<ILoginHeaderProps> = ({ isNewUser }) => {
 	}
 	return (
 		<>
-			<div className='text-center h1 fw-bold mt-5'>Welcome,</div>
-			<div className='text-center h4 text-muted mb-5'>Sign in to continue!</div>
+			<div className='text-center h1 fw-bold mt-5 mb-5'>Sign in to your account</div>
+			{/* <div className='text-center h4 text-muted mb-5'>Sign in to continue!</div> */}
 		</>
 	);
 };
@@ -114,10 +114,10 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 		<PageWrapper
 			isProtected={false}
 			title={singUpStatus ? 'Sign Up' : 'Login'}
-			className={classNames({ 'bg-warning': !singUpStatus, 'bg-info': singUpStatus })}>
+			className={classNames({ 'bg-light': !singUpStatus })}>
 			<Page className='p-0'>
 				<div className='row h-100 align-items-center justify-content-center'>
-					<div className='col-xl-4 col-lg-6 col-md-8 shadow-3d-container'>
+					<div className='col-xl-6 col-lg-6 col-md-8 shadow-3d-container'>
 						<Card className='shadow-3d-dark' data-tour='login-page'>
 							<CardBody>
 								<div className='text-center my-5'>
@@ -133,7 +133,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 										<Logo width={200} />
 									</Link>
 								</div>
-								<div
+								{/* <div
 									className={classNames('rounded-3', {
 										'bg-l10-dark': !darkModeStatus,
 										'bg-dark': darkModeStatus,
@@ -166,11 +166,11 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 											</Button>
 										</div>
 									</div>
-								</div>
+								</div> */}
 
 								<LoginHeader isNewUser={singUpStatus} />
 
-								<Alert isLight icon='Lock' isDismissible>
+								{/* <Alert isLight icon='Lock' isDismissible>
 									<div className='row'>
 										<div className='col-12'>
 											<strong>Username:</strong> {USERS.JOHN.username}
@@ -179,11 +179,11 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 											<strong>Password:</strong> {USERS.JOHN.password}
 										</div>
 									</div>
-								</Alert>
-								<form className='row g-4'>
+								</Alert> */}
+								<form className='row g-4 align-items-center justify-content-center mb-4'>
 									{singUpStatus ? (
 										<>
-											<div className='col-12'>
+											{/* <div className='col-12'>
 												<FormGroup
 													id='signup-email'
 													isFloating
@@ -225,15 +225,15 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 													onClick={handleOnClick}>
 													Sign Up
 												</Button>
-											</div>
+											</div> */}
 										</>
 									) : (
 										<>
-											<div className='col-12'>
+											<div className='col-lg-9'>
 												<FormGroup
 													id='loginUsername'
 													isFloating
-													label='Your email or username'
+													label='Email'
 													className={classNames({
 														'd-none': signInPassword,
 													})}>
@@ -279,11 +279,11 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 													/>
 												</FormGroup>
 											</div>
-											<div className='col-12'>
+											<div className='col-lg-9 my-5'>
 												{!signInPassword ? (
 													<Button
-														color='warning'
-														className='w-100 py-3'
+														color='dark'
+														className='w-100 py-3 fw-bold'
 														isDisable={!formik.values.loginUsername}
 														onClick={handleContinue}>
 														{isLoading && (
@@ -292,12 +292,20 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 														Continue
 													</Button>
 												) : (
-													<Button
-														color='warning'
-														className='w-100 py-3'
-														onClick={formik.handleSubmit}>
-														Login
-													</Button>
+													<div>
+														<Button
+															color="link"
+															className='w-100 py-3 fw-bold mb-2'
+														>
+															Forgot Passwpord?
+														</Button>
+														<Button
+															color='dark'
+															className='w-100 py-3 fw-bold'
+															onClick={formik.handleSubmit}>
+																Sign In
+														</Button>
+													</div>
 												)}
 											</div>
 										</>
@@ -306,7 +314,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 									{/* BEGIN :: Social Login */}
 									{!signInPassword && (
 										<>
-											<div className='col-12 mt-3 text-center text-muted'>
+											{/* <div className='col-12 mt-3 text-center text-muted'>
 												OR
 											</div>
 											<div className='col-12 mt-3'>
@@ -334,31 +342,13 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 													onClick={handleOnClick}>
 													Continue with Google
 												</Button>
-											</div>
+											</div> */}
 										</>
 									)}
 									{/* END :: Social Login */}
 								</form>
 							</CardBody>
 						</Card>
-						<div className='text-center'>
-							<a
-								href='/'
-								className={classNames('text-decoration-none me-3', {
-									'link-light': singUpStatus,
-									'link-dark': !singUpStatus,
-								})}>
-								Privacy policy
-							</a>
-							<a
-								href='/'
-								className={classNames('link-light text-decoration-none', {
-									'link-light': singUpStatus,
-									'link-dark': !singUpStatus,
-								})}>
-								Terms of use
-							</a>
-						</div>
 					</div>
 				</div>
 			</Page>
