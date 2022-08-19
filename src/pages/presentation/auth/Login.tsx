@@ -8,7 +8,7 @@ import Card, { CardBody } from '../../../components/bootstrap/Card';
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Input from '../../../components/bootstrap/forms/Input';
 import Button from '../../../components/bootstrap/Button';
-import Logo from '../../../components/Logo';
+import Logo1 from '../../../assets/img/logo.jpeg';
 import useDarkMode from '../../../hooks/useDarkMode';
 import { useFormik } from 'formik';
 import AuthContext from '../../../contexts/authContext';
@@ -30,7 +30,7 @@ const LoginHeader: FC<ILoginHeaderProps> = ({ isNewUser }) => {
 	}
 	return (
 		<>
-			<div className='text-center h1 fw-bold mt-5 mb-5'>Sign in to your account</div>
+			<div className='text-center h1 fw-bold mt-3 mb-5'>Sign in to your account</div>
 			{/* <div className='text-center h4 text-muted mb-5'>Sign in to continue!</div> */}
 		</>
 	);
@@ -120,7 +120,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 					<div className='col-xl-6 col-lg-6 col-md-8 shadow-3d-container'>
 						<Card className='shadow-3d-dark' data-tour='login-page'>
 							<CardBody>
-								<div className='text-center my-5'>
+								<div className='text-center mt-5'>
 									<Link
 										to='/'
 										className={classNames(
@@ -130,7 +130,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 												'text-light': darkModeStatus,
 											},
 										)}>
-										<Logo width={200} />
+										<img src={Logo1} alt='logo' height={120} />
 									</Link>
 								</div>
 								{/* <div

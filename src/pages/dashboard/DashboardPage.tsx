@@ -1,45 +1,155 @@
 import React from 'react';
 
 import PageWrapper from '../../layout/PageWrapper/PageWrapper';
-import SubHeader, {
-	SubHeaderLeft,
-	SubHeaderRight,
-	SubheaderSeparator,
-} from '../../layout/SubHeader/SubHeader';
 import Page from '../../layout/Page/Page';
-import Popovers from '../../components/bootstrap/Popovers';
+import Card, { CardBody } from '../../components/bootstrap/Card';
+import Icon from '../../components/icon/Icon';
 
 const DashboardPage = () => {
 	return (
 		<PageWrapper title='Dashboard Page'>
-			<SubHeader>
-				<SubHeaderLeft>
-					<Popovers
-						title='DashboardPage.tsx'
-						desc={<code>src/pages/dashboard/DashboardPage.tsx</code>}>
-						SubHeaderLeft
-					</Popovers>
-					<code>DashboardPage.tsx</code>
-					<SubheaderSeparator />
-				</SubHeaderLeft>
-				<SubHeaderRight>
-					<Popovers
-						title='DashboardPage.tsx'
-						desc={<code>src/pages/dashboard/DashboardPage.tsx</code>}>
-						SubHeaderRight
-					</Popovers>
-					<code>DashboardPage.tsx</code>
-				</SubHeaderRight>
-			</SubHeader>
-			<Page>
-				<div className='row'>
-					<div className='col-12 mb-3'>
-						<Popovers
-							title='DashboardPage.tsx'
-							desc={<code>src/pages/dashboard/DashboardPage.tsx</code>}>
-							Page
-						</Popovers>
-						<code className='ps-3'>DashboardPage.tsx</code>
+			<Page className='p-lg-5'>
+				<div className='mb-lg-5'>
+					<div className='row'>
+						<div className='col-12 mb-3'>
+							<div className='display-4 fw-bold py-3'>Welcome back, Michael!</div>
+						</div>
+					</div>
+					<div className='row mt-lg-4'>
+						<div className='col-md-6 col-lg-3'>
+							<Card 
+								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
+								<CardBody>
+									<div className='d-flex align-items-center'>
+										<div>
+											<h3 className="display-3 m-0">150</h3>
+											<span className='h5 fw-bold'>Courses</span>
+										</div>
+									</div>
+								</CardBody>
+							</Card>
+						</div>
+						<div className='col-md-6 col-lg-3'>
+							<Card 
+								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
+								<CardBody>
+									<div className='d-flex align-items-center'>
+										<div>
+											<h3 className="display-3 m-0">500</h3>
+											<span className='h5 fw-bold'>Students</span>
+										</div>
+									</div>
+								</CardBody>
+							</Card>
+						</div>
+						<div className='col-md-6 col-lg-3'>
+							<Card 
+								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
+								<CardBody>
+									<div className='d-flex align-items-center'>
+										<div>
+											<h3 className="display-3 m-0">20</h3>
+											<span className='h5 fw-bold'>Organizations</span>
+										</div>
+									</div>
+								</CardBody>
+							</Card>
+						</div>
+						<div className='col-md-6 col-lg-3'>
+							<Card 
+								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
+								<CardBody>
+									<div className='d-flex align-items-center'>
+										<div>
+											<h3 className="display-3 m-0">150</h3>
+											<span className='h5 fw-bold'>New Enrollments</span>
+										</div>
+									</div>
+								</CardBody>
+							</Card>
+						</div>
+					</div>
+				</div>
+
+				<div className='mt-lg-5'>
+					<div className='row'>
+						<div className='col-12'>
+							<div className='h5 fw-bold py-3'>QUICK ACTIONS</div>
+						</div>
+					</div>
+					<div className='row mt-lg-2'>
+						<div className='col-md-6 col-lg-3'>
+							<Card 
+								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
+								<CardBody>
+									<div className='d-flex align-items-center justify-content-between'>
+										<div>
+											<h3 className="display-3 m-0">Add</h3>
+											<span className='h5 fw-bold'>New User</span>
+										</div>
+										<Icon
+											icon='PersonAdd'
+											size='4x'
+											color='dark'
+										/>
+									</div>
+								</CardBody>
+							</Card>
+						</div>
+						<div className='col-md-6 col-lg-3'>
+							<Card 
+								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
+								<CardBody>
+									<div className='d-flex align-items-center justify-content-between'>
+										<div>
+											<h3 className="display-3 m-0">Manage</h3>
+											<span className='h5 fw-bold'>Users</span>
+										</div>
+										<Icon
+											icon='Group'
+											size='4x'
+											color='dark'
+										/>
+									</div>
+								</CardBody>
+							</Card>
+						</div>
+						<div className='col-md-6 col-lg-3'>
+							<Card 
+								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
+								<CardBody>
+									<div className='d-flex align-items-center justify-content-between'>
+										<div>
+											<h3 className="display-3 m-0">Add</h3>
+											<span className='h5 fw-bold'>New Organization</span>
+										</div>
+										<Icon
+											icon='AddBusiness'
+											size='4x'
+											color='dark'
+										/>
+									</div>
+								</CardBody>
+							</Card>
+						</div>
+						<div className='col-md-6 col-lg-3'>
+							<Card 
+								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
+								<CardBody>
+									<div className='d-flex align-items-center justify-content-between'>
+										<div>
+											<h3 className="display-3 m-0">Manage</h3>
+											<span className='h5 fw-bold'>Organization</span>
+										</div>
+										<Icon
+											icon='Business'
+											size='4x'
+											color='dark'
+										/>
+									</div>
+								</CardBody>
+							</Card>
+						</div>
 					</div>
 				</div>
 			</Page>
@@ -48,3 +158,4 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
+	
