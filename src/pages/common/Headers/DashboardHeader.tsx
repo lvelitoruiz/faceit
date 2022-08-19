@@ -44,7 +44,7 @@ const DashboardHeader = () => {
 									color='primary'
 								/>
 								<div className='d-flex align-items-start flex-column ms-3 me-3'>
-									<span className='fw-bold fs-6 mb-0'>Example Dropdown Menu</span>
+									<span className='fw-bold fs-6 mb-0'>Michael Smith</span>
 									<span className='text-muted'>Tenant Admin</span>
 								</div>
 							</Button>
