@@ -25,7 +25,7 @@ const DashboardHeader = () => {
 	return (
 		<Header>
 			<HeaderLeft>
-			<img src={Logo2} alt='Company' height={44} />
+				<img src={Logo2} alt='Company' height={44} />
 			</HeaderLeft>
 			<HeaderRight>
 				<div className='row'>
