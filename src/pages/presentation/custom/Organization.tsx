@@ -11,6 +11,8 @@ import Dropdown, {
 	DropdownMenu,
 	DropdownToggle,
 } from '../../../components/bootstrap/Dropdown';
+import Micro from '../../../assets/img/micro.jpeg';
+import Acce from '../../../assets/img/acce.jpeg';
 
 const Organization = () => {
 	return (
@@ -103,7 +105,7 @@ const Organization = () => {
 					</div>
 					<div className='row'>
 						<div className='col-lg-12'>
-							<Card className='p-3'>
+							<Card >
 								<CardBody className='table-responsive'>
 									<table className='table table-modern'>
 										<thead>
@@ -117,7 +119,10 @@ const Organization = () => {
 										<tbody>
 											<tr>
 												<td>
-													<p className='m-0'>Accelered</p>
+													<div className='d-flex align-items-center'>
+														<img src={Acce} alt='Company' height={44} />
+														<p className='m-0'>Accelered</p>
+													</div>
 												</td>
 												<td>
 													<p className='m-0'>www.accelered.com</p>
@@ -137,7 +142,10 @@ const Organization = () => {
 											</tr>
 											<tr>
 												<td>
-													<p className='m-0'>Accelered</p>
+													<div className='d-flex align-items-center'>
+														<img src={Micro} alt='Company' height={44} />
+														<p className='m-0'>Microsoft</p>
+													</div>
 												</td>
 												<td>
 													<p className='m-0'>www.accelered.com</p>
