@@ -21,6 +21,12 @@ const PAGE_LAYOUTS = {
 	ORGANIZATION_ADMIN: lazy(() => import('../pages/presentation/custom/OrganizationAdmin')),
 	EDIT_FORM: lazy(() => import('../pages/presentation/custom/EditForm')),
 	ADD_FORM: lazy(() => import('../pages/presentation/custom/AddForm')),
+	ADD_ADMIN: lazy(() => import('../pages/presentation/custom/AddAdmin')),
+	EDIT_ADMIN: lazy(() => import('../pages/presentation/custom/EditAdmin')),
+	ADD_ORGANIZATION: lazy(() => import('../pages/presentation/custom/AddOrganization')),
+	EDIT_ORGANIZATION: lazy(() => import('../pages/presentation/custom/EditOrganization')),
+	MANAGE_ADMIN: lazy(() => import('../pages/presentation/custom/ManageAdmin')),
+	PROFILE: lazy(() => import('../pages/presentation/custom/Profile')),
 };
 
 const presentation = [
@@ -111,6 +117,36 @@ const presentation = [
 	{
 		path: forms.add.path,
 		element: <PAGE_LAYOUTS.ADD_FORM />,
+		exact: true,
+	},
+	{
+		path: forms.profile.path,
+		element: <PAGE_LAYOUTS.PROFILE />,
+		exact: true,
+	},
+	{
+		path: forms.editOrganization.path,
+		element: <PAGE_LAYOUTS.EDIT_ORGANIZATION />,
+		exact: true,
+	},
+	{
+		path: forms.addOrganization.path,
+		element: <PAGE_LAYOUTS.ADD_ORGANIZATION />,
+		exact: true,
+	},
+	{
+		path: forms.manageAdmin.path,
+		element: <PAGE_LAYOUTS.MANAGE_ADMIN />,
+		exact: true,
+	},
+	{
+		path: forms.editAdmin.path,
+		element: <PAGE_LAYOUTS.EDIT_ADMIN />,
+		exact: true,
+	},
+	{
+		path: forms.addAdmin.path,
+		element: <PAGE_LAYOUTS.ADD_ADMIN />,
 		exact: true,
 	},
 ];

@@ -98,6 +98,48 @@ export const forms = {
 		icon: 'Code',
 		subMenu: null,
 	},
+	editOrganization: {
+		id: 'editorganization',
+		text: 'EDIT ORGANIZATION',
+		path: '/edit-organization',
+		icon: 'Code',
+		subMenu: null,
+	},
+	addOrganization: {
+		id: 'addorganization',
+		text: 'ADD ORGANIZATION',
+		path: '/add-organization',
+		icon: 'Code',
+		subMenu: null,
+	},
+	manageAdmin: {
+		id: 'manageadmin',
+		text: 'MANAGE ADMINS',
+		path: '/manage-admins',
+		icon: 'Code',
+		subMenu: null,
+	},
+	profile: {
+		id: 'profile',
+		text: 'PROFILE',
+		path: '/profile',
+		icon: 'Code',
+		subMenu: null,
+	},
+	editAdmin: {
+		id: 'editadmin',
+		text: 'EDIT ADMIN',
+		path: '/edit-admin',
+		icon: 'Code',
+		subMenu: null,
+	},
+	addAdmin: {
+		id: 'addadmin',
+		text: 'ADD ADMIN',
+		path: '/add-admin',
+		icon: 'Code',
+		subMenu: null,
+	},
 };
 
 export const demoPages = {
