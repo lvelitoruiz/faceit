@@ -83,6 +83,23 @@ export const cmsMenu = {
 	},
 };
 
+export const forms = {
+	edit: {
+		id: 'edit',
+		text: 'EDIT',
+		path: '/edit',
+		icon: 'Code',
+		subMenu: null,
+	},
+	add: {
+		id: 'add',
+		text: 'ADD',
+		path: '/add',
+		icon: 'Code',
+		subMenu: null,
+	},
+};
+
 export const demoPages = {
 	auth: {
 		id: 'auth',

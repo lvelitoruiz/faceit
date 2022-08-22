@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-import { dashboardMenu, demoPages, layoutMenu, userMenu, organizationMenu } from '../menu';
+import { dashboardMenu, demoPages, layoutMenu, userMenu, organizationMenu, forms } from '../menu';
 import Login from '../pages/presentation/auth/Login';
 
 const LANDING = {
@@ -19,6 +19,8 @@ const PAGE_LAYOUTS = {
 	ORGANIZATION: lazy(() => import('../pages/presentation/custom/Organization')),
 	STUDENT: lazy(() => import('../pages/presentation/custom/Student')),
 	ORGANIZATION_ADMIN: lazy(() => import('../pages/presentation/custom/OrganizationAdmin')),
+	EDIT_FORM: lazy(() => import('../pages/presentation/custom/EditForm')),
+	ADD_FORM: lazy(() => import('../pages/presentation/custom/AddForm')),
 };
 
 const presentation = [
@@ -99,6 +101,16 @@ const presentation = [
 	{
 		path: userMenu.user.subMenu.organizationAdmin.path,
 		element: <PAGE_LAYOUTS.ORGANIZATION_ADMIN />,
+		exact: true,
+	},
+	{
+		path: forms.edit.path,
+		element: <PAGE_LAYOUTS.EDIT_FORM />,
+		exact: true,
+	},
+	{
+		path: forms.add.path,
+		element: <PAGE_LAYOUTS.ADD_FORM />,
 		exact: true,
 	},
 ];
