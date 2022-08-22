@@ -2,22 +2,171 @@ import React from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import { userMenu } from '../../../menu';
-import Popovers from '../../../components/bootstrap/Popovers';
+import Card, { CardBody } from '../../../components/bootstrap/Card';
+import Input from '../../../components/bootstrap/forms/Input';
+import FormGroup from '../../../components/bootstrap/forms/FormGroup';
+import Button from '../../../components/bootstrap/Button';
 
 const AddOrganization = () => {
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
-			<Page>
-				<div className='row d-flex align-items-center h-100'>
-					<div
-						className='col-12 d-flex justify-content-center align-items-center'
-						style={{ fontSize: 'calc(3rem + 3vw)' }}>
-						<Popovers
-							title='AddOrganization.tsx'
-							desc={<code>src/pages/presentation/custom/AddOrganization.tsx</code>}>
-							Add Form
-						</Popovers>
-						<code className='ps-3'>AddOrganization.tsx</code>
+			<Page className='container'>
+				<div className='mb-lg-5'>
+					<div className='row align-items-center mb-3 mb-lg-5'>
+						<div className='col-lg-6'>
+							<div className='py-3'>
+								<div>USERS</div>
+								<div className='display-4 fw-bold'>Add Organization</div>
+							</div>
+						</div>
+					</div>
+					<div className='row'>
+						<div className='col-lg-12'>
+							<Card>
+								<CardBody>
+									<div className='row'>
+										<div className='col-lg-12'>
+											<FormGroup
+												className='mb-4'
+												id='formPrefix'
+												label='Name'>
+												<Input
+													autoComplete='honorific-prefix'
+													onChange={function noRefCheck(){}}
+													value=""
+													className='w-100'
+												/>
+											</FormGroup>
+										</div>
+										<div className='col-lg-6'>
+											<FormGroup
+												className='mb-4'
+												id='formPrefix'
+												label='Phome Number'>
+												<Input
+													autoComplete='honorific-prefix'
+													onChange={function noRefCheck(){}}
+													value=""
+													className='w-100'
+												/>
+											</FormGroup>
+										</div>
+										<div className='col-lg-6'>
+											<FormGroup
+												className='mb-4'
+												id='formPrefix'
+												label='Website'>
+												<Input
+													autoComplete='honorific-prefix'
+													onChange={function noRefCheck(){}}
+													value=""
+													className='w-100'
+												/>
+											</FormGroup>
+										</div>
+										<div className='col-lg-6'>
+											<FormGroup
+												className='mb-4'
+												id='formPrefix'
+												label='Company Size'>
+												<Input
+													autoComplete='honorific-prefix'
+													onChange={function noRefCheck(){}}
+													value=""
+													className='w-100'
+												/>
+												{/* <Select
+													value=""
+												>
+													<Option value={1}>
+														One
+													</Option>
+													<Option value={2}>
+														Two
+													</Option>
+													<Option value={3}>
+														Three
+													</Option>
+													<Option value={4}>
+														Four
+													</Option>
+													<Option value={5}>
+														Five
+													</Option>
+													<Option value={6}>
+														Six
+													</Option>
+												</Select> */}
+											</FormGroup>
+										</div>
+										<div className='col-lg-6'>
+											<FormGroup
+												className='mb-4'
+												id='formPrefix'
+												label='Indsutry'>
+												<Input
+													autoComplete='honorific-prefix'
+													onChange={function noRefCheck(){}}
+													value=""
+													className='w-100'
+												/>
+												{/* <Select
+													value=""
+												>
+													<Option value={1}>
+														One
+													</Option>
+													<Option value={2}>
+														Two
+													</Option>
+													<Option value={3}>
+														Three
+													</Option>
+													<Option value={4}>
+														Four
+													</Option>
+													<Option value={5}>
+														Five
+													</Option>
+													<Option value={6}>
+														Six
+													</Option>
+												</Select> */}
+											</FormGroup>
+										</div>
+										<div className='col-lg-12'>
+											<FormGroup
+												className='mb-4'
+												id='formPrefix'
+												label='Avatar Picture'>
+													<Input type='file' autoComplete='photo'/>
+											</FormGroup>
+										</div>
+									</div>
+									<div className='row align-items-center justify-content-center mt-5'>
+										<div className='col-lg-3'>
+											<Button
+												color="dark"
+												isOutline
+												size='lg'
+												className='w-100 mb-3 mb-lg-0'
+											>
+												Cancel
+											</Button>
+										</div>
+										<div className='col-lg-3'>
+											<Button
+												color="dark"
+												size='lg'
+												className='w-100 mb-3 mb-lg-0'
+											>
+												Create Organization
+											</Button>
+										</div>
+									</div>
+								</CardBody>
+							</Card>
+						</div>
 					</div>
 				</div>
 			</Page>
