@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import { forms, userMenu } from '../../../menu';
@@ -14,6 +14,21 @@ import { useNavigate } from 'react-router-dom';
 
 const EditOrganization = () => {
 	const navigate = useNavigate();
+
+	const [ edit,setEdit ] = useState(true);
+
+	useEffect( () => {
+		setEdit(true)
+	},[])
+
+	const handleChange = ( status: string ) => {
+		if(status === "active") {
+			setEdit(true)
+		} else {
+			setEdit(false)
+		}
+	}
+	
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='py-lg-5'>
@@ -43,7 +58,9 @@ const EditOrganization = () => {
 										<div className='col-12'>
 											<Button
 												color='dark'
+												isOutline={!edit}
 												className='w-100 p-3 mb-4'
+												onClick={ () => handleChange('active')}
 											>
 												Edit Information
 											</Button>
@@ -51,8 +68,9 @@ const EditOrganization = () => {
 										<div className='col-12'>
 											<Button
 												color='dark'
-												isOutline
+												isOutline={edit}
 												className='w-100 p-3 mb-4'
+												onClick={ () => handleChange('inactive')}
 											>
 												Management Admin
 											</Button>
@@ -63,7 +81,9 @@ const EditOrganization = () => {
 						</div>
 						<div className='col-md-9 col-lg-10'>
 							{/* Edit information */}
-							<div>
+							{
+								(edit) ? 
+								<div>
 								<div className='row align-items-center mb-3 mb-lg-3'>
 									<div className='col-lg-6'>
 										<div className='py-3'>
@@ -224,127 +244,130 @@ const EditOrganization = () => {
 										</Card>
 									</div>
 								</div>
-							</div>
-
-							{/* Manage Admins */}
+							</div> :
 							<div>
-								<div className='row align-items-center mb-3 mb-lg-3'>
-									<div className='col-lg-6'>
-										<div className='py-3'>
-											<div>ORGANIZATIONS</div>
-											<div className='display-4 fw-bold'>Manage Admins</div>
+							<div className='row align-items-center mb-3 mb-lg-3'>
+								<div className='col-lg-6'>
+									<div className='py-3'>
+										<div>ORGANIZATIONS</div>
+										<div className='display-4 fw-bold'>Manage Admins</div>
+									</div>
+								</div>
+								<div className='col-lg-6'>
+									<div className='row align-items-center justify-content-end'>
+										<div className='col-md-5 col-lg-auto'>
+											<Button
+												color="dark"
+												icon='PersonAdd'
+												size='lg'
+												className='w-100 mb-3 mb-lg-0'
+												onClick={() => {
+													navigate(`../${forms.addAdmin.path}`);
+												}}
+											>
+												Add Admin
+											</Button>
 										</div>
 									</div>
-									<div className='col-lg-6'>
-										<div className='row align-items-center justify-content-end'>
-											<div className='col-md-5 col-lg-auto'>
+								</div>
+							</div>
+							<div className='row'>
+								<div className='col-md-12'>
+								<Card>
+							<CardBody className='table-responsive'>
+								<table className='table table-modern'>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Email</th>
+											<th>Status</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div className='d-flex align-items-center'>
+													<Icon
+														icon='Person'
+														size='2x'
+														color='dark'
+													/>
+													<p className='m-0 px-2'>Jhon Doe</p>
+												</div>
+											</td>
+											<td>
+												<p className='m-0'>John@accelered.com</p>
+											</td>
+											<td>
+												<p className='m-0'>Active</p>
+											</td>
+											<td className='text-center'>
 												<Button
 													color="dark"
-													icon='PersonAdd'
-													size='lg'
-													className='w-100 mb-3 mb-lg-0'
+													isOutline
+													icon="Edit"
 													onClick={() => {
-														navigate(`../${forms.addAdmin.path}`);
+														navigate(`../${forms.editAdmin.path}`);
 													}}
 												>
-													Add Admin
+													Edit
 												</Button>
-											</div>
-										</div>
-									</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div className='d-flex align-items-center'>
+													<Icon
+														icon='Person'
+														size='2x'
+														color='dark'
+													/>
+													<p className='m-0 px-2'>Jane Carpenter</p>
+												</div>
+											</td>
+											<td>
+												<p className='m-0'>John@accelered.com</p>
+											</td>
+											<td>
+												<p className='m-0'>Active</p>
+											</td>
+											<td className='text-center'>
+												<Button
+													color="dark"
+													isOutline
+													icon="Edit"
+													onClick={() => {
+														navigate(`../${forms.editAdmin.path}`);
+													}}
+												>
+													Edit
+												</Button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<div className='d-flex justify-content-between px-4 mt-4 align-items-center'>
+									<p className='fw-bold m-0'>Showing 1-4 of 10 Students</p>
+									{/* <Pagination ariaLabel="pagination">
+										<PaginationItem isActive>
+											1
+										</PaginationItem>
+										<PaginationItem>
+											2
+										</PaginationItem>
+									</Pagination> */}
 								</div>
-								<div className='row'>
-									<div className='col-md-12'>
-									<Card>
-								<CardBody className='table-responsive'>
-									<table className='table table-modern'>
-										<thead>
-											<tr>
-												<th>Name</th>
-												<th>Email</th>
-												<th>Status</th>
-												<th></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>
-													<div className='d-flex align-items-center'>
-														<Icon
-															icon='Person'
-															size='2x'
-															color='dark'
-														/>
-														<p className='m-0 px-2'>Jhon Doe</p>
-													</div>
-												</td>
-												<td>
-													<p className='m-0'>John@accelered.com</p>
-												</td>
-												<td>
-													<p className='m-0'>Active</p>
-												</td>
-												<td className='text-center'>
-													<Button
-														color="dark"
-														isOutline
-														icon="Edit"
-														onClick={() => {
-															navigate(`../${forms.editAdmin.path}`);
-														}}
-													>
-														Edit
-													</Button>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<div className='d-flex align-items-center'>
-														<Icon
-															icon='Person'
-															size='2x'
-															color='dark'
-														/>
-														<p className='m-0 px-2'>Jane Carpenter</p>
-													</div>
-												</td>
-												<td>
-													<p className='m-0'>John@accelered.com</p>
-												</td>
-												<td>
-													<p className='m-0'>Active</p>
-												</td>
-												<td className='text-center'>
-													<Button
-														color="dark"
-														isOutline
-														icon="Edit"
-														onClick={() => {
-															navigate(`../${forms.editAdmin.path}`);
-														}}
-													>
-														Edit
-													</Button>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-									<div className='d-flex justify-content-between px-4 mt-4 align-items-center'>
-										<p className='fw-bold m-0'>Showing 1-4 of 10 Students</p>
-										{/* <Pagination ariaLabel="pagination">
-											<PaginationItem isActive>
-												1
-											</PaginationItem>
-											<PaginationItem>
-												2
-											</PaginationItem>
-										</Pagination> */}
-									</div>
-								</CardBody>
-							</Card>
-									</div>
+							</CardBody>
+						</Card>
 								</div>
 							</div>
+						</div>
+
+							}
+
+							{/* Manage Admins */}
+							
 
 						</div>
 					</div>
