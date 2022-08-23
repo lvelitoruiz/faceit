@@ -36,7 +36,7 @@ export interface IUserProps {
 
 const john: IUserProps = {
 	id: '1',
-	username: 'john',
+	username: 'john@omtanke.studio',
 	name: 'John',
 	surname: 'Doe',
 	position: 'CEO, Founder',

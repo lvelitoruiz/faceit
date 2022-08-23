@@ -251,12 +251,27 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 															formik.setErrors({});
 														}}
 													/>
+
+													<Input
+														type='password'
+														autoComplete='current-password'
+														value={formik.values.loginPassword}
+														isTouched={formik.touched.loginPassword}
+														invalidFeedback={
+															formik.errors.loginPassword
+														}
+														validFeedback='Looks good!'
+														isValid={formik.isValid}
+														onChange={formik.handleChange}
+														onBlur={formik.handleBlur}
+														className="mt-4"
+													/>
 												</FormGroup>
-												{signInPassword && (
+												{/* {signInPassword && (
 													<div className='text-center h4 mb-3 fw-bold'>
 														Hi, {formik.values.loginUsername}.
 													</div>
-												)}
+												)} */}
 												<FormGroup
 													id='loginPassword'
 													isFloating
@@ -280,7 +295,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 												</FormGroup>
 											</div>
 											<div className='col-lg-9 my-5'>
-												{!signInPassword ? (
+												{signInPassword ? (
 													<Button
 														color='dark'
 														className='w-100 py-3 fw-bold'
