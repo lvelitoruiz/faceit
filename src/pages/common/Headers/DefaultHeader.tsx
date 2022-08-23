@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header, { HeaderLeft, HeaderRight } from '../../../layout/Header/Header';
 import useDeviceScreen from '../../../hooks/useDeviceScreen';
 import Button, { IButtonProps } from '../../../components/bootstrap/Button';
@@ -11,9 +11,15 @@ import UserImageWebp from '../../../assets/img/wanna/wanna1.webp';
 import UserImage from '../../../assets/img/wanna/wanna1.png';
 import Logo2 from '../../../assets/img/logo-2.jpeg';
 import Avatar from '../../../components/Avatar';
+import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../../contexts/authContext';
+import { demoPages, forms } from '../../../menu';
 
 const DefaultHeader = () => {
 	const { width } = useDeviceScreen();
+	const { userData, setUser } = useContext(AuthContext);
+	const navigate = useNavigate();
+	
 	return (
 		<Header>
 			<HeaderLeft>
@@ -42,13 +48,19 @@ const DefaultHeader = () => {
 							</Button>
 						</DropdownToggle>
 						<DropdownMenu>
-							<DropdownItem>
+						<DropdownItem 
+							onClick={() => {
+								navigate(`../${forms.profile.path}`);
+							}}>
 								Edit Profile
 							</DropdownItem>
-							<DropdownItem>
-								Change Password
-							</DropdownItem>
-							<DropdownItem>
+							<DropdownItem 
+								onClick={() => {
+									if (setUser) {
+										setUser('');
+									}
+									navigate(`../${demoPages.login.path}`);
+								}}>
 								Sign Out
 							</DropdownItem>
 						</DropdownMenu>

@@ -4,8 +4,11 @@ import PageWrapper from '../../layout/PageWrapper/PageWrapper';
 import Page from '../../layout/Page/Page';
 import Card, { CardBody } from '../../components/bootstrap/Card';
 import Icon from '../../components/icon/Icon';
+import { useNavigate } from 'react-router-dom';
+import { forms, organizationMenu, userMenu } from '../../menu';
 
 const DashboardPage = () => {
+	const navigate = useNavigate();
 	return (
 		<PageWrapper title='Dashboard Page'>
 			<Page className='p-lg-5'>
@@ -82,7 +85,10 @@ const DashboardPage = () => {
 							<Card 
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
-									<div className='d-flex align-items-center justify-content-between'>
+									<div className='d-flex align-items-center justify-content-between' 
+									onClick={() => {
+										navigate(`../${forms.add.path}`);
+									}}>
 										<div>
 											<h3 className="display-3 m-0">Add</h3>
 											<span className='h5 fw-bold'>New User</span>
@@ -100,7 +106,10 @@ const DashboardPage = () => {
 							<Card 
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
-									<div className='d-flex align-items-center justify-content-between'>
+									<div className='d-flex align-items-center justify-content-between'
+										onClick={() => {
+											navigate(`../${userMenu.user.subMenu.students.path}`);
+										}}>
 										<div>
 											<h3 className="display-3 m-0">Manage</h3>
 											<span className='h5 fw-bold'>Users</span>
@@ -118,7 +127,10 @@ const DashboardPage = () => {
 							<Card 
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
-									<div className='d-flex align-items-center justify-content-between'>
+									<div className='d-flex align-items-center justify-content-between'
+										onClick={() => {
+											navigate(`../${forms.addOrganization.path}`);
+										}}>
 										<div>
 											<h3 className="display-3 m-0">Add</h3>
 											<span className='h5 fw-bold'>New Organization</span>
@@ -136,7 +148,10 @@ const DashboardPage = () => {
 							<Card 
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
-									<div className='d-flex align-items-center justify-content-between'>
+									<div className='d-flex align-items-center justify-content-between'
+										onClick={() => {
+											navigate(`../${organizationMenu.organization.path}`);
+										}}>
 										<div>
 											<h3 className="display-3 m-0">Manage</h3>
 											<span className='h5 fw-bold'>Organization</span>

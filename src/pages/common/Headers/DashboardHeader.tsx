@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useContext, useLayoutEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header, { HeaderLeft, HeaderRight } from '../../../layout/Header/Header';
 import Button, { IButtonProps } from '../../../components/bootstrap/Button';
@@ -11,9 +11,15 @@ import UserImageWebp from '../../../assets/img/wanna/wanna1.webp';
 import UserImage from '../../../assets/img/wanna/wanna1.png';
 import Logo2 from '../../../assets/img/logo-2.jpeg';
 import Avatar from '../../../components/Avatar';
+import AuthContext from '../../../contexts/authContext';
+import { demoPages, forms } from '../../../menu';
+import { useNavigate } from 'react-router-dom';
 
 const DashboardHeader = () => {
 	const { i18n } = useTranslation();
+
+	const { userData, setUser } = useContext(AuthContext);
+	const navigate = useNavigate();
 
 	/**
 	 * Language attribute
@@ -50,13 +56,19 @@ const DashboardHeader = () => {
 							</Button>
 						</DropdownToggle>
 						<DropdownMenu>
-							<DropdownItem>
+							<DropdownItem 
+							onClick={() => {
+								navigate(`../${forms.profile.path}`);
+							}}>
 								Edit Profile
 							</DropdownItem>
-							<DropdownItem>
-								Change Password
-							</DropdownItem>
-							<DropdownItem>
+							<DropdownItem
+								onClick={() => {
+									if (setUser) {
+										setUser('');
+									}
+									navigate(`../${demoPages.login.path}`);
+								}}>
 								Sign Out
 							</DropdownItem>
 						</DropdownMenu>

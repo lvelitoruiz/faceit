@@ -45,7 +45,7 @@ export const userMenu = {
 		id: 'user',
 		text: 'User',
 		path: 'user',
-		icon: 'CustomApple',
+		icon: 'Group',
 		subMenu: {
 			students: {
 				id: 'students',
@@ -68,7 +68,7 @@ export const organizationMenu = {
 		id: 'organization',
 		text: 'Organizations',
 		path: '/organization',
-		icon: 'CustomGoogle',
+		icon: 'Business',
 		subMenu: null,
 	},
 };
@@ -78,7 +78,7 @@ export const cmsMenu = {
 		id: 'cms',
 		text: 'CMS',
 		path: '/',
-		icon: 'Code',
+		icon: 'ControlCamera',
 		subMenu: null,
 	},
 };

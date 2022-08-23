@@ -1,7 +1,7 @@
 import React from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
-import { organizationMenu } from '../../../menu';
+import { forms, organizationMenu } from '../../../menu';
 import Button from '../../../components/bootstrap/Button';
 import Input from '../../../components/bootstrap/forms/Input';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
@@ -13,8 +13,10 @@ import Dropdown, {
 } from '../../../components/bootstrap/Dropdown';
 import Micro from '../../../assets/img/micro.jpeg';
 import Acce from '../../../assets/img/acce.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 const Organization = () => {
+	const navigate = useNavigate();
 	return (
 		<PageWrapper title={organizationMenu.organization.text}>
 			<Page className='p-lg-5'>
@@ -42,6 +44,9 @@ const Organization = () => {
 										icon="AddBusiness"
 										size='lg'
 										className='w-100'
+										onClick={() => {
+											navigate(`../${forms.addOrganization.path}`);
+										}}
 									>
 										Add Organization
 									</Button>
@@ -135,6 +140,9 @@ const Organization = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../${forms.editOrganization.path}`);
+														}}
 													>
 														Edit
 													</Button>
@@ -158,6 +166,9 @@ const Organization = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../${forms.editOrganization.path}`);
+														}}
 													>
 														Edit
 													</Button>

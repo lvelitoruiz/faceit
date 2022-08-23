@@ -1,7 +1,7 @@
 import React from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
-import { userMenu } from '../../../menu';
+import { forms, userMenu } from '../../../menu';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
 import Button from '../../../components/bootstrap/Button';
 import UserImageWebp from '../../../assets/img/wanna/wanna1.webp';
@@ -10,8 +10,10 @@ import Avatar from '../../../components/Avatar';
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Input from '../../../components/bootstrap/forms/Input';
 import Icon from '../../../components/icon/Icon';
+import { useNavigate } from 'react-router-dom';
 
 const EditOrganization = () => {
+	const navigate = useNavigate();
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='py-lg-5'>
@@ -65,7 +67,7 @@ const EditOrganization = () => {
 								<div className='row align-items-center mb-3 mb-lg-3'>
 									<div className='col-lg-6'>
 										<div className='py-3'>
-											<div>STUDENT INFO</div>
+											<div>ORGANIZATION INFO</div>
 											<div className='display-4 fw-bold'>Edit Information</div>
 										</div>
 									</div>
@@ -241,6 +243,9 @@ const EditOrganization = () => {
 													icon='PersonAdd'
 													size='lg'
 													className='w-100 mb-3 mb-lg-0'
+													onClick={() => {
+														navigate(`../${forms.addAdmin.path}`);
+													}}
 												>
 													Add Admin
 												</Button>
@@ -284,6 +289,9 @@ const EditOrganization = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../${forms.editAdmin.path}`);
+														}}
 													>
 														Edit
 													</Button>
@@ -311,6 +319,9 @@ const EditOrganization = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../${forms.editAdmin.path}`);
+														}}
 													>
 														Edit
 													</Button>

@@ -34,7 +34,7 @@ const Profile = () => {
 											src={UserImage}
 											className='rounded-circle'
 										/>
-										<p className='fw-bold fs-5 mt-2'>John Doe</p>
+										<p className='fw-bold fs-5 mt-2'>Michael Smith</p>
 									</div>
 									<div className='row p-4'>
 										<div className='col-12'>

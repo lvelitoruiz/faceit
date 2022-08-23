@@ -1,7 +1,7 @@
 import React from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
-import { userMenu } from '../../../menu';
+import { forms, userMenu } from '../../../menu';
 import Button from '../../../components/bootstrap/Button';
 import Input from '../../../components/bootstrap/forms/Input';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
@@ -13,8 +13,10 @@ import Dropdown, {
 } from '../../../components/bootstrap/Dropdown';
 import Checks, { ChecksGroup } from '../../../components/bootstrap/forms/Checks';
 import Pagination, { PaginationItem } from '../../../components/bootstrap/Pagination';
+import { useNavigate } from 'react-router-dom';
 
 const Student = () => {
+	const navigate = useNavigate();
 	return (
 		<PageWrapper title={userMenu.user.subMenu.students.text}>
 			<Page className='p-lg-5'>
@@ -45,6 +47,9 @@ const Student = () => {
 										icon="PersonAdd"
 										size='lg'
 										className='w-100'
+										onClick={() => {
+											navigate(`../${forms.add.path}`);
+										}}
 									>
 										Add Student
 									</Button>
@@ -195,6 +200,9 @@ const Student = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../${forms.edit.path}`);
+														}}
 													>
 														Edit
 													</Button>
@@ -225,6 +233,9 @@ const Student = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../${forms.edit.path}`);
+														}}
 													>
 														Edit
 													</Button>
@@ -255,6 +266,9 @@ const Student = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../${forms.edit.path}`);
+														}}
 													>
 														Edit
 													</Button>
@@ -285,6 +299,9 @@ const Student = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../${forms.edit.path}`);
+														}}
 													>
 														Edit
 													</Button>
