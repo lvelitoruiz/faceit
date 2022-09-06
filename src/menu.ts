@@ -63,6 +63,38 @@ export const userMenu = {
 	},
 };
 
+export const catalogMenu = {
+	catalog: {
+		id: 'catalog',
+		text: 'CATALOG',
+		path: '/catalog',
+		icon: 'Book',
+		subMenu: {
+			courses: {
+				id: 'courses',
+				text: 'COURSES',
+				path: '/courses',
+				icon: 'Book',
+				subMenu: null,
+			},
+			certificates: {
+				id: 'certificates',
+				text: 'CERTIFICATES',
+				path: '/certificates',
+				icon: 'Book',
+				subMenu: null,
+			},
+			learningPath: {
+				id: 'learningPath',
+				text: 'LEARNING PATH',
+				path: '/learning-path',
+				icon: 'Book',
+				subMenu: null,
+			},
+		},
+	},	
+};
+
 export const organizationMenu = {
 	organization: {
 		id: 'organization',
@@ -137,6 +169,48 @@ export const forms = {
 		id: 'addadmin',
 		text: 'ADD ADMIN',
 		path: '/add-admin',
+		icon: 'Code',
+		subMenu: null,
+	},
+	addCourse: {
+		id: 'addcourse',
+		text: 'ADD COURSE',
+		path: '/add-course',
+		icon: 'Code',
+		subMenu: null,
+	},
+	editCourse: {
+		id: 'editcourse',
+		text: 'EDIT COURSE',
+		path: '/edit-course',
+		icon: 'Code',
+		subMenu: null,
+	},
+	addCertificate: {
+		id: 'addcertificate',
+		text: 'ADD CERTIFICATE',
+		path: '/add-certificate',
+		icon: 'Code',
+		subMenu: null,
+	},
+	editCertificate: {
+		id: 'editcertificate',
+		text: 'EDIT CERTIFICATE',
+		path: '/edit-certificate',
+		icon: 'Code',
+		subMenu: null,
+	},
+	addLearningPath: {
+		id: 'addlearningpath',
+		text: 'ADD LEARNING PATH',
+		path: '/add-learning-path',
+		icon: 'Code',
+		subMenu: null,
+	},
+	editLearningPath: {
+		id: 'editlearningpath',
+		text: 'EDIT LEARNING PATH',
+		path: '/edit-learning-path',
 		icon: 'Code',
 		subMenu: null,
 	},

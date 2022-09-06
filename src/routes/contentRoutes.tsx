@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-import { dashboardMenu, demoPages, layoutMenu, userMenu, organizationMenu, forms } from '../menu';
+import { dashboardMenu, demoPages, layoutMenu, userMenu, organizationMenu, forms, catalogMenu } from '../menu';
 import Login from '../pages/presentation/auth/Login';
 
 const LANDING = {
@@ -27,6 +27,15 @@ const PAGE_LAYOUTS = {
 	EDIT_ORGANIZATION: lazy(() => import('../pages/presentation/custom/EditOrganization')),
 	MANAGE_ADMIN: lazy(() => import('../pages/presentation/custom/ManageAdmin')),
 	PROFILE: lazy(() => import('../pages/presentation/custom/Profile')),
+	COURSES: lazy(() => import('../pages/presentation/custom/Courses')),
+	CERTIFICATES: lazy(() => import('../pages/presentation/custom/Certificates')),
+	LEARNING_PATH: lazy(() => import('../pages/presentation/custom/LearningPath')),
+	ADD_COURSE: lazy(() => import('../pages/presentation/custom/AddCourse')),
+	EDIT_COURSE: lazy(() => import('../pages/presentation/custom/EditCourse')),
+	ADD_CERTIFICATE: lazy(() => import('../pages/presentation/custom/AddCertificate')),
+	EDIT_CERTIFICATE: lazy(() => import('../pages/presentation/custom/EditCertificate')),
+	ADD_LEARNING_PATH: lazy(() => import('../pages/presentation/custom/AddLearningPath')),
+	EDIT_LEARNING_PATH: lazy(() => import('../pages/presentation/custom/EditLearningPath')),
 };
 
 const presentation = [
@@ -147,6 +156,51 @@ const presentation = [
 	{
 		path: forms.addAdmin.path,
 		element: <PAGE_LAYOUTS.ADD_ADMIN />,
+		exact: true,
+	},
+	{
+		path: catalogMenu.catalog.subMenu.courses.path,
+		element: <PAGE_LAYOUTS.COURSES />,
+		exact: true,
+	},
+	{
+		path: catalogMenu.catalog.subMenu.certificates.path,
+		element: <PAGE_LAYOUTS.CERTIFICATES />,
+		exact: true,
+	},
+	{
+		path: catalogMenu.catalog.subMenu.learningPath.path,
+		element: <PAGE_LAYOUTS.LEARNING_PATH />,
+		exact: true,
+	},
+	{
+		path: forms.addLearningPath.path,
+		element: <PAGE_LAYOUTS.ADD_LEARNING_PATH />,
+		exact: true,
+	},
+	{
+		path: forms.editLearningPath.path,
+		element: <PAGE_LAYOUTS.EDIT_LEARNING_PATH />,
+		exact: true,
+	},
+	{
+		path: forms.addCourse.path,
+		element: <PAGE_LAYOUTS.ADD_COURSE />,
+		exact: true,
+	},
+	{
+		path: forms.editCourse.path,
+		element: <PAGE_LAYOUTS.EDIT_COURSE />,
+		exact: true,
+	},
+	{
+		path: forms.addCertificate.path,
+		element: <PAGE_LAYOUTS.ADD_CERTIFICATE />,
+		exact: true,
+	},
+	{
+		path: forms.editCertificate.path,
+		element: <PAGE_LAYOUTS.EDIT_CERTIFICATE />,
 		exact: true,
 	},
 ];
