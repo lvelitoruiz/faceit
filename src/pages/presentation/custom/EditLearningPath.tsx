@@ -425,6 +425,232 @@ const EditLearningPath = () => {
 											</CardBody>
 										</Card>
 									</div>
+									<div>
+										<Card>
+											<CardBody>
+												<div className='row'>
+													<div className='col-md-12'>
+														<p className="mb-2 fs-5">Select the courses or certificates you'd like to add to this path</p>
+													</div>
+													<div className='col-md-12'>
+														<Card>
+															<CardBody>
+																<div className='row align-items-center'>
+																	<div className='col-md-9'>
+																		<div className='d-flex align-items-center'>
+																			<Icon
+																				icon='Search'
+																				size='2x'
+																				color='dark'
+																				/>
+																			<Input
+																				id="example"
+																				onBlur={function noRefCheck(){}}
+																				onChange={function noRefCheck(){}}
+																				onFocus={function noRefCheck(){}}
+																				onInput={function noRefCheck(){}}
+																				onInvalid={function noRefCheck(){}}
+																				onSelect={function noRefCheck(){}}
+																				placeholder="Search"
+																				size="lg" 
+																				className='ms-2'
+																			/>
+																		</div>
+																	</div>
+																	<div className='col-md-3'>
+																		<ChecksGroup className='d-flex gap-4 align-items-center justify-content-end'>
+																			<Checks
+																				id='example'
+																				label='All'
+																				name='example'
+																				onChange={function noRefCheck() {}}
+																				type='radio'
+																				value='radio value'
+																			/>
+																			<Checks
+																				id='example'
+																				label='Courses'
+																				name='example'
+																				onChange={function noRefCheck() {}}
+																				type='radio'
+																				value='radio value'
+																			/>
+																			<Checks
+																				id='example'
+																				label='Certificates'
+																				name='example'
+																				onChange={function noRefCheck() {}}
+																				type='radio'
+																				value='radio value'
+																			/>
+																		</ChecksGroup>
+																	</div>
+																	<div className='col-md-12 mt-4'>
+																		<div className='row'>
+																			<div className='col-md-6'>
+																				<div className='rounded-3 border'>
+																					<div className='text-center'>
+																						<p className='m-0 p-3 border-bottom fs-4 fw-bold'>Courses and Certificates</p>
+																					</div>
+																					<div className='p-3' style={{ height: '400px', overflow: 'auto' }}>
+																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																							<div>
+																								<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																								<p className='m-0'>Certificate</p>
+																							</div>
+																							<Icon
+																								icon='Dehaze'
+																								size='2x'
+																								color='dark'
+																								/>
+																						</div>
+																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																							<div>
+																								<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																								<p className='m-0'>Certificate</p>
+																							</div>
+																							<Icon
+																								icon='Dehaze'
+																								size='2x'
+																								color='dark'
+																								/>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div className='col-md-6'>
+																				<div className='rounded-3 border'>
+																					<div className='text-center'>
+																						<p className='m-0 p-3 border-bottom fs-4 fw-bold'>Cybersecurity Learning Path</p>
+																					</div>
+																					<div className='p-3' style={{ height: '400px', overflow: 'auto' }}>
+																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																							<div className='d-flex align-items-center'>
+																								<Icon
+																									icon='Close'
+																									size='2x'
+																									color='dark'
+																									className='me-3'
+																									/>
+																								<div>
+																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																									<p className='m-0'>Certificate</p>
+																								</div>
+																							</div>
+																							<Icon
+																								icon='Dehaze'
+																								size='2x'
+																								color='dark'
+																								/>
+																						</div>
+																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																							<div className='d-flex align-items-center'>
+																								<Icon
+																									icon='Close'
+																									size='2x'
+																									color='dark'
+																									className='me-3'
+																									/>
+																								<div>
+																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																									<p className='m-0'>Certificate</p>
+																								</div>
+																							</div>
+																							<Icon
+																								icon='Dehaze'
+																								size='2x'
+																								color='dark'
+																								/>
+																						</div>
+																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																							<div className='d-flex align-items-center'>
+																								<Icon
+																									icon='Close'
+																									size='2x'
+																									color='dark'
+																									className='me-3'
+																									/>
+																								<div>
+																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																									<p className='m-0'>Certificate</p>
+																								</div>
+																							</div>
+																							<Icon
+																								icon='Dehaze'
+																								size='2x'
+																								color='dark'
+																								/>
+																						</div>
+																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																							<div className='d-flex align-items-center'>
+																								<Icon
+																									icon='Close'
+																									size='2x'
+																									color='dark'
+																									className='me-3'
+																									/>
+																								<div>
+																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																									<p className='m-0'>Certificate</p>
+																								</div>
+																							</div>
+																							<Icon
+																								icon='Dehaze'
+																								size='2x'
+																								color='dark'
+																								/>
+																						</div>
+																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																							<div className='d-flex align-items-center'>
+																								<Icon
+																									icon='Close'
+																									size='2x'
+																									color='dark'
+																									className='me-3'
+																									/>
+																								<div>
+																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																									<p className='m-0'>Certificate</p>
+																								</div>
+																							</div>
+																							<Icon
+																								icon='Dehaze'
+																								size='2x'
+																								color='dark'
+																								/>
+																						</div>
+																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																							<div className='d-flex align-items-center'>
+																								<Icon
+																									icon='Close'
+																									size='2x'
+																									color='dark'
+																									className='me-3'
+																									/>
+																								<div>
+																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																									<p className='m-0'>Certificate</p>
+																								</div>
+																							</div>
+																							<Icon
+																								icon='Dehaze'
+																								size='2x'
+																								color='dark'
+																								/>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</CardBody>
+														</Card>
+													</div>
+												</div>
+											</CardBody>
+										</Card>
+									</div>
 								</div>
 							</div>
 						</div>
