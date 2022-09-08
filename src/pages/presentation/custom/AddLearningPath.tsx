@@ -23,6 +23,32 @@ const AddLearningPath = () => {
 							</div>
 						</div>
 					</div>
+					<div className='d-flex align-items-center mb-3 mb-lg-5 justify-content-between'>
+						<div className='d-flex align-items-center'>
+							<div className='bg-dark p-1 me-3 d-flex align-items-center justify-content-center rounded-circle' style={{ width: '30px', height: '30px' }}>
+								<span className='text-white fw-bold'>1</span>
+							</div>
+							<p className='m-0 d-none d-md-block'>General Details</p>
+						</div>
+						<div className='d-flex align-items-center'>
+							<div className='bg-dark p-1 me-3 d-flex align-items-center justify-content-center rounded-circle bg-opacity-10' style={{ width: '30px', height: '30px' }}>
+								<span className='text-white fw-bold'>2</span>
+							</div>
+							<p className='m-0 d-none d-md-block'>Categories and Skills</p>
+						</div>
+						<div className='d-flex align-items-center'>
+							<div className='bg-dark p-1 me-3 d-flex align-items-center justify-content-center rounded-circle bg-opacity-10' style={{ width: '30px', height: '30px' }}>
+								<span className='text-white fw-bold'>3</span>
+							</div>
+							<p className='m-0 d-none d-md-block'>Images</p>
+						</div>
+						<div className='d-flex align-items-center'>
+							<div className='bg-dark p-1 me-3 d-flex align-items-center justify-content-center rounded-circle bg-opacity-10' style={{ width: '30px', height: '30px' }}>
+								<span className='text-white fw-bold'>4</span>
+							</div>
+							<p className='m-0 d-none d-md-block'>Courses and Paths</p>
+						</div>
+					</div>
 					<div className='row'>
 						<div className='col-lg-12'>
 							<Card>
