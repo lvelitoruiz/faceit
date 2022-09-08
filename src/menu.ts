@@ -214,6 +214,20 @@ export const forms = {
 		icon: 'Code',
 		subMenu: null,
 	},
+	learningPathView: {
+		id: 'learningPathView',
+		text: 'LEARNING PATH VIEW',
+		path: '/learning-path-view',
+		icon: 'Code',
+		subMenu: null,
+	},
+	courseView: {
+		id: 'courseView',
+		text: 'COURSE VIEW',
+		path: '/course-view',
+		icon: 'Code',
+		subMenu: null,
+	},
 };
 
 export const demoPages = {

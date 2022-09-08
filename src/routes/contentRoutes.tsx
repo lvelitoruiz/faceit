@@ -36,6 +36,8 @@ const PAGE_LAYOUTS = {
 	EDIT_CERTIFICATE: lazy(() => import('../pages/presentation/custom/EditCertificate')),
 	ADD_LEARNING_PATH: lazy(() => import('../pages/presentation/custom/AddLearningPath')),
 	EDIT_LEARNING_PATH: lazy(() => import('../pages/presentation/custom/EditLearningPath')),
+	LEARNING_PATH_VIEW: lazy(() => import('../pages/presentation/custom/LearningPathView')),
+	COURSE_VIEW: lazy(() => import('../pages/presentation/custom/CourseView')),
 };
 
 const presentation = [
@@ -201,6 +203,16 @@ const presentation = [
 	{
 		path: forms.editCertificate.path,
 		element: <PAGE_LAYOUTS.EDIT_CERTIFICATE />,
+		exact: true,
+	},
+	{
+		path: forms.learningPathView.path,
+		element: <PAGE_LAYOUTS.LEARNING_PATH_VIEW />,
+		exact: true,
+	},
+	{
+		path: forms.courseView.path,
+		element: <PAGE_LAYOUTS.COURSE_VIEW />,
 		exact: true,
 	},
 ];
