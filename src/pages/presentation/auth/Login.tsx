@@ -312,7 +312,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 															color="link"
 															className='w-100 py-3 fw-bold mb-2'
 														>
-															Forgot Passwpord?
+															Forgot Password?
 														</Button>
 														<Button
 															color='dark'

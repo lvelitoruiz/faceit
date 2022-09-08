@@ -62,7 +62,7 @@ const EditLearningPath = () => {
 								<div className='col-lg-6'>
 									<div className='py-3'>
 										<div>CATALOG</div>
-										<div className='display-4 fw-bold'>Edit Course</div>
+										<div className='display-4 fw-bold'>Edit Learning Path</div>
 									</div>
 								</div>
 							</div>

@@ -62,7 +62,7 @@ const EditCertificate = () => {
 								<div className='col-lg-6'>
 									<div className='py-3'>
 										<div>CATALOG</div>
-										<div className='display-4 fw-bold'>Add Certificate</div>
+										<div className='display-4 fw-bold'>Edit Certificate</div>
 									</div>
 								</div>
 							</div>
