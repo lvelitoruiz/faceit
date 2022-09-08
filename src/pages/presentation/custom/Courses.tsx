@@ -162,15 +162,19 @@ const Courses = () => {
 									<table className='table table-modern'>
 										<thead>
 											<tr>
+												<th>Code</th>
 												<th>Title</th>
 												<th>Category</th>
-												<th>Vendor</th>
+												<th>Status</th>
 												<th></th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td>
+													<p className='m-0'>C001</p>
+												</td>
+												<td>
 													<div className='d-flex align-items-center'>
 														<p className='m-0 px-2'>Intro to Cybersecurity</p>
 													</div>
@@ -179,7 +183,7 @@ const Courses = () => {
 													<p className='m-0'>Cybersecurity</p>
 												</td>
 												<td>
-													<p className='m-0'>Accelered</p>
+													<p className='m-0'>Active</p>
 												</td>
 												<td className='text-end'>
 													<Button
@@ -188,7 +192,15 @@ const Courses = () => {
 														icon="Edit"
 														className='me-4'
 													>
-														CMS Access
+														CMS
+													</Button>
+													<Button
+														color="dark"
+														isOutline
+														icon="Edit"
+														className='me-4'
+													>
+														View
 													</Button>
 													<Button
 														color="dark"
@@ -201,6 +213,9 @@ const Courses = () => {
 											</tr>
 											<tr>
 												<td>
+													<p className='m-0'>C002</p>
+												</td>
+												<td>
 													<div className='d-flex align-items-center'>
 														<p className='m-0 px-2'>Intro to Cybersecurity</p>
 													</div>
@@ -209,7 +224,7 @@ const Courses = () => {
 													<p className='m-0'>Cybersecurity</p>
 												</td>
 												<td>
-													<p className='m-0'>Accelered</p>
+													<p className='m-0'>Active</p>
 												</td>
 												<td className='text-end'>
 													<Button
@@ -218,7 +233,15 @@ const Courses = () => {
 														icon="Edit"
 														className='me-4'
 													>
-														CMS Access
+														CMS
+													</Button>
+													<Button
+														color="dark"
+														isOutline
+														icon="Edit"
+														className='me-4'
+													>
+														View
 													</Button>
 													<Button
 														color="dark"
@@ -231,6 +254,9 @@ const Courses = () => {
 											</tr>
 											<tr>
 												<td>
+													<p className='m-0'>C003</p>
+												</td>
+												<td>
 													<div className='d-flex align-items-center'>
 														<p className='m-0 px-2'>Intro to Cybersecurity</p>
 													</div>
@@ -239,7 +265,7 @@ const Courses = () => {
 													<p className='m-0'>Cybersecurity</p>
 												</td>
 												<td>
-													<p className='m-0'>Accelered</p>
+													<p className='m-0'>Active</p>
 												</td>
 												<td className='text-end'>
 													<Button
@@ -248,7 +274,15 @@ const Courses = () => {
 														icon="Edit"
 														className='me-4'
 													>
-														CMS Access
+														CMS
+													</Button>
+													<Button
+														color="dark"
+														isOutline
+														icon="Edit"
+														className='me-4'
+													>
+														View
 													</Button>
 													<Button
 														color="dark"
@@ -261,6 +295,9 @@ const Courses = () => {
 											</tr>
 											<tr>
 												<td>
+													<p className='m-0'>C004</p>
+												</td>
+												<td>
 													<div className='d-flex align-items-center'>
 														<p className='m-0 px-2'>Intro to Cybersecurity</p>
 													</div>
@@ -269,7 +306,7 @@ const Courses = () => {
 													<p className='m-0'>Cybersecurity</p>
 												</td>
 												<td>
-													<p className='m-0'>Accelered</p>
+													<p className='m-0'>Active</p>
 												</td>
 												<td className='text-end'>
 													<Button
@@ -278,7 +315,15 @@ const Courses = () => {
 														icon="Edit"
 														className='me-4'
 													>
-														CMS Access
+														CMS
+													</Button>
+													<Button
+														color="dark"
+														isOutline
+														icon="Edit"
+														className='me-4'
+													>
+														View
 													</Button>
 													<Button
 														color="dark"

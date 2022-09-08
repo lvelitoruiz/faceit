@@ -43,7 +43,7 @@ const EditCourse = () => {
 												color='dark'
 												className='w-100 p-3 mb-4'
 											>
-												Skills
+												Categories and Skills
 											</Button>
 										</div>
 										<div className='col-12'>
@@ -51,7 +51,7 @@ const EditCourse = () => {
 												color='dark'
 												className='w-100 p-3 mb-4'
 											>
-												Thumbnail
+												Images
 											</Button>
 										</div>
 									</div>
@@ -60,10 +60,21 @@ const EditCourse = () => {
 						</div>
 						<div className='col-md-9 col-lg-10'>
 							<div className='row align-items-center mb-3 mb-lg-3'>
-								<div className='col-lg-6'>
+								<div className='col-lg-9'>
 									<div className='py-3'>
 										<div>CATALOG</div>
 										<div className='display-4 fw-bold'>Edit Course</div>
+									</div>
+								</div>
+								<div className='col-lg-3'>
+									<div className='py-3'>
+										<Button
+											color='dark'
+											isOutline
+											size='lg'
+											className='w-100 mb-3 mb-lg-0'>
+											Desactivate
+										</Button>
 									</div>
 								</div>
 							</div>
@@ -73,11 +84,24 @@ const EditCourse = () => {
 										<Card>
 											<CardBody>
 												<div className='row align-items-center'>
-													<div className='col-lg-12'>
+													<div className='col-lg-9'>
 														<FormGroup
 															className='mb-4'
 															id='formPrefix'
 															label='Title'>
+															<Input
+																autoComplete='honorific-prefix'
+																onChange={function noRefCheck() {}}
+																value=''
+																className='w-100'
+															/>
+														</FormGroup>
+													</div>
+													<div className='col-lg-3'>
+														<FormGroup
+															className='mb-4'
+															id='formPrefix'
+															label='Code'>
 															<Input
 																autoComplete='honorific-prefix'
 																onChange={function noRefCheck() {}}
@@ -119,54 +143,6 @@ const EditCourse = () => {
 																			Six
 																		</Option>
 																	</Select> */}
-														</FormGroup>
-													</div>
-													<div className='col-lg-6'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Category'>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
-															{/* <Select
-																		value=""
-																	>
-																		<Option value={1}>
-																			One
-																		</Option>
-																		<Option value={2}>
-																			Two
-																		</Option>
-																		<Option value={3}>
-																			Three
-																		</Option>
-																		<Option value={4}>
-																			Four
-																		</Option>
-																		<Option value={5}>
-																			Five
-																		</Option>
-																		<Option value={6}>
-																			Six
-																		</Option>
-																	</Select> */}
-														</FormGroup>
-													</div>
-													<div className='col-lg-6'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Code'>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
 														</FormGroup>
 													</div>
 													<div className='col-lg-6'>
@@ -321,12 +297,54 @@ const EditCourse = () => {
 									<div>
 										<Card>
 											<CardBody>
-												<div className='row align-items-center'>
-													<div className='col-lg-6 mb-4'>
-														<p className='fw-bold m-0 fs-5'>Add Skills</p>
+												<div className='row align-items-center mb-5'>
+													<div className='col-lg-6 mb-2'>
+														<p className='fw-bold m-0 fs-5'>Category</p>
 													</div>
-													<div className='col-lg-6 mb-4 text-end'>
-														<p className='m-0 fs-5'>You can add <span className='fw-bold'>9</span> more skills</p>
+													<div className='col-lg-12'>
+														<FormGroup
+															className='mb-4'
+															id='formPrefix'
+															>
+															<Input
+																autoComplete='honorific-prefix'
+																onChange={function noRefCheck() {}}
+																value=''
+																className='w-100'
+																placeholder='Skill (ex: Cybersecurity)'
+															/>
+														</FormGroup>
+													</div>
+													<div className='col-lg-12'>
+														<div className='row align-items-center'>
+															<div className="col-auto">
+																<div className="border d-flex align-items-center border-info border-2 text-info fw-bold px-2 py-1 rounded-1">
+																	<p className='m-0'>Cybersercutiry</p>
+																	<Icon
+																		icon='Close'
+																		size='lg'
+																		color='primary'
+																		className='ms-4'
+																		/>
+																</div>
+															</div>
+															<div className="col-auto">
+																<div className="border d-flex align-items-center border-info border-2 text-info fw-bold px-2 py-1 rounded-1">
+																	<p className='m-0'>Cybersercutiry</p>
+																	<Icon
+																		icon='Close'
+																		size='lg'
+																		color='primary'
+																		className='ms-4'
+																		/>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div className='row align-items-center'>
+													<div className='col-lg-6 mb-2'>
+														<p className='fw-bold m-0 fs-5'>Skills</p>
 													</div>
 													<div className='col-lg-12'>
 														<FormGroup
@@ -384,7 +402,7 @@ const EditCourse = () => {
 															color='dark'
 															size='lg'
 															className='w-100 mb-3 mb-lg-0'>
-															Seve Changes
+															Seve and Continue
 														</Button>
 													</div>
 												</div>
