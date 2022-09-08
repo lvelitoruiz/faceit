@@ -163,11 +163,11 @@ const presentation = [
 		element: <PAGE_LAYOUTS.COURSES />,
 		exact: true,
 	},
-	{
-		path: catalogMenu.catalog.subMenu.certificates.path,
-		element: <PAGE_LAYOUTS.CERTIFICATES />,
-		exact: true,
-	},
+	// {
+	// 	path: catalogMenu.catalog.subMenu.certificates.path,
+	// 	element: <PAGE_LAYOUTS.CERTIFICATES />,
+	// 	exact: true,
+	// },
 	{
 		path: catalogMenu.catalog.subMenu.learningPath.path,
 		element: <PAGE_LAYOUTS.LEARNING_PATH />,
@@ -193,11 +193,11 @@ const presentation = [
 		element: <PAGE_LAYOUTS.EDIT_COURSE />,
 		exact: true,
 	},
-	{
-		path: forms.addCertificate.path,
-		element: <PAGE_LAYOUTS.ADD_CERTIFICATE />,
-		exact: true,
-	},
+	// {
+	// 	path: forms.addCertificate.path,
+	// 	element: <PAGE_LAYOUTS.ADD_CERTIFICATE />,
+	// 	exact: true,
+	// },
 	{
 		path: forms.editCertificate.path,
 		element: <PAGE_LAYOUTS.EDIT_CERTIFICATE />,

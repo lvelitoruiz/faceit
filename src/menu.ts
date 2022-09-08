@@ -77,13 +77,13 @@ export const catalogMenu = {
 				icon: 'Book',
 				subMenu: null,
 			},
-			certificates: {
-				id: 'certificates',
-				text: 'CERTIFICATES',
-				path: '/certificates',
-				icon: 'Book',
-				subMenu: null,
-			},
+			// certificates: {
+			// 	id: 'certificates',
+			// 	text: 'CERTIFICATES',
+			// 	path: '/certificates',
+			// 	icon: 'Book',
+			// 	subMenu: null,
+			// },
 			learningPath: {
 				id: 'learningPath',
 				text: 'LEARNING PATH',

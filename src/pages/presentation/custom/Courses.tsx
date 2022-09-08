@@ -13,8 +13,10 @@ import Dropdown, {
 	DropdownToggle,
 } from '../../../components/bootstrap/Dropdown';
 import Pagination, { PaginationItem } from '../../../components/bootstrap/Pagination';
+import { useNavigate } from 'react-router-dom';
 
 const Courses = () => {
+	const navigate = useNavigate();
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='p-lg-5'>
@@ -45,6 +47,9 @@ const Courses = () => {
 										icon="PostAdd"
 										size='lg'
 										className='w-100'
+										onClick={() => {
+											navigate(`../add-course`);
+										}}
 									>
 										Add Course
 									</Button>
@@ -194,6 +199,9 @@ const Courses = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-course`);
+														}}
 													>
 														Edit
 													</Button>
@@ -224,6 +232,9 @@ const Courses = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-course`);
+														}}
 													>
 														Edit
 													</Button>
@@ -254,6 +265,9 @@ const Courses = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-course`);
+														}}
 													>
 														Edit
 													</Button>
@@ -284,6 +298,9 @@ const Courses = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-course`);
+														}}
 													>
 														Edit
 													</Button>

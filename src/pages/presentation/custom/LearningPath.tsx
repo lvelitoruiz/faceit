@@ -13,8 +13,10 @@ import Dropdown, {
 	DropdownToggle,
 } from '../../../components/bootstrap/Dropdown';
 import Pagination, { PaginationItem } from '../../../components/bootstrap/Pagination';
+import { useNavigate } from 'react-router-dom';
 
 const LearningPath = () => {
+	const navigate = useNavigate();
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='p-lg-5'>
@@ -45,6 +47,9 @@ const LearningPath = () => {
 										icon="PostAdd"
 										size='lg'
 										className='w-100'
+										onClick={() => {
+											navigate(`../add-learning-path`);
+										}}
 									>
 										Create Learning Path
 									</Button>
@@ -194,6 +199,9 @@ const LearningPath = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-learning-path`);
+														}}
 													>
 														Edit
 													</Button>
@@ -224,6 +232,9 @@ const LearningPath = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-learning-path`);
+														}}
 													>
 														Edit
 													</Button>
@@ -254,6 +265,9 @@ const LearningPath = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-learning-path`);
+														}}
 													>
 														Edit
 													</Button>
@@ -284,6 +298,9 @@ const LearningPath = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-learning-path`);
+														}}
 													>
 														Edit
 													</Button>

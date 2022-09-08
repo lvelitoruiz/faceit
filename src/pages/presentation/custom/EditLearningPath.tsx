@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import { userMenu } from '../../../menu';
@@ -11,6 +11,42 @@ import Textarea from '../../../components/bootstrap/forms/Textarea';
 import Icon from '../../../components/icon/Icon';
 
 const EditLearningPath = () => {
+	const [ edit,setEdit ] = useState(true);
+	const [ categories,setCategories ] = useState(false);
+	const [ images,setImages ] = useState(false);
+	const [ courses,setCourses ] = useState(false);
+
+	useEffect( () => {
+		setEdit(true)
+		setCategories(false)
+		setImages(false)
+		setCourses(false)
+	},[])
+
+	const handleChange = ( status: string ) => {
+		if(status === "edit") {
+			setEdit(true)
+			setCategories(false)
+			setImages(false)
+			setCourses(false)
+		} else if(status === 'categories') {
+			setEdit(false)
+			setCategories(true)
+			setImages(false)
+			setCourses(false)
+		} else if(status === 'images') {
+			setEdit(false)
+			setCategories(false)
+			setImages(true)
+			setCourses(false)
+		} else {
+			setEdit(false)
+			setCategories(false)
+			setImages(false)
+			setCourses(true)
+		}
+	}
+	
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='py-lg-5'>
@@ -32,7 +68,9 @@ const EditLearningPath = () => {
 										<div className='col-12'>
 											<Button
 												color='dark'
+												isOutline={!edit}
 												className='w-100 p-3 mb-4'
+												onClick={ () => handleChange('edit')}
 											>
 												General Information
 											</Button>
@@ -40,17 +78,31 @@ const EditLearningPath = () => {
 										<div className='col-12'>
 											<Button
 												color='dark'
+												isOutline={!categories}
 												className='w-100 p-3 mb-4'
+												onClick={ () => handleChange('categories')}
 											>
-												Skills
+												Categories and Skills
 											</Button>
 										</div>
 										<div className='col-12'>
 											<Button
 												color='dark'
+												isOutline={!images}
 												className='w-100 p-3 mb-4'
+												onClick={ () => handleChange('images')}
 											>
-												Thumbnail
+												Images
+											</Button>
+										</div>
+										<div className='col-12'>
+											<Button
+												color='dark'
+												isOutline={!courses}
+												className='w-100 p-3 mb-4'
+												onClick={ () => handleChange('courses')}
+											>
+												Courses and Paths
 											</Button>
 										</div>
 									</div>
@@ -68,589 +120,601 @@ const EditLearningPath = () => {
 							</div>
 							<div className='row'>
 								<div className='col-md-12'>
-									<div>
-										<Card>
-											<CardBody>
-												<div className='row align-items-center'>
-													<div className='col-lg-12'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Title'>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
-														</FormGroup>
+									{
+										(edit) ?
+										<div>
+											<Card>
+												<CardBody>
+													<div className='row align-items-center'>
+														<div className='col-lg-12'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																label='Title'>
+																<Input
+																	autoComplete='honorific-prefix'
+																	onChange={function noRefCheck() {}}
+																	value=''
+																	className='w-100'
+																/>
+															</FormGroup>
+														</div>
+														<div className='col-lg-6'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																label='Vendor'>
+																<Input
+																	autoComplete='honorific-prefix'
+																	onChange={function noRefCheck() {}}
+																	value=''
+																	className='w-100'
+																/>
+																{/* <Select
+																			value=""
+																		>
+																			<Option value={1}>
+																				One
+																			</Option>
+																			<Option value={2}>
+																				Two
+																			</Option>
+																			<Option value={3}>
+																				Three
+																			</Option>
+																			<Option value={4}>
+																				Four
+																			</Option>
+																			<Option value={5}>
+																				Five
+																			</Option>
+																			<Option value={6}>
+																				Six
+																			</Option>
+																		</Select> */}
+															</FormGroup>
+														</div>
+														<div className='col-lg-6'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																label='Category'>
+																<Input
+																	autoComplete='honorific-prefix'
+																	onChange={function noRefCheck() {}}
+																	value=''
+																	className='w-100'
+																/>
+																{/* <Select
+																			value=""
+																		>
+																			<Option value={1}>
+																				One
+																			</Option>
+																			<Option value={2}>
+																				Two
+																			</Option>
+																			<Option value={3}>
+																				Three
+																			</Option>
+																			<Option value={4}>
+																				Four
+																			</Option>
+																			<Option value={5}>
+																				Five
+																			</Option>
+																			<Option value={6}>
+																				Six
+																			</Option>
+																		</Select> */}
+															</FormGroup>
+														</div>
+														<div className='col-lg-6'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																label='Code'>
+																<Input
+																	autoComplete='honorific-prefix'
+																	onChange={function noRefCheck() {}}
+																	value=''
+																	className='w-100'
+																/>
+															</FormGroup>
+														</div>
+														<div className='col-lg-6'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																label='Price'>
+																<Input
+																	autoComplete='honorific-prefix'
+																	onChange={function noRefCheck() {}}
+																	value=''
+																	className='w-100'
+																/>
+															</FormGroup>
+														</div>
+														<div className='col-lg-6'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																label='Duration'>
+																<Input
+																	autoComplete='honorific-prefix'
+																	onChange={function noRefCheck() {}}
+																	value=''
+																	className='w-100'
+																/>
+															</FormGroup>
+														</div>
+														<div className='col-lg-6'>
+															<ChecksGroup className='d-flex align-items-center justify-content-between'>
+																<Checks
+																	id='example'
+																	label='Hours'
+																	name='example'
+																	onChange={function noRefCheck() {}}
+																	type='radio'
+																	value='radio value'
+																	className='me-3'
+																/>
+																<Checks
+																	id='example'
+																	label='Days'
+																	name='example'
+																	onChange={function noRefCheck() {}}
+																	type='radio'
+																	value='radio value'
+																/>
+																<Checks
+																	id='example'
+																	label='Weeks'
+																	name='example'
+																	onChange={function noRefCheck() {}}
+																	type='radio'
+																	value='radio value'
+																/>
+																<Checks
+																	id='example'
+																	label='Months'
+																	name='example'
+																	onChange={function noRefCheck() {}}
+																	type='radio'
+																	value='radio value'
+																/>
+															</ChecksGroup>
+														</div>
+														<div className='col-lg-6'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																label='Access Time'>
+																<Input
+																	autoComplete='honorific-prefix'
+																	onChange={function noRefCheck() {}}
+																	value=''
+																	className='w-100'
+																/>
+															</FormGroup>
+														</div>
+														<div className='col-lg-6'>
+															<ChecksGroup className='d-flex align-items-center justify-content-between'>
+																<Checks
+																	id='example'
+																	label='Hours'
+																	name='example'
+																	onChange={function noRefCheck() {}}
+																	type='radio'
+																	value='radio value'
+																	className='me-3'
+																/>
+																<Checks
+																	id='example'
+																	label='Days'
+																	name='example'
+																	onChange={function noRefCheck() {}}
+																	type='radio'
+																	value='radio value'
+																/>
+																<Checks
+																	id='example'
+																	label='Weeks'
+																	name='example'
+																	onChange={function noRefCheck() {}}
+																	type='radio'
+																	value='radio value'
+																/>
+																<Checks
+																	id='example'
+																	label='Months'
+																	name='example'
+																	onChange={function noRefCheck() {}}
+																	type='radio'
+																	value='radio value'
+																/>
+															</ChecksGroup>
+														</div>
+														<div className='col-lg-12'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																label='Description'>
+																<Textarea
+																	autoComplete='honorific-prefix'
+																	onChange={function noRefCheck() {}}
+																	value=''
+																	className='w-100'
+																/>
+															</FormGroup>
+														</div>
 													</div>
-													<div className='col-lg-6'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Vendor'>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
-															{/* <Select
-																		value=""
-																	>
-																		<Option value={1}>
-																			One
-																		</Option>
-																		<Option value={2}>
-																			Two
-																		</Option>
-																		<Option value={3}>
-																			Three
-																		</Option>
-																		<Option value={4}>
-																			Four
-																		</Option>
-																		<Option value={5}>
-																			Five
-																		</Option>
-																		<Option value={6}>
-																			Six
-																		</Option>
-																	</Select> */}
-														</FormGroup>
+													<div className='row align-items-center justify-content-center mt-5'>
+														<div className='col-lg-3'>
+															<Button
+																color='dark'
+																isOutline
+																size='lg'
+																className='w-100 mb-3 mb-lg-0'>
+																Cancel
+															</Button>
+														</div>
+														<div className='col-lg-3'>
+															<Button
+																color='dark'
+																size='lg'
+																className='w-100 mb-3 mb-lg-0'>
+																Seve Changes
+															</Button>
+														</div>
 													</div>
-													<div className='col-lg-6'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Category'>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
-															{/* <Select
-																		value=""
-																	>
-																		<Option value={1}>
-																			One
-																		</Option>
-																		<Option value={2}>
-																			Two
-																		</Option>
-																		<Option value={3}>
-																			Three
-																		</Option>
-																		<Option value={4}>
-																			Four
-																		</Option>
-																		<Option value={5}>
-																			Five
-																		</Option>
-																		<Option value={6}>
-																			Six
-																		</Option>
-																	</Select> */}
-														</FormGroup>
-													</div>
-													<div className='col-lg-6'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Code'>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
-														</FormGroup>
-													</div>
-													<div className='col-lg-6'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Price'>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
-														</FormGroup>
-													</div>
-													<div className='col-lg-6'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Duration'>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
-														</FormGroup>
-													</div>
-													<div className='col-lg-6'>
-														<ChecksGroup className='d-flex align-items-center justify-content-between'>
-															<Checks
-																id='example'
-																label='Hours'
-																name='example'
-																onChange={function noRefCheck() {}}
-																type='radio'
-																value='radio value'
-																className='me-3'
-															/>
-															<Checks
-																id='example'
-																label='Days'
-																name='example'
-																onChange={function noRefCheck() {}}
-																type='radio'
-																value='radio value'
-															/>
-															<Checks
-																id='example'
-																label='Weeks'
-																name='example'
-																onChange={function noRefCheck() {}}
-																type='radio'
-																value='radio value'
-															/>
-															<Checks
-																id='example'
-																label='Months'
-																name='example'
-																onChange={function noRefCheck() {}}
-																type='radio'
-																value='radio value'
-															/>
-														</ChecksGroup>
-													</div>
-													<div className='col-lg-6'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Access Time'>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
-														</FormGroup>
-													</div>
-													<div className='col-lg-6'>
-														<ChecksGroup className='d-flex align-items-center justify-content-between'>
-															<Checks
-																id='example'
-																label='Hours'
-																name='example'
-																onChange={function noRefCheck() {}}
-																type='radio'
-																value='radio value'
-																className='me-3'
-															/>
-															<Checks
-																id='example'
-																label='Days'
-																name='example'
-																onChange={function noRefCheck() {}}
-																type='radio'
-																value='radio value'
-															/>
-															<Checks
-																id='example'
-																label='Weeks'
-																name='example'
-																onChange={function noRefCheck() {}}
-																type='radio'
-																value='radio value'
-															/>
-															<Checks
-																id='example'
-																label='Months'
-																name='example'
-																onChange={function noRefCheck() {}}
-																type='radio'
-																value='radio value'
-															/>
-														</ChecksGroup>
-													</div>
-													<div className='col-lg-12'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Description'>
-															<Textarea
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-															/>
-														</FormGroup>
-													</div>
-												</div>
-												<div className='row align-items-center justify-content-center mt-5'>
-													<div className='col-lg-3'>
-														<Button
-															color='dark'
-															isOutline
-															size='lg'
-															className='w-100 mb-3 mb-lg-0'>
-															Cancel
-														</Button>
-													</div>
-													<div className='col-lg-3'>
-														<Button
-															color='dark'
-															size='lg'
-															className='w-100 mb-3 mb-lg-0'>
-															Seve Changes
-														</Button>
-													</div>
-												</div>
-											</CardBody>
-										</Card>
-									</div>
-									<div>
-										<Card>
-											<CardBody>
-												<div className='row align-items-center'>
-													<div className='col-lg-6 mb-4'>
-														<p className='fw-bold m-0 fs-5'>Add Skills</p>
-													</div>
-													<div className='col-lg-6 mb-4 text-end'>
-														<p className='m-0 fs-5'>You can add <span className='fw-bold'>9</span> more skills</p>
-													</div>
-													<div className='col-lg-12'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															>
-															<Input
-																autoComplete='honorific-prefix'
-																onChange={function noRefCheck() {}}
-																value=''
-																className='w-100'
-																placeholder='Skill (ex: Cybersecurity)'
-															/>
-														</FormGroup>
-													</div>
-													<div className='col-lg-12'>
-														<div className='row align-items-center'>
-															<div className="col-auto">
-																<div className="border d-flex align-items-center border-info border-2 text-info fw-bold px-2 py-1 rounded-1">
-																	<p className='m-0'>Cybersercutiry</p>
-																	<Icon
-																		icon='Close'
-																		size='lg'
-																		color='primary'
-																		className='ms-4'
-																		/>
+												</CardBody>
+											</Card>
+										</div> : ""
+									}
+									{
+										(categories) ? 
+										<div>
+											<Card>
+												<CardBody>
+													<div className='row align-items-center'>
+														<div className='col-lg-6 mb-4'>
+															<p className='fw-bold m-0 fs-5'>Add Skills</p>
+														</div>
+														<div className='col-lg-6 mb-4 text-end'>
+															<p className='m-0 fs-5'>You can add <span className='fw-bold'>9</span> more skills</p>
+														</div>
+														<div className='col-lg-12'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																>
+																<Input
+																	autoComplete='honorific-prefix'
+																	onChange={function noRefCheck() {}}
+																	value=''
+																	className='w-100'
+																	placeholder='Skill (ex: Cybersecurity)'
+																/>
+															</FormGroup>
+														</div>
+														<div className='col-lg-12'>
+															<div className='row align-items-center'>
+																<div className="col-auto">
+																	<div className="border d-flex align-items-center border-info border-2 text-info fw-bold px-2 py-1 rounded-1">
+																		<p className='m-0'>Cybersercutiry</p>
+																		<Icon
+																			icon='Close'
+																			size='lg'
+																			color='primary'
+																			className='ms-4'
+																			/>
+																	</div>
 																</div>
-															</div>
-															<div className="col-auto">
-																<div className="border d-flex align-items-center border-info border-2 text-info fw-bold px-2 py-1 rounded-1">
-																	<p className='m-0'>Cybersercutiry</p>
-																	<Icon
-																		icon='Close'
-																		size='lg'
-																		color='primary'
-																		className='ms-4'
-																		/>
+																<div className="col-auto">
+																	<div className="border d-flex align-items-center border-info border-2 text-info fw-bold px-2 py-1 rounded-1">
+																		<p className='m-0'>Cybersercutiry</p>
+																		<Icon
+																			icon='Close'
+																			size='lg'
+																			color='primary'
+																			className='ms-4'
+																			/>
+																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
-												</div>
-												<div className='row align-items-center justify-content-center mt-5'>
-													<div className='col-lg-3'>
-														<Button
-															color='dark'
-															isOutline
-															size='lg'
-															className='w-100 mb-3 mb-lg-0'>
-															Return
-														</Button>
+													<div className='row align-items-center justify-content-center mt-5'>
+														<div className='col-lg-3'>
+															<Button
+																color='dark'
+																isOutline
+																size='lg'
+																className='w-100 mb-3 mb-lg-0'>
+																Return
+															</Button>
+														</div>
+														<div className='col-lg-3'>
+															<Button
+																color='dark'
+																size='lg'
+																className='w-100 mb-3 mb-lg-0'>
+																Seve Changes
+															</Button>
+														</div>
 													</div>
-													<div className='col-lg-3'>
-														<Button
-															color='dark'
-															size='lg'
-															className='w-100 mb-3 mb-lg-0'>
-															Seve Changes
-														</Button>
+												</CardBody>
+											</Card>
+										</div> : ""
+									}
+									{
+										(images) ? 
+										<div>
+											<Card>
+												<CardBody>
+													<div className='row align-items-center'>
+														<div className='col-lg-12'>
+															<FormGroup
+																className='mb-4'
+																id='formPrefix'
+																label='Thumbnail'>
+																	<Input type='file' autoComplete='photo'/>
+															</FormGroup>
+														</div>
 													</div>
-												</div>
-											</CardBody>
-										</Card>
-									</div>
-									<div>
-										<Card>
-											<CardBody>
-												<div className='row align-items-center'>
-													<div className='col-lg-12'>
-														<FormGroup
-															className='mb-4'
-															id='formPrefix'
-															label='Thumbnail'>
-																<Input type='file' autoComplete='photo'/>
-														</FormGroup>
+													<div className='row align-items-center justify-content-center mt-5'>
+														<div className='col-lg-3'>
+															<Button
+																color='dark'
+																isOutline
+																size='lg'
+																className='w-100 mb-3 mb-lg-0'>
+																Return
+															</Button>
+														</div>
+														<div className='col-lg-3'>
+															<Button
+																color='dark'
+																size='lg'
+																className='w-100 mb-3 mb-lg-0'>
+																Seve Changes
+															</Button>
+														</div>
 													</div>
-												</div>
-												<div className='row align-items-center justify-content-center mt-5'>
-													<div className='col-lg-3'>
-														<Button
-															color='dark'
-															isOutline
-															size='lg'
-															className='w-100 mb-3 mb-lg-0'>
-															Return
-														</Button>
-													</div>
-													<div className='col-lg-3'>
-														<Button
-															color='dark'
-															size='lg'
-															className='w-100 mb-3 mb-lg-0'>
-															Seve Changes
-														</Button>
-													</div>
-												</div>
-											</CardBody>
-										</Card>
-									</div>
-									<div>
-										<Card>
-											<CardBody>
-												<div className='row'>
-													<div className='col-md-12'>
-														<p className="mb-2 fs-5">Select the courses or certificates you'd like to add to this path</p>
-													</div>
-													<div className='col-md-12'>
-														<Card>
-															<CardBody>
-																<div className='row align-items-center'>
-																	<div className='col-md-9'>
-																		<div className='d-flex align-items-center'>
-																			<Icon
-																				icon='Search'
-																				size='2x'
-																				color='dark'
+												</CardBody>
+											</Card>
+										</div> : ""
+									}
+									{
+										(courses) ?
+										<div>
+											<Card>
+												<CardBody>
+													<div className='row'>
+														<div className='col-md-12'>
+															<p className="mb-2 fs-5">Select the courses or certificates you'd like to add to this path</p>
+														</div>
+														<div className='col-md-12'>
+															<Card>
+																<CardBody>
+																	<div className='row align-items-center'>
+																		<div className='col-md-9'>
+																			<div className='d-flex align-items-center'>
+																				<Icon
+																					icon='Search'
+																					size='2x'
+																					color='dark'
+																					/>
+																				<Input
+																					id="example"
+																					onBlur={function noRefCheck(){}}
+																					onChange={function noRefCheck(){}}
+																					onFocus={function noRefCheck(){}}
+																					onInput={function noRefCheck(){}}
+																					onInvalid={function noRefCheck(){}}
+																					onSelect={function noRefCheck(){}}
+																					placeholder="Search"
+																					size="lg" 
+																					className='ms-2'
 																				/>
-																			<Input
-																				id="example"
-																				onBlur={function noRefCheck(){}}
-																				onChange={function noRefCheck(){}}
-																				onFocus={function noRefCheck(){}}
-																				onInput={function noRefCheck(){}}
-																				onInvalid={function noRefCheck(){}}
-																				onSelect={function noRefCheck(){}}
-																				placeholder="Search"
-																				size="lg" 
-																				className='ms-2'
-																			/>
+																			</div>
 																		</div>
-																	</div>
-																	<div className='col-md-3'>
-																		<ChecksGroup className='d-flex gap-4 align-items-center justify-content-end'>
-																			<Checks
-																				id='example'
-																				label='All'
-																				name='example'
-																				onChange={function noRefCheck() {}}
-																				type='radio'
-																				value='radio value'
-																			/>
-																			<Checks
-																				id='example'
-																				label='Courses'
-																				name='example'
-																				onChange={function noRefCheck() {}}
-																				type='radio'
-																				value='radio value'
-																			/>
-																			<Checks
-																				id='example'
-																				label='Certificates'
-																				name='example'
-																				onChange={function noRefCheck() {}}
-																				type='radio'
-																				value='radio value'
-																			/>
-																		</ChecksGroup>
-																	</div>
-																	<div className='col-md-12 mt-4'>
-																		<div className='row'>
-																			<div className='col-md-6'>
-																				<div className='rounded-3 border'>
-																					<div className='text-center'>
-																						<p className='m-0 p-3 border-bottom fs-4 fw-bold'>Courses and Certificates</p>
-																					</div>
-																					<div className='p-3' style={{ height: '400px', overflow: 'auto' }}>
-																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
-																							<div>
-																								<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																								<p className='m-0'>Certificate</p>
-																							</div>
-																							<Icon
-																								icon='Dehaze'
-																								size='2x'
-																								color='dark'
-																								/>
+																		<div className='col-md-3'>
+																			<ChecksGroup className='d-flex gap-4 align-items-center justify-content-end'>
+																				<Checks
+																					id='example'
+																					label='All'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																				<Checks
+																					id='example'
+																					label='Courses'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																				<Checks
+																					id='example'
+																					label='Certificates'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																			</ChecksGroup>
+																		</div>
+																		<div className='col-md-12 mt-4'>
+																			<div className='row'>
+																				<div className='col-md-6'>
+																					<div className='rounded-3 border'>
+																						<div className='text-center'>
+																							<p className='m-0 p-3 border-bottom fs-4 fw-bold'>Courses and Certificates</p>
 																						</div>
-																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
-																							<div>
-																								<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																								<p className='m-0'>Certificate</p>
+																						<div className='p-3' style={{ height: '400px', overflow: 'auto' }}>
+																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																								<div>
+																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																									<p className='m-0'>Certificate</p>
+																								</div>
+																								<Icon
+																									icon='Dehaze'
+																									size='2x'
+																									color='dark'
+																									/>
 																							</div>
-																							<Icon
-																								icon='Dehaze'
-																								size='2x'
-																								color='dark'
-																								/>
+																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																								<div>
+																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																									<p className='m-0'>Certificate</p>
+																								</div>
+																								<Icon
+																									icon='Dehaze'
+																									size='2x'
+																									color='dark'
+																									/>
+																							</div>
 																						</div>
 																					</div>
 																				</div>
-																			</div>
-																			<div className='col-md-6'>
-																				<div className='rounded-3 border'>
-																					<div className='text-center'>
-																						<p className='m-0 p-3 border-bottom fs-4 fw-bold'>Cybersecurity Learning Path</p>
-																					</div>
-																					<div className='p-3' style={{ height: '400px', overflow: 'auto' }}>
-																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
-																							<div className='d-flex align-items-center'>
-																								<Icon
-																									icon='Close'
-																									size='2x'
-																									color='dark'
-																									className='me-3'
-																									/>
-																								<div>
-																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																									<p className='m-0'>Certificate</p>
-																								</div>
-																							</div>
-																							<Icon
-																								icon='Dehaze'
-																								size='2x'
-																								color='dark'
-																								/>
+																				<div className='col-md-6'>
+																					<div className='rounded-3 border'>
+																						<div className='text-center'>
+																							<p className='m-0 p-3 border-bottom fs-4 fw-bold'>Cybersecurity Learning Path</p>
 																						</div>
-																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
-																							<div className='d-flex align-items-center'>
+																						<div className='p-3' style={{ height: '400px', overflow: 'auto' }}>
+																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																								<div className='d-flex align-items-center'>
+																									<Icon
+																										icon='Close'
+																										size='2x'
+																										color='dark'
+																										className='me-3'
+																										/>
+																									<div>
+																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																										<p className='m-0'>Certificate</p>
+																									</div>
+																								</div>
 																								<Icon
-																									icon='Close'
+																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									className='me-3'
 																									/>
-																								<div>
-																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																									<p className='m-0'>Certificate</p>
-																								</div>
 																							</div>
-																							<Icon
-																								icon='Dehaze'
-																								size='2x'
-																								color='dark'
-																								/>
-																						</div>
-																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
-																							<div className='d-flex align-items-center'>
+																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																								<div className='d-flex align-items-center'>
+																									<Icon
+																										icon='Close'
+																										size='2x'
+																										color='dark'
+																										className='me-3'
+																										/>
+																									<div>
+																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																										<p className='m-0'>Certificate</p>
+																									</div>
+																								</div>
 																								<Icon
-																									icon='Close'
+																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									className='me-3'
 																									/>
-																								<div>
-																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																									<p className='m-0'>Certificate</p>
-																								</div>
 																							</div>
-																							<Icon
-																								icon='Dehaze'
-																								size='2x'
-																								color='dark'
-																								/>
-																						</div>
-																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
-																							<div className='d-flex align-items-center'>
+																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																								<div className='d-flex align-items-center'>
+																									<Icon
+																										icon='Close'
+																										size='2x'
+																										color='dark'
+																										className='me-3'
+																										/>
+																									<div>
+																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																										<p className='m-0'>Certificate</p>
+																									</div>
+																								</div>
 																								<Icon
-																									icon='Close'
+																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									className='me-3'
 																									/>
-																								<div>
-																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																									<p className='m-0'>Certificate</p>
-																								</div>
 																							</div>
-																							<Icon
-																								icon='Dehaze'
-																								size='2x'
-																								color='dark'
-																								/>
-																						</div>
-																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
-																							<div className='d-flex align-items-center'>
+																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																								<div className='d-flex align-items-center'>
+																									<Icon
+																										icon='Close'
+																										size='2x'
+																										color='dark'
+																										className='me-3'
+																										/>
+																									<div>
+																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																										<p className='m-0'>Certificate</p>
+																									</div>
+																								</div>
 																								<Icon
-																									icon='Close'
+																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									className='me-3'
 																									/>
-																								<div>
-																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																									<p className='m-0'>Certificate</p>
-																								</div>
 																							</div>
-																							<Icon
-																								icon='Dehaze'
-																								size='2x'
-																								color='dark'
-																								/>
-																						</div>
-																						<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
-																							<div className='d-flex align-items-center'>
+																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																								<div className='d-flex align-items-center'>
+																									<Icon
+																										icon='Close'
+																										size='2x'
+																										color='dark'
+																										className='me-3'
+																										/>
+																									<div>
+																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																										<p className='m-0'>Certificate</p>
+																									</div>
+																								</div>
 																								<Icon
-																									icon='Close'
+																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									className='me-3'
 																									/>
-																								<div>
-																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																									<p className='m-0'>Certificate</p>
-																								</div>
 																							</div>
-																							<Icon
-																								icon='Dehaze'
-																								size='2x'
-																								color='dark'
-																								/>
+																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
+																								<div className='d-flex align-items-center'>
+																									<Icon
+																										icon='Close'
+																										size='2x'
+																										color='dark'
+																										className='me-3'
+																										/>
+																									<div>
+																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
+																										<p className='m-0'>Certificate</p>
+																									</div>
+																								</div>
+																								<Icon
+																									icon='Dehaze'
+																									size='2x'
+																									color='dark'
+																									/>
+																							</div>
 																						</div>
 																					</div>
 																				</div>
 																			</div>
 																		</div>
 																	</div>
-																</div>
-															</CardBody>
-														</Card>
+																</CardBody>
+															</Card>
+														</div>
 													</div>
-												</div>
-											</CardBody>
-										</Card>
-									</div>
+												</CardBody>
+											</Card>
+										</div> : ""
+									}
 								</div>
 							</div>
 						</div>
