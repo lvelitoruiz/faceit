@@ -9,10 +9,13 @@ import UserImage from '../../../assets/img/wanna/wanna1.png';
 import Avatar from '../../../components/Avatar';
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Input from '../../../components/bootstrap/forms/Input';
+import { useLocation } from 'react-router-dom';
+
 
 const Profile = () => {
 
 	const [ edit,setEdit ] = useState(true);
+	const location: any = useLocation();
 
 	useEffect( () => {
 		setEdit(true)
@@ -25,6 +28,14 @@ const Profile = () => {
 			setEdit(false)
 		}
 	}
+
+	useEffect(() => {
+		console.log('this is the location',location.state);
+		if(location.state !== null) {
+			const { editStatus } = location.state;
+			setEdit(editStatus)
+		}
+	}, [location])
 
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
