@@ -204,6 +204,9 @@ const Courses = () => {
 														isOutline
 														icon="Edit"
 														className='me-4'
+														onClick={() => {
+															navigate(`../course-view`);
+														}}
 													>
 														View
 													</Button>
@@ -211,6 +214,7 @@ const Courses = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														
 														onClick={() => {
 															navigate(`../edit-course`);
 														}}

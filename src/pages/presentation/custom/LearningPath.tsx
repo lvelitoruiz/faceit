@@ -204,6 +204,9 @@ const LearningPath = () => {
 														isOutline
 														icon="Edit"
 														className='me-4'
+														onClick={() => {
+															navigate(`../learning-path-view`);
+														}}
 													>
 														View
 													</Button>
