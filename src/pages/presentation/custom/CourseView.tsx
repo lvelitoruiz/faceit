@@ -4,6 +4,7 @@ import Page from '../../../layout/Page/Page';
 import { userMenu } from '../../../menu';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
 import Button from '../../../components/bootstrap/Button';
+import Img from '../../../assets/img/img.jpeg';
 
 const CourseView = () => {
 	return (
@@ -72,13 +73,29 @@ const CourseView = () => {
 										<div className='col-lg-12 py-4'>
 											<p className='fw-bold m-0 fs-5'>Images</p>
 										</div>
+										<div className='col-lg-12'>
+											<div className='d-flex justify-content-start align-items-end'>
+												<div className='p-4'>
+													<img src={Img} alt='Company' width={350} />
+													<p className='fw-bold mt-2'>Large (1024px)</p>
+												</div>
+												<div className='p-4'>
+													<img src={Img} alt='Company' width={280} />
+													<p className='fw-bold mt-2'>Large (768px)</p>
+												</div>
+												<div className='p-4'>
+													<img src={Img} alt='Company' width={160} />
+													<p className='fw-bold mt-2'>Large (320px)</p>
+												</div>
+											</div>
+										</div>
 									</div>
 									<div className="row align-items-center justify-content-center mt-5">
 										<div className="col-lg-3">
-											<button type="button" className="btn btn-outline-dark btn-lg w-100 mb-3 mb-lg-0">Return</button>
+											<Button type="button" className="btn btn-outline-dark btn-lg w-100 mb-3 mb-lg-0">Return</Button>
 										</div>
 										<div className="col-lg-3">
-											<button type="button" className="btn btn-dark btn-lg w-100 mb-3 mb-lg-0">Edit Course Details</button>
+											<Button type="button" className="btn btn-dark btn-lg w-100 mb-3 mb-lg-0">Edit Course Details</Button>
 										</div>
 									</div>
 								</CardBody>
