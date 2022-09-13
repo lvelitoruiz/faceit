@@ -30,6 +30,26 @@ export const homeMenu = {
 	},
 };
 
+export const skills = {
+	skill: {
+		id: 'skills',
+		text: 'Skills',
+		path: '/skills',
+		icon: 'Code',
+		subMenu: null,
+	},
+};
+
+export const categories = {
+	category: {
+		id: 'categories',
+		text: 'Categories',
+		path: '/categories',
+		icon: 'Code',
+		subMenu: null,
+	},
+};
+
 export const dashboardMenu = {
 	dashboard: {
 		id: 'dashboard',
@@ -225,6 +245,34 @@ export const forms = {
 		id: 'courseView',
 		text: 'COURSE VIEW',
 		path: '/course-view',
+		icon: 'Code',
+		subMenu: null,
+	},
+	addSkills: {
+		id: 'addskills',
+		text: 'ADD SKILLS',
+		path: '/add-skills',
+		icon: 'Code',
+		subMenu: null,
+	},
+	editSkills: {
+		id: 'editskills',
+		text: 'EDIT SKILLS',
+		path: '/edit-skills',
+		icon: 'Code',
+		subMenu: null,
+	},
+	addCategories: {
+		id: 'addcategories',
+		text: 'ADD CATEGORIES',
+		path: '/add-categories',
+		icon: 'Code',
+		subMenu: null,
+	},
+	editCategories: {
+		id: 'editcategories',
+		text: 'EDIT CATEGORIES',
+		path: '/edit-categories',
 		icon: 'Code',
 		subMenu: null,
 	},

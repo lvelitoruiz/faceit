@@ -1,6 +1,7 @@
 import React, { lazy } from 'react';
-import { dashboardMenu, demoPages, layoutMenu, userMenu, organizationMenu, forms, catalogMenu } from '../menu';
+import { dashboardMenu, demoPages, layoutMenu, userMenu, organizationMenu, forms, catalogMenu, skills, categories } from '../menu';
 import Login from '../pages/presentation/auth/Login';
+import Categories from '../pages/presentation/custom/Categories';
 
 const LANDING = {
 	DASHBOARD: lazy(() => import('../pages/dashboard/DashboardPage')),
@@ -38,6 +39,12 @@ const PAGE_LAYOUTS = {
 	EDIT_LEARNING_PATH: lazy(() => import('../pages/presentation/custom/EditLearningPath')),
 	LEARNING_PATH_VIEW: lazy(() => import('../pages/presentation/custom/LearningPathView')),
 	COURSE_VIEW: lazy(() => import('../pages/presentation/custom/CourseView')),
+	SKILLS: lazy(() => import('../pages/presentation/custom/Skills')),
+	CATEGORIES: lazy(() => import('../pages/presentation/custom/Categories')),
+	SKILLS_ADD: lazy(() => import('../pages/presentation/custom/AddSkills')),
+	SKILLS_EDIT: lazy(() => import('../pages/presentation/custom/EditSkills')),
+	CATEGORIES_ADD: lazy(() => import('../pages/presentation/custom/AddCategories')),
+	CATEGORIES_EDIT: lazy(() => import('../pages/presentation/custom/EditCategories')),
 };
 
 const presentation = [
@@ -213,6 +220,36 @@ const presentation = [
 	{
 		path: forms.courseView.path,
 		element: <PAGE_LAYOUTS.COURSE_VIEW />,
+		exact: true,
+	},
+	{
+		path: skills.skill.path,
+		element: <PAGE_LAYOUTS.SKILLS />,
+		exact: true,
+	},
+	{
+		path: categories.category.path,
+		element: <PAGE_LAYOUTS.CATEGORIES />,
+		exact: true,
+	},
+	{
+		path: forms.addSkills.path,
+		element: <PAGE_LAYOUTS.SKILLS_ADD />,
+		exact: true,
+	},
+	{
+		path: forms.editSkills.path,
+		element: <PAGE_LAYOUTS.SKILLS_EDIT />,
+		exact: true,
+	},
+	{
+		path: forms.addCategories.path,
+		element: <PAGE_LAYOUTS.CATEGORIES_ADD />,
+		exact: true,
+	},
+	{
+		path: forms.editCategories.path,
+		element: <PAGE_LAYOUTS.CATEGORIES_EDIT />,
 		exact: true,
 	},
 ];
