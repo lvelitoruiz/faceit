@@ -11,7 +11,7 @@ import UserImageWebp from '../../../assets/img/wanna/wanna1.webp';
 import UserImage from '../../../assets/img/wanna/wanna1.png';
 import Logo2 from '../../../assets/img/logo-2.jpeg';
 import Avatar from '../../../components/Avatar';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../../../contexts/authContext';
 import { demoPages, forms } from '../../../menu';
 
@@ -53,6 +53,11 @@ const DefaultHeader = () => {
 								navigate(`../${forms.profile.path}`);
 							}}>
 								Edit Profile
+							</DropdownItem>
+							<DropdownItem>
+								<Link
+									to={"/profile"}
+									state={{ editStatus: false }}>Forgot Password?</Link>
 							</DropdownItem>
 							<DropdownItem 
 								onClick={() => {

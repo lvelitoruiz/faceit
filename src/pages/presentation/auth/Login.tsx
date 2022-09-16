@@ -312,7 +312,9 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 															color="link"
 															className='w-100 py-3 fw-bold mb-2'
 														>
-															Forgot Passwpord?
+															<Link
+																to="/profile"
+																state={{ editStatus: false }}>Forgot Password?</Link>
 														</Button>
 														<Button
 															color='dark'

@@ -13,7 +13,7 @@ import Logo2 from '../../../assets/img/logo-2.jpeg';
 import Avatar from '../../../components/Avatar';
 import AuthContext from '../../../contexts/authContext';
 import { demoPages, forms } from '../../../menu';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const DashboardHeader = () => {
 	const { i18n } = useTranslation();
@@ -61,6 +61,11 @@ const DashboardHeader = () => {
 								navigate(`../${forms.profile.path}`);
 							}}>
 								Edit Profile
+							</DropdownItem>
+							<DropdownItem>
+								<Link
+									to={"/profile"}
+									state={{ editStatus: false }}>Forgot Password?</Link>
 							</DropdownItem>
 							<DropdownItem
 								onClick={() => {
