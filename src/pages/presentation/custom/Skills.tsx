@@ -6,8 +6,10 @@ import Button from '../../../components/bootstrap/Button';
 import Input from '../../../components/bootstrap/forms/Input';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
 import Icon from '../../../components/icon/Icon';
+import { useNavigate } from 'react-router-dom';
 
 const Skills = () => {
+	const navigate = useNavigate();
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='p-lg-5'>
@@ -35,6 +37,9 @@ const Skills = () => {
 										icon="Bookmarks"
 										size='lg'
 										className='w-100'
+										onClick={() => {
+											navigate(`../add-skills`);
+										}}
 									>
 										Add a New Skill
 									</Button>
@@ -96,6 +101,9 @@ const Skills = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-skills`);
+														}}
 													>
 														Edit
 													</Button>
@@ -113,6 +121,9 @@ const Skills = () => {
 														color="dark"
 														isOutline
 														icon="Edit"
+														onClick={() => {
+															navigate(`../edit-skills`);
+														}}
 													>
 														Edit
 													</Button>
