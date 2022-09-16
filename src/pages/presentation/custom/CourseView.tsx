@@ -54,19 +54,38 @@ const CourseView = () => {
 									<div className='row border-bottom'>
 										<div className='col-lg-12 py-4'>
 											<p className='fw-bold m-0 fs-5'>Description</p>
-											<p className='m-0 fs-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+											<p className='m-0 fs-5'>
+												Lorem Ipsum is simply dummy text of the printing and
+												typesetting industry. Lorem Ipsum has been the
+												industry's standard dummy text ever since the 1500s,
+												when an unknown printer took a galley of type and
+												scrambled it to make a type specimen book. It has
+												survived not only five centuries, but also the leap
+												into electronic typesetting, remaining essentially
+												unchanged. It was popularised in the 1960s with the
+												release of Letraset sheets containing Lorem Ipsum
+												passages, and more recently with desktop publishing
+												software like Aldus PageMaker including versions of
+												Lorem Ipsum.
+											</p>
 										</div>
 									</div>
 									<div className='row border-bottom'>
 										<div className='col-lg-12 py-4'>
 											<p className='fw-bold m-0 fs-5'>Categories</p>
-											<p className='m-0 fs-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+											<p className='m-0 fs-5'>
+												Lorem Ipsum is simply dummy text of the printing and
+												typesetting industry.
+											</p>
 										</div>
 									</div>
 									<div className='row border-bottom'>
 										<div className='col-lg-12 py-4'>
 											<p className='fw-bold m-0 fs-5'>Skills</p>
-											<p className='m-0 fs-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+											<p className='m-0 fs-5'>
+												Lorem Ipsum is simply dummy text of the printing and
+												typesetting industry.
+											</p>
 										</div>
 									</div>
 									<div className='row border-bottom'>
@@ -90,12 +109,20 @@ const CourseView = () => {
 											</div>
 										</div>
 									</div>
-									<div className="row align-items-center justify-content-center mt-5">
-										<div className="col-lg-3">
-											<Button type="button" className="btn btn-outline-dark btn-lg w-100 mb-3 mb-lg-0">Return</Button>
+									<div className='row align-items-center justify-content-center mt-5'>
+										<div className='col-lg-3'>
+											<Button
+												type='button'
+												className='btn btn-outline-dark btn-lg w-100 mb-3 mb-lg-0'>
+												Return
+											</Button>
 										</div>
-										<div className="col-lg-3">
-											<Button type="button" className="btn btn-dark btn-lg w-100 mb-3 mb-lg-0">Edit Course Details</Button>
+										<div className='col-lg-3'>
+											<Button
+												type='button'
+												className='btn btn-dark btn-lg w-100 mb-3 mb-lg-0'>
+												Edit Course Details
+											</Button>
 										</div>
 									</div>
 								</CardBody>

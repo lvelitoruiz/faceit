@@ -15,20 +15,20 @@ import { useNavigate } from 'react-router-dom';
 const EditOrganization = () => {
 	const navigate = useNavigate();
 
-	const [ edit,setEdit ] = useState(true);
+	const [edit, setEdit] = useState(true);
 
-	useEffect( () => {
-		setEdit(true)
-	},[])
+	useEffect(() => {
+		setEdit(true);
+	}, []);
 
-	const handleChange = ( status: string ) => {
-		if(status === "active") {
-			setEdit(true)
+	const handleChange = (status: string) => {
+		if (status === 'active') {
+			setEdit(true);
 		} else {
-			setEdit(false)
+			setEdit(false);
 		}
-	}
-	
+	};
+
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='py-lg-5'>
@@ -38,11 +38,7 @@ const EditOrganization = () => {
 							<Card className='card card-stretch-full'>
 								<CardBody className='p-0'>
 									<div className='border-bottom mb-4 pt-3 ps-2'>
-										<Button
-											color="link"
-											icon='ArrowBackIos'
-											className='mb-2'
-										>
+										<Button color='link' icon='ArrowBackIos' className='mb-2'>
 											Return
 										</Button>
 									</div>
@@ -60,8 +56,7 @@ const EditOrganization = () => {
 												color='dark'
 												isOutline={!edit}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('active')}
-											>
+												onClick={() => handleChange('active')}>
 												Edit Information
 											</Button>
 										</div>
@@ -70,8 +65,7 @@ const EditOrganization = () => {
 												color='dark'
 												isOutline={edit}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('inactive')}
-											>
+												onClick={() => handleChange('inactive')}>
 												Management Admin
 											</Button>
 										</div>
@@ -81,275 +75,287 @@ const EditOrganization = () => {
 						</div>
 						<div className='col-md-9 col-lg-10'>
 							{/* Edit information */}
-							{
-								(edit) ? 
+							{edit ? (
 								<div>
-								<div className='row align-items-center mb-3 mb-lg-3'>
-									<div className='col-lg-6'>
-										<div className='py-3'>
-											<div>ORGANIZATION INFO</div>
-											<div className='display-4 fw-bold'>Edit Information</div>
-										</div>
-									</div>
-									<div className='col-lg-6'>
-										<div className='row align-items-center justify-content-end'>
-											<div className='col-md-5 col-lg-auto'>
-												<Button
-													color="dark"
-													isOutline
-													size='lg'
-													className='w-100 mb-3 mb-lg-0'
-												>
-													Desactivate
-												</Button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div className='row'>
-									<div className='col-md-12'>
-										<Card className='px-4 py-3 card card-stretch-full'>
-											<div className='row'>
-												<div className='col-lg-12'>
-													<FormGroup
-														className='mb-4'
-														id='formPrefix'
-														label='Name'>
-														<Input
-															autoComplete='honorific-prefix'
-															onChange={function noRefCheck(){}}
-															value=""
-															className='w-100'
-														/>
-													</FormGroup>
-												</div>
-												<div className='col-lg-6'>
-													<FormGroup
-														className='mb-4'
-														id='formPrefix'
-														label='Phome Number'>
-														<Input
-															autoComplete='honorific-prefix'
-															onChange={function noRefCheck(){}}
-															value=""
-															className='w-100'
-														/>
-													</FormGroup>
-												</div>
-												<div className='col-lg-6'>
-													<FormGroup
-														className='mb-4'
-														id='formPrefix'
-														label='Website'>
-														<Input
-															autoComplete='honorific-prefix'
-															onChange={function noRefCheck(){}}
-															value=""
-															className='w-100'
-														/>
-													</FormGroup>
-												</div>
-												<div className='col-lg-6'>
-													<FormGroup
-														className='mb-4'
-														id='formPrefix'
-														label='Industry'>
-														<Input
-															autoComplete='honorific-prefix'
-															onChange={function noRefCheck(){}}
-															value=""
-															className='w-100'
-														/>
-														{/* <Select
-															value=""
-														>
-															<Option value={1}>
-																One
-															</Option>
-															<Option value={2}>
-																Two
-															</Option>
-															<Option value={3}>
-																Three
-															</Option>
-															<Option value={4}>
-																Four
-															</Option>
-															<Option value={5}>
-																Five
-															</Option>
-															<Option value={6}>
-																Six
-															</Option>
-														</Select> */}
-													</FormGroup>
-												</div>
-												<div className='col-lg-6'>
-													<FormGroup
-														className='mb-4'
-														id='formPrefix'
-														label='Company Size'>
-														<Input
-															autoComplete='honorific-prefix'
-															onChange={function noRefCheck(){}}
-															value=""
-															className='w-100'
-														/>
-														{/* <Select
-															value=""
-														>
-															<Option value={1}>
-																One
-															</Option>
-															<Option value={2}>
-																Two
-															</Option>
-															<Option value={3}>
-																Three
-															</Option>
-															<Option value={4}>
-																Four
-															</Option>
-															<Option value={5}>
-																Five
-															</Option>
-															<Option value={6}>
-																Six
-															</Option>
-														</Select> */}
-													</FormGroup>
+									<div className='row align-items-center mb-3 mb-lg-3'>
+										<div className='col-lg-6'>
+											<div className='py-3'>
+												<div>ORGANIZATION INFO</div>
+												<div className='display-4 fw-bold'>
+													Edit Information
 												</div>
 											</div>
-											<div className='row align-items-center justify-content-center mt-5'>
-												<div className='col-lg-3'>
+										</div>
+										<div className='col-lg-6'>
+											<div className='row align-items-center justify-content-end'>
+												<div className='col-md-5 col-lg-auto'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
 														size='lg'
-														className='w-100 mb-3 mb-lg-0'
-													>
-														Cancel
-													</Button>
-												</div>
-												<div className='col-lg-3'>
-													<Button
-														color="dark"
-														size='lg'
-														className='w-100 mb-3 mb-lg-0'
-													>
-														Save Changes
+														className='w-100 mb-3 mb-lg-0'>
+														Desactivate
 													</Button>
 												</div>
 											</div>
-										</Card>
+										</div>
 									</div>
-								</div>
-							</div> :
-							<div>
-							<div className='row align-items-center mb-3 mb-lg-3'>
-								<div className='col-lg-6'>
-									<div className='py-3'>
-										<div>ORGANIZATIONS</div>
-										<div className='display-4 fw-bold'>Manage Admins</div>
-									</div>
-								</div>
-								<div className='col-lg-6'>
-									<div className='row align-items-center justify-content-end'>
-										<div className='col-md-5 col-lg-auto'>
-											<Button
-												color="dark"
-												icon='PersonAdd'
-												size='lg'
-												className='w-100 mb-3 mb-lg-0'
-												onClick={() => {
-													navigate(`../${forms.addAdmin.path}`);
-												}}
-											>
-												Add Admin
-											</Button>
+									<div className='row'>
+										<div className='col-md-12'>
+											<Card className='px-4 py-3 card card-stretch-full'>
+												<div className='row'>
+													<div className='col-lg-12'>
+														<FormGroup
+															className='mb-4'
+															id='formPrefix'
+															label='Name'>
+															<Input
+																autoComplete='honorific-prefix'
+																onChange={function noRefCheck() {}}
+																value=''
+																className='w-100'
+															/>
+														</FormGroup>
+													</div>
+													<div className='col-lg-6'>
+														<FormGroup
+															className='mb-4'
+															id='formPrefix'
+															label='Phome Number'>
+															<Input
+																autoComplete='honorific-prefix'
+																onChange={function noRefCheck() {}}
+																value=''
+																className='w-100'
+															/>
+														</FormGroup>
+													</div>
+													<div className='col-lg-6'>
+														<FormGroup
+															className='mb-4'
+															id='formPrefix'
+															label='Website'>
+															<Input
+																autoComplete='honorific-prefix'
+																onChange={function noRefCheck() {}}
+																value=''
+																className='w-100'
+															/>
+														</FormGroup>
+													</div>
+													<div className='col-lg-6'>
+														<FormGroup
+															className='mb-4'
+															id='formPrefix'
+															label='Industry'>
+															<Input
+																autoComplete='honorific-prefix'
+																onChange={function noRefCheck() {}}
+																value=''
+																className='w-100'
+															/>
+															{/* <Select
+															value=""
+														>
+															<Option value={1}>
+																One
+															</Option>
+															<Option value={2}>
+																Two
+															</Option>
+															<Option value={3}>
+																Three
+															</Option>
+															<Option value={4}>
+																Four
+															</Option>
+															<Option value={5}>
+																Five
+															</Option>
+															<Option value={6}>
+																Six
+															</Option>
+														</Select> */}
+														</FormGroup>
+													</div>
+													<div className='col-lg-6'>
+														<FormGroup
+															className='mb-4'
+															id='formPrefix'
+															label='Company Size'>
+															<Input
+																autoComplete='honorific-prefix'
+																onChange={function noRefCheck() {}}
+																value=''
+																className='w-100'
+															/>
+															{/* <Select
+															value=""
+														>
+															<Option value={1}>
+																One
+															</Option>
+															<Option value={2}>
+																Two
+															</Option>
+															<Option value={3}>
+																Three
+															</Option>
+															<Option value={4}>
+																Four
+															</Option>
+															<Option value={5}>
+																Five
+															</Option>
+															<Option value={6}>
+																Six
+															</Option>
+														</Select> */}
+														</FormGroup>
+													</div>
+												</div>
+												<div className='row align-items-center justify-content-center mt-5'>
+													<div className='col-lg-3'>
+														<Button
+															color='dark'
+															isOutline
+															size='lg'
+															className='w-100 mb-3 mb-lg-0'>
+															Cancel
+														</Button>
+													</div>
+													<div className='col-lg-3'>
+														<Button
+															color='dark'
+															size='lg'
+															className='w-100 mb-3 mb-lg-0'>
+															Save Changes
+														</Button>
+													</div>
+												</div>
+											</Card>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div className='row'>
-								<div className='col-md-12'>
-								<Card>
-							<CardBody className='table-responsive'>
-								<table className='table table-modern'>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Email</th>
-											<th>Status</th>
-											<th></th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<div className='d-flex align-items-center'>
-													<Icon
-														icon='Person'
-														size='2x'
-														color='dark'
-													/>
-													<p className='m-0 px-2'>Jhon Doe</p>
+							) : (
+								<div>
+									<div className='row align-items-center mb-3 mb-lg-3'>
+										<div className='col-lg-6'>
+											<div className='py-3'>
+												<div>ORGANIZATIONS</div>
+												<div className='display-4 fw-bold'>
+													Manage Admins
 												</div>
-											</td>
-											<td>
-												<p className='m-0'>John@accelered.com</p>
-											</td>
-											<td>
-												<p className='m-0'>Active</p>
-											</td>
-											<td className='text-center'>
-												<Button
-													color="dark"
-													isOutline
-													icon="Edit"
-													onClick={() => {
-														navigate(`../${forms.editAdmin.path}`);
-													}}
-												>
-													Edit
-												</Button>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div className='d-flex align-items-center'>
-													<Icon
-														icon='Person'
-														size='2x'
+											</div>
+										</div>
+										<div className='col-lg-6'>
+											<div className='row align-items-center justify-content-end'>
+												<div className='col-md-5 col-lg-auto'>
+													<Button
 														color='dark'
-													/>
-													<p className='m-0 px-2'>Jane Carpenter</p>
+														icon='PersonAdd'
+														size='lg'
+														className='w-100 mb-3 mb-lg-0'
+														onClick={() => {
+															navigate(`../${forms.addAdmin.path}`);
+														}}>
+														Add Admin
+													</Button>
 												</div>
-											</td>
-											<td>
-												<p className='m-0'>John@accelered.com</p>
-											</td>
-											<td>
-												<p className='m-0'>Active</p>
-											</td>
-											<td className='text-center'>
-												<Button
-													color="dark"
-													isOutline
-													icon="Edit"
-													onClick={() => {
-														navigate(`../${forms.editAdmin.path}`);
-													}}
-												>
-													Edit
-												</Button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<div className='d-flex justify-content-between px-4 mt-4 align-items-center'>
-									<p className='fw-bold m-0'>Showing 1-4 of 10 Students</p>
-									{/* <Pagination ariaLabel="pagination">
+											</div>
+										</div>
+									</div>
+									<div className='row'>
+										<div className='col-md-12'>
+											<Card>
+												<CardBody className='table-responsive'>
+													<table className='table table-modern'>
+														<thead>
+															<tr>
+																<th>Name</th>
+																<th>Email</th>
+																<th>Status</th>
+																<th></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>
+																	<div className='d-flex align-items-center'>
+																		<Icon
+																			icon='Person'
+																			size='2x'
+																			color='dark'
+																		/>
+																		<p className='m-0 px-2'>
+																			Jhon Doe
+																		</p>
+																	</div>
+																</td>
+																<td>
+																	<p className='m-0'>
+																		John@accelered.com
+																	</p>
+																</td>
+																<td>
+																	<p className='m-0'>Active</p>
+																</td>
+																<td className='text-center'>
+																	<Button
+																		color='dark'
+																		isOutline
+																		icon='Edit'
+																		onClick={() => {
+																			navigate(
+																				`../${forms.editAdmin.path}`,
+																			);
+																		}}>
+																		Edit
+																	</Button>
+																</td>
+															</tr>
+															<tr>
+																<td>
+																	<div className='d-flex align-items-center'>
+																		<Icon
+																			icon='Person'
+																			size='2x'
+																			color='dark'
+																		/>
+																		<p className='m-0 px-2'>
+																			Jane Carpenter
+																		</p>
+																	</div>
+																</td>
+																<td>
+																	<p className='m-0'>
+																		John@accelered.com
+																	</p>
+																</td>
+																<td>
+																	<p className='m-0'>Active</p>
+																</td>
+																<td className='text-center'>
+																	<Button
+																		color='dark'
+																		isOutline
+																		icon='Edit'
+																		onClick={() => {
+																			navigate(
+																				`../${forms.editAdmin.path}`,
+																			);
+																		}}>
+																		Edit
+																	</Button>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													<div className='d-flex justify-content-between px-4 mt-4 align-items-center'>
+														<p className='fw-bold m-0'>
+															Showing 1-4 of 10 Students
+														</p>
+														{/* <Pagination ariaLabel="pagination">
 										<PaginationItem isActive>
 											1
 										</PaginationItem>
@@ -357,18 +363,15 @@ const EditOrganization = () => {
 											2
 										</PaginationItem>
 									</Pagination> */}
+													</div>
+												</CardBody>
+											</Card>
+										</div>
+									</div>
 								</div>
-							</CardBody>
-						</Card>
-								</div>
-							</div>
-						</div>
-
-							}
+							)}
 
 							{/* Manage Admins */}
-							
-
 						</div>
 					</div>
 				</div>

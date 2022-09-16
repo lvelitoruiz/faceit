@@ -29,25 +29,23 @@ const Organization = () => {
 							<div className='row align-items-center justify-content-end'>
 								<div className='col-md-4 col-lg-4'>
 									<Button
-										color="dark"
+										color='dark'
 										isOutline
-										icon="InsertDriveFile"
+										icon='InsertDriveFile'
 										size='lg'
-										className='w-100 mb-3 mb-lg-0'
-									>
+										className='w-100 mb-3 mb-lg-0'>
 										Export CSV
 									</Button>
 								</div>
 								<div className='col-md-4 col-lg-4'>
-									<Button 
-										color="dark"
-										icon="AddBusiness"
+									<Button
+										color='dark'
+										icon='AddBusiness'
 										size='lg'
 										className='w-100'
 										onClick={() => {
 											navigate(`../${forms.addOrganization.path}`);
-										}}
-									>
+										}}>
 										Add Organization
 									</Button>
 								</div>
@@ -60,57 +58,46 @@ const Organization = () => {
 								<div className='row align-items-center justify-content-between'>
 									<div className='col-lg-11 mb-2 mb-lg-0'>
 										<div className='d-flex align-items-center'>
-											<Icon
-												icon='Search'
-												size='2x'
-												color='dark'
-												/>
+											<Icon icon='Search' size='2x' color='dark' />
 											<Input
-												id="example"
-												onBlur={function noRefCheck(){}}
-												onChange={function noRefCheck(){}}
-												onFocus={function noRefCheck(){}}
-												onInput={function noRefCheck(){}}
-												onInvalid={function noRefCheck(){}}
-												onSelect={function noRefCheck(){}}
-												placeholder="Search"
-												size="lg" 
+												id='example'
+												onBlur={function noRefCheck() {}}
+												onChange={function noRefCheck() {}}
+												onFocus={function noRefCheck() {}}
+												onInput={function noRefCheck() {}}
+												onInvalid={function noRefCheck() {}}
+												onSelect={function noRefCheck() {}}
+												placeholder='Search'
+												size='lg'
 												className='ms-2'
 											/>
 										</div>
 									</div>
 									<div className='col-auto'>
-										<Dropdown setIsOpen={function noRefCheck(){}}>
+										<Dropdown setIsOpen={function noRefCheck() {}}>
 											<DropdownToggle>
 												<Button
-													color="light"
+													color='light'
 													isLight
 													className='d-flex align-items-center'
-													icon="FilterAlt"
-												>
+													icon='FilterAlt'>
 													Filter By
 												</Button>
 											</DropdownToggle>
 											<DropdownMenu>
-												<DropdownItem>
-													Option1
-												</DropdownItem>
-												<DropdownItem>
-													Option2
-												</DropdownItem>
-												<DropdownItem>
-													Option3
-												</DropdownItem>
+												<DropdownItem>Option1</DropdownItem>
+												<DropdownItem>Option2</DropdownItem>
+												<DropdownItem>Option3</DropdownItem>
 											</DropdownMenu>
 										</Dropdown>
-									</div>	
+									</div>
 								</div>
 							</Card>
 						</div>
 					</div>
 					<div className='row'>
 						<div className='col-lg-12'>
-							<Card >
+							<Card>
 								<CardBody className='table-responsive'>
 									<table className='table table-modern'>
 										<thead>
@@ -137,13 +124,14 @@ const Organization = () => {
 												</td>
 												<td className='text-center'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
-														icon="Edit"
+														icon='Edit'
 														onClick={() => {
-															navigate(`../${forms.editOrganization.path}`);
-														}}
-													>
+															navigate(
+																`../${forms.editOrganization.path}`,
+															);
+														}}>
 														Edit
 													</Button>
 												</td>
@@ -151,7 +139,11 @@ const Organization = () => {
 											<tr>
 												<td>
 													<div className='d-flex align-items-center'>
-														<img src={Micro} alt='Company' height={44} />
+														<img
+															src={Micro}
+															alt='Company'
+															height={44}
+														/>
 														<p className='m-0'>Microsoft</p>
 													</div>
 												</td>
@@ -163,13 +155,14 @@ const Organization = () => {
 												</td>
 												<td className='text-center'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
-														icon="Edit"
+														icon='Edit'
 														onClick={() => {
-															navigate(`../${forms.editOrganization.path}`);
-														}}
-													>
+															navigate(
+																`../${forms.editOrganization.path}`,
+															);
+														}}>
 														Edit
 													</Button>
 												</td>

@@ -112,7 +112,7 @@ export const catalogMenu = {
 				subMenu: null,
 			},
 		},
-	},	
+	},
 };
 
 export const organizationMenu = {

@@ -264,7 +264,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 														isValid={formik.isValid}
 														onChange={formik.handleChange}
 														onBlur={formik.handleBlur}
-														className="mt-4"
+														className='mt-4'
 													/>
 												</FormGroup>
 												{/* {signInPassword && (
@@ -309,18 +309,19 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 												) : (
 													<div>
 														<Button
-															color="link"
-															className='w-100 py-3 fw-bold mb-2'
-														>
+															color='link'
+															className='w-100 py-3 fw-bold mb-2'>
 															<Link
-																to="/profile"
-																state={{ editStatus: false }}>Forgot Password?</Link>
+																to='/profile'
+																state={{ editStatus: false }}>
+																Forgot Password?
+															</Link>
 														</Button>
 														<Button
 															color='dark'
 															className='w-100 py-3 fw-bold'
 															onClick={formik.handleSubmit}>
-																Sign In
+															Sign In
 														</Button>
 													</div>
 												)}

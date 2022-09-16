@@ -32,25 +32,23 @@ const Student = () => {
 							<div className='row align-items-center justify-content-end'>
 								<div className='col-md-4 col-lg-4'>
 									<Button
-										color="dark"
+										color='dark'
 										isOutline
-										icon="InsertDriveFile"
+										icon='InsertDriveFile'
 										size='lg'
-										className='w-100 mb-3 mb-lg-0'
-									>
+										className='w-100 mb-3 mb-lg-0'>
 										Export CSV
 									</Button>
 								</div>
 								<div className='col-md-4 col-lg-4'>
-									<Button 
-										color="dark"
-										icon="PersonAdd"
+									<Button
+										color='dark'
+										icon='PersonAdd'
 										size='lg'
 										className='w-100'
 										onClick={() => {
 											navigate(`../${forms.add.path}`);
-										}}
-									>
+										}}>
 										Add Student
 									</Button>
 								</div>
@@ -63,34 +61,29 @@ const Student = () => {
 								<div className='row align-items-center justify-content-between'>
 									<div className='col-lg-11 mb-2 mb-lg-0'>
 										<div className='d-flex align-items-center'>
-											<Icon
-												icon='Search'
-												size='2x'
-												color='dark'
-												/>
+											<Icon icon='Search' size='2x' color='dark' />
 											<Input
-												id="example"
-												onBlur={function noRefCheck(){}}
-												onChange={function noRefCheck(){}}
-												onFocus={function noRefCheck(){}}
-												onInput={function noRefCheck(){}}
-												onInvalid={function noRefCheck(){}}
-												onSelect={function noRefCheck(){}}
-												placeholder="Search"
-												size="lg" 
+												id='example'
+												onBlur={function noRefCheck() {}}
+												onChange={function noRefCheck() {}}
+												onFocus={function noRefCheck() {}}
+												onInput={function noRefCheck() {}}
+												onInvalid={function noRefCheck() {}}
+												onSelect={function noRefCheck() {}}
+												placeholder='Search'
+												size='lg'
 												className='ms-2'
 											/>
 										</div>
 									</div>
 									<div className='col-auto'>
-										<Dropdown setIsOpen={function noRefCheck(){}}>
+										<Dropdown setIsOpen={function noRefCheck() {}}>
 											<DropdownToggle>
 												<Button
-													color="light"
+													color='light'
 													isLight
 													className='d-flex align-items-center'
-													icon="FilterAlt"
-												>
+													icon='FilterAlt'>
 													Filter By
 												</Button>
 											</DropdownToggle>
@@ -99,28 +92,28 @@ const Student = () => {
 													<p className='fw-bold mb-2'>Organization</p>
 													<ChecksGroup>
 														<Checks
-															id="example"
-															label="All"
-															name="example"
-															onChange={function noRefCheck(){}}
-															type="radio"
-															value="radio value"
+															id='example'
+															label='All'
+															name='example'
+															onChange={function noRefCheck() {}}
+															type='radio'
+															value='radio value'
 														/>
 														<Checks
-															id="example"
-															label="Accelered"
-															name="example"
-															onChange={function noRefCheck(){}}
-															type="radio"
-															value="radio value"
+															id='example'
+															label='Accelered'
+															name='example'
+															onChange={function noRefCheck() {}}
+															type='radio'
+															value='radio value'
 														/>
 														<Checks
-															id="example"
-															label="Microsoft"
-															name="example"
-															onChange={function noRefCheck(){}}
-															type="radio"
-															value="radio value"
+															id='example'
+															label='Microsoft'
+															name='example'
+															onChange={function noRefCheck() {}}
+															type='radio'
+															value='radio value'
 														/>
 													</ChecksGroup>
 												</div>
@@ -128,34 +121,34 @@ const Student = () => {
 													<p className='fw-bold mb-2'>Status</p>
 													<ChecksGroup>
 														<Checks
-															id="example"
-															label="All"
-															name="example"
-															onChange={function noRefCheck(){}}
-															type="radio"
-															value="radio value"
+															id='example'
+															label='All'
+															name='example'
+															onChange={function noRefCheck() {}}
+															type='radio'
+															value='radio value'
 														/>
 														<Checks
-															id="example"
-															label="Active"
-															name="example"
-															onChange={function noRefCheck(){}}
-															type="radio"
-															value="radio value"
+															id='example'
+															label='Active'
+															name='example'
+															onChange={function noRefCheck() {}}
+															type='radio'
+															value='radio value'
 														/>
 														<Checks
-															id="example"
-															label="Inactive"
-															name="example"
-															onChange={function noRefCheck(){}}
-															type="radio"
-															value="radio value"
+															id='example'
+															label='Inactive'
+															name='example'
+															onChange={function noRefCheck() {}}
+															type='radio'
+															value='radio value'
 														/>
 													</ChecksGroup>
 												</div>
 											</DropdownMenu>
 										</Dropdown>
-									</div>	
+									</div>
 								</div>
 							</Card>
 						</div>
@@ -197,13 +190,12 @@ const Student = () => {
 												</td>
 												<td className='text-center'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
-														icon="Edit"
+														icon='Edit'
 														onClick={() => {
 															navigate(`../${forms.edit.path}`);
-														}}
-													>
+														}}>
 														Edit
 													</Button>
 												</td>
@@ -230,13 +222,12 @@ const Student = () => {
 												</td>
 												<td className='text-center'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
-														icon="Edit"
+														icon='Edit'
 														onClick={() => {
 															navigate(`../${forms.edit.path}`);
-														}}
-													>
+														}}>
 														Edit
 													</Button>
 												</td>
@@ -263,13 +254,12 @@ const Student = () => {
 												</td>
 												<td className='text-center'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
-														icon="Edit"
+														icon='Edit'
 														onClick={() => {
 															navigate(`../${forms.edit.path}`);
-														}}
-													>
+														}}>
 														Edit
 													</Button>
 												</td>
@@ -296,13 +286,12 @@ const Student = () => {
 												</td>
 												<td className='text-center'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
-														icon="Edit"
+														icon='Edit'
 														onClick={() => {
 															navigate(`../${forms.edit.path}`);
-														}}
-													>
+														}}>
 														Edit
 													</Button>
 												</td>
@@ -311,13 +300,9 @@ const Student = () => {
 									</table>
 									<div className='d-flex justify-content-between px-4 mt-4 align-items-center'>
 										<p className='fw-bold m-0'>Showing 1-4 of 10 Students</p>
-										<Pagination ariaLabel="pagination">
-											<PaginationItem isActive>
-												1
-											</PaginationItem>
-											<PaginationItem>
-												2
-											</PaginationItem>
+										<Pagination ariaLabel='pagination'>
+											<PaginationItem isActive>1</PaginationItem>
+											<PaginationItem>2</PaginationItem>
 										</Pagination>
 									</div>
 								</CardBody>

@@ -5,7 +5,17 @@ import { useTranslation } from 'react-i18next';
 import Brand from '../Brand/Brand';
 import Navigation, { NavigationLine } from '../Navigation/Navigation';
 import User from '../User/User';
-import { dashboardMenu, demoPages, layoutMenu, userMenu, cmsMenu, organizationMenu, catalogMenu, skills, categories } from '../../menu';
+import {
+	dashboardMenu,
+	demoPages,
+	layoutMenu,
+	userMenu,
+	cmsMenu,
+	organizationMenu,
+	catalogMenu,
+	skills,
+	categories,
+} from '../../menu';
 import ThemeContext from '../../contexts/themeContext';
 
 import Icon from '../../components/icon/Icon';
@@ -87,7 +97,7 @@ const Aside = () => {
 						</>
 					)}
 				</div>
-				{ /* 
+				{/* 
 				<div className='aside-foot'>
 					<nav aria-label='aside-bottom-menu'>
 						<div className='navigation'>
@@ -125,7 +135,7 @@ const Aside = () => {
 					</nav>
 					<User />
 				</div> 
-				*/ }
+				*/}
 			</motion.aside>
 			{asideStatus && hasTouchButton && isModernDesign && (
 				<>
