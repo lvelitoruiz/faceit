@@ -36,23 +36,23 @@ export interface IUserProps {
 
 const john: IUserProps = {
 	id: '1',
-	username: 'john@omtanke.studio',
+	username: 'superadmin@test.com',
 	name: 'John',
 	surname: 'Doe',
 	position: 'CEO, Founder',
-	email: 'john@omtanke.studio',
+	email: 'superadmin@test.com',
 	src: UserImage,
 	srcSet: UserImageWebp,
 	isOnline: true,
 	isReply: true,
 	color: 'primary',
 	services: [SERVICES.SURFING, SERVICES.KITE_SURFING, SERVICES.TENNIS],
-	password: '@ABC123',
+	password: 'Password!',
 };
 
 const grace: IUserProps = {
 	id: '2',
-	username: 'grace',
+	username: 'useradmingroup@test.com',
 	name: 'Grace',
 	surname: 'Buckland',
 	position: 'Staff',
@@ -62,7 +62,7 @@ const grace: IUserProps = {
 	isOnline: true,
 	color: 'warning',
 	services: [SERVICES.SNOWBOARDING, SERVICES.ICE_SKATING, SERVICES.KITE_SURFING],
-	password: '@ABC123',
+	password: 'Password!',
 };
 
 const jane: IUserProps = {
@@ -149,6 +149,8 @@ const USERS: { [key: string]: IUserProps } = {
 	CHLOE: chloe,
 	SAM: sam,
 };
+
+export const ROLE: string = "3d1ee2af-cc28-4615-891f-cd71530975fc";
 
 export function getUserDataWithUsername(username: string): IUserProps {
 	// @ts-ignore

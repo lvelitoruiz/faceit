@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState, useContext } from 'react';
+import React, { FC, useCallback, useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -12,8 +12,10 @@ import Logo1 from '../../../assets/img/logo.jpeg';
 import useDarkMode from '../../../hooks/useDarkMode';
 import { useFormik } from 'formik';
 import AuthContext from '../../../contexts/authContext';
-import USERS, { getUserDataWithUsername } from '../../../common/data/userDummyData';
+import USERS, { getUserDataWithUsername, ROLE } from '../../../common/data/userDummyData';
 import Spinner from '../../../components/bootstrap/Spinner';
+import axios from "axios";
+import jwt_decode from "jwt-decode";
 // import Alert from '../../../components/bootstrap/Alert';
 
 interface ILoginHeaderProps {
@@ -39,6 +41,7 @@ const LoginHeader: FC<ILoginHeaderProps> = ({ isNewUser }) => {
 interface ILoginProps {
 	isSignUp?: boolean;
 }
+
 const Login: FC<ILoginProps> = ({ isSignUp }) => {
 	const { setUser } = useContext(AuthContext);
 
@@ -46,6 +49,8 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 
 	const [signInPassword, setSignInPassword] = useState<boolean>(false);
 	const [singUpStatus, setSingUpStatus] = useState<boolean>(!!isSignUp);
+	const [hasErrors,setErrors] = useState<boolean>(false);
+	const [noUser,setNoUser] = useState<boolean>(false);
 
 	const navigate = useNavigate();
 	const handleOnClick = useCallback(() => navigate('/'), [navigate]);
@@ -57,6 +62,33 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 	const passwordCheck = (username: string, password: string) => {
 		return getUserDataWithUsername(username).password === password;
 	};
+
+	const [post, setPost] = useState<any>(null);
+
+	const getInfo = () => {
+		axios
+		.post('https://accelered-api.whiz.pe/api/auth', {
+			username: formik.values.loginUsername,
+			password: formik.values.loginPassword
+		})
+		.then((response) => {
+			setPost(jwt_decode(response.data.access_token));
+		}).catch( function(error) {
+			console.log(error);
+			setNoUser(true);
+		});
+	};
+
+	useEffect( () => {
+		if(post?.role !== undefined) {
+			console.log('**** this is the user info **** ',post?.role);
+			if(ROLE == post?.role) {
+				handleOnClick();
+			} else {
+				setErrors(true);
+			}
+		}
+	},[post,handleOnClick]);
 
 	const formik = useFormik({
 		enableReinitialize: true,
@@ -79,17 +111,17 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 		},
 		validateOnChange: false,
 		onSubmit: (values) => {
-			if (usernameCheck(values.loginUsername)) {
-				if (passwordCheck(values.loginUsername, values.loginPassword)) {
-					if (setUser) {
-						setUser(values.loginUsername);
-					}
+			// if (usernameCheck(values.loginUsername)) {
+			// 	if (passwordCheck(values.loginUsername, values.loginPassword)) {
+			// 		if (setUser) {
+			// 			setUser(values.loginUsername);
+			// 		}
 
-					handleOnClick();
-				} else {
-					formik.setFieldError('loginPassword', 'Username and password do not match.');
-				}
-			}
+					getInfo();
+				// } else {
+				// 	formik.setFieldError('loginPassword', 'Username and password do not match.');
+				// }
+			// }
 		},
 	});
 
@@ -239,6 +271,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 													})}>
 													<Input
 														autoComplete='username'
+														name="loginUsername"
 														value={formik.values.loginUsername}
 														isTouched={formik.touched.loginUsername}
 														invalidFeedback={
@@ -254,6 +287,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 
 													<Input
 														type='password'
+														name='loginPassword'
 														autoComplete='current-password'
 														value={formik.values.loginPassword}
 														isTouched={formik.touched.loginPassword}
@@ -308,6 +342,18 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 													</Button>
 												) : (
 													<div>
+														{
+															(hasErrors) ?
+															<div>
+																<div className="invalid-feedback" style={{"display":"block", "width": "100%","textAlign":"center","fontWeight":"bold","fontSize":"16px"}}>Incorrect Role.</div>
+															</div> : ""
+														}
+														{
+															(noUser) ?
+															<div>
+																<div className="invalid-feedback" style={{"display":"block", "width": "100%","textAlign":"center","fontWeight":"bold","fontSize":"16px"}}>Incorrect user or password.</div>
+															</div> : ""
+														}
 														<Button
 															color='link'
 															className='w-100 py-3 fw-bold mb-2'>
