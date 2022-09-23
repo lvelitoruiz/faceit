@@ -77,6 +77,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 		}).catch( function(error) {
 			console.log(error);
 			setNoUser(true);
+			setErrors(false);
 		});
 	};
 
@@ -87,6 +88,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 				handleOnClick();
 			} else {
 				setErrors(true);
+				setNoUser(false);
 			}
 		}
 	},[post,handleOnClick]);
