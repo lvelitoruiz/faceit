@@ -16,6 +16,14 @@ const Profile = () => {
 
 	const [ edit,setEdit ] = useState(true);
 	const location: any = useLocation();
+	const [userInfo, setUserInfo] = useState<any>([]);
+
+	useEffect(() => {
+		const userInformation = JSON.parse(localStorage.getItem('user_info') || '{}');
+		if (userInformation) {
+			setUserInfo(userInformation.profile);
+		}
+	}, []);
 
 	useEffect( () => {
 		setEdit(true)
@@ -60,7 +68,7 @@ const Profile = () => {
 											src={UserImage}
 											className='rounded-circle'
 										/>
-										<p className='fw-bold fs-5 mt-2'>Michael Smith</p>
+										<p className='fw-bold fs-5 mt-2'>{userInfo?.firstName} {userInfo?.lastName}</p>
 									</div>
 									<div className='row p-4'>
 										<div className='col-12'>
@@ -112,7 +120,7 @@ const Profile = () => {
 															<Input
 																autoComplete='honorific-prefix'
 																onChange={function noRefCheck(){}}
-																value=""
+																value={userInfo?.firstName}
 																className='w-100'
 															/>
 														</FormGroup>
@@ -125,7 +133,7 @@ const Profile = () => {
 															<Input
 																autoComplete='honorific-prefix'
 																onChange={function noRefCheck(){}}
-																value=""
+																value={userInfo?.lastName}
 																className='w-100'
 															/>
 														</FormGroup>
@@ -138,7 +146,7 @@ const Profile = () => {
 															<Input
 																autoComplete='honorific-prefix'
 																onChange={function noRefCheck(){}}
-																value=""
+																value={userInfo?.login}
 																className='w-100'
 															/>
 														</FormGroup>

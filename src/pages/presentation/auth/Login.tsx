@@ -54,6 +54,8 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 
 	const navigate = useNavigate();
 	const handleOnClick = useCallback(() => navigate('/'), [navigate]);
+	const [post, setPost] = useState<any>(null);
+	const [userInfo, setUserInfo] = useState<any>(null);
 
 	const usernameCheck = (username: string) => {
 		return !!getUserDataWithUsername(username);
@@ -63,8 +65,6 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 		return getUserDataWithUsername(username).password === password;
 	};
 
-	const [post, setPost] = useState<any>(null);
-
 	const getInfo = () => {
 		axios
 		.post('https://accelered-api.whiz.pe/api/auth', {
@@ -72,6 +72,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 			password: formik.values.loginPassword
 		})
 		.then((response) => {
+			setUserInfo(response.data);
 			setPost(jwt_decode(response.data.access_token));
 		}).catch( function(error) {
 			console.log(error);
@@ -89,6 +90,13 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 			}
 		}
 	},[post,handleOnClick]);
+
+	useEffect(() => {
+		if(userInfo?.data._embedded.user !== undefined) {
+			console.log(userInfo?.data._embedded.user);
+			localStorage.setItem('user_info', JSON.stringify(userInfo?.data._embedded.user));
+		}
+	},[userInfo]);
 
 	const formik = useFormik({
 		enableReinitialize: true,

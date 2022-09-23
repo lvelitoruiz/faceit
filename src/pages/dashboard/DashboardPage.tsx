@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import PageWrapper from '../../layout/PageWrapper/PageWrapper';
 import Page from '../../layout/Page/Page';
@@ -9,13 +9,22 @@ import { forms, organizationMenu, userMenu } from '../../menu';
 
 const DashboardPage = () => {
 	const navigate = useNavigate();
+	const [userInfo, setUserInfo] = useState<any>([]);
+
+	useEffect(() => {
+		const userInformation = JSON.parse(localStorage.getItem('user_info') || '{}');
+		if (userInformation) {
+			setUserInfo(userInformation.profile);
+		}
+	}, []);
+
 	return (
 		<PageWrapper title='Dashboard Page'>
 			<Page className='p-lg-5'>
 				<div className='mb-lg-5'>
 					<div className='row'>
 						<div className='col-12 mb-3'>
-							<div className='display-4 fw-bold py-3'>Welcome back, Michael!</div>
+							<div className='display-4 fw-bold py-3'>Welcome back, {userInfo?.firstName}!</div>
 						</div>
 					</div>
 					<div className='row mt-lg-4'>

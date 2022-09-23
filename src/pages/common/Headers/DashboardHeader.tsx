@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header, { HeaderLeft, HeaderRight } from '../../../layout/Header/Header';
 import Button, { IButtonProps } from '../../../components/bootstrap/Button';
@@ -20,6 +20,7 @@ const DashboardHeader = () => {
 
 	const { userData, setUser } = useContext(AuthContext);
 	const navigate = useNavigate();
+	const [userInfo, setUserInfo] = useState<any>([]);
 
 	/**
 	 * Language attribute
@@ -27,6 +28,13 @@ const DashboardHeader = () => {
 	useLayoutEffect(() => {
 		document.documentElement.setAttribute('lang', i18n.language);
 	});
+
+	useEffect(() => {
+		const userInformation = JSON.parse(localStorage.getItem('user_info') || '{}');
+		if (userInformation) {
+			setUserInfo(userInformation.profile);
+		}
+	  }, []);
 
 	return (
 		<Header>
@@ -50,8 +58,8 @@ const DashboardHeader = () => {
 									color='primary'
 								/>
 								<div className='d-flex align-items-start flex-column ms-3 me-3'>
-									<span className='fw-bold fs-6 mb-0'>Michael Smith</span>
-									<span className='text-muted'>Tenant Admin</span>
+									<span className='fw-bold fs-6 mb-0'>{userInfo?.firstName} {userInfo?.lastName}</span>
+									<span className='text-muted'>{userInfo?.login}</span>
 								</div>
 							</Button>
 						</DropdownToggle>
