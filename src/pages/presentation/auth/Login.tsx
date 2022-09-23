@@ -121,17 +121,17 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 		},
 		validateOnChange: false,
 		onSubmit: (values) => {
-			// if (usernameCheck(values.loginUsername)) {
-			// 	if (passwordCheck(values.loginUsername, values.loginPassword)) {
-			// 		if (setUser) {
-			// 			setUser(values.loginUsername);
-			// 		}
+			if (usernameCheck(values.loginUsername)) {
+				if (passwordCheck(values.loginUsername, values.loginPassword)) {
+					if (setUser) {
+						setUser(values.loginUsername);
+					}
 
 					getInfo();
-				// } else {
-				// 	formik.setFieldError('loginPassword', 'Username and password do not match.');
-				// }
-			// }
+				} else {
+					formik.setFieldError('loginPassword', 'Username and password do not match.');
+				}
+			}
 		},
 	});
 

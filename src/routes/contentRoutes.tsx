@@ -12,6 +12,7 @@ import {
 } from '../menu';
 import Login from '../pages/presentation/auth/Login';
 import Categories from '../pages/presentation/custom/Categories';
+import Register from '../pages/presentation/auth/Register';
 
 const LANDING = {
 	DASHBOARD: lazy(() => import('../pages/dashboard/DashboardPage')),
@@ -79,6 +80,11 @@ const presentation = [
 	{
 		path: demoPages.signUp.path,
 		element: <Login isSignUp />,
+		exact: true,
+	},
+	{
+		path: demoPages.register.path,
+		element: <Register />,
 		exact: true,
 	},
 

@@ -297,6 +297,13 @@ export const demoPages = {
 		icon: 'PersonAdd',
 	},
 
+	register: {
+		id: 'register',
+		text: 'Register',
+		path: 'auth-pages/register',
+		icon: 'Login',
+	},
+
 	page404: {
 		id: 'Page404',
 		text: '404 Page',
