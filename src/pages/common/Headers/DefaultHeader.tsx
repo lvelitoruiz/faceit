@@ -35,13 +35,9 @@ const DefaultHeader = () => {
 			</HeaderLeft>
 			<HeaderRight>
 				<div className='row'>
-					<Dropdown setIsOpen={function noRefCheck(){}}>
+					<Dropdown setIsOpen={function noRefCheck() {}}>
 						<DropdownToggle>
-							<Button
-								color="light"
-								isLight
-								className='d-flex align-items-center'
-							>
+							<Button color='light' isLight className='d-flex align-items-center'>
 								<Avatar
 									srcSet={UserImageWebp}
 									src={UserImage}
@@ -56,18 +52,18 @@ const DefaultHeader = () => {
 							</Button>
 						</DropdownToggle>
 						<DropdownMenu>
-						<DropdownItem 
-							onClick={() => {
-								navigate(`../${forms.profile.path}`);
-							}}>
+							<DropdownItem
+								onClick={() => {
+									navigate(`../${forms.profile.path}`);
+								}}>
 								Edit Profile
 							</DropdownItem>
 							<DropdownItem>
-								<Link
-									to={"/profile"}
-									state={{ editStatus: false }}>Forgot Password?</Link>
+								<Link to={'/profile'} state={{ editStatus: false }}>
+									Forgot Password?
+								</Link>
 							</DropdownItem>
-							<DropdownItem 
+							<DropdownItem
 								onClick={() => {
 									if (setUser) {
 										setUser('');

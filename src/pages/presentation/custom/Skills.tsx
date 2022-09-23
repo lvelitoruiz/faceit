@@ -22,25 +22,23 @@ const Skills = () => {
 							<div className='row align-items-center justify-content-end'>
 								<div className='col-md-4 col-lg-4'>
 									<Button
-										color="dark"
+										color='dark'
 										isOutline
-										icon="InsertDriveFile"
+										icon='InsertDriveFile'
 										size='lg'
-										className='w-100 mb-3 mb-lg-0'
-									>
+										className='w-100 mb-3 mb-lg-0'>
 										Export CSV
 									</Button>
 								</div>
 								<div className='col-md-4 col-lg-4'>
-									<Button 
-										color="dark"
-										icon="Bookmarks"
+									<Button
+										color='dark'
+										icon='Bookmarks'
 										size='lg'
 										className='w-100'
 										onClick={() => {
 											navigate(`../add-skills`);
-										}}
-									>
+										}}>
 										Add a New Skill
 									</Button>
 								</div>
@@ -53,21 +51,17 @@ const Skills = () => {
 								<div className='row align-items-center justify-content-between'>
 									<div className='col-lg-12 mb-2 mb-lg-0'>
 										<div className='d-flex align-items-center'>
-											<Icon
-												icon='Search'
-												size='2x'
-												color='dark'
-												/>
+											<Icon icon='Search' size='2x' color='dark' />
 											<Input
-												id="example"
-												onBlur={function noRefCheck(){}}
-												onChange={function noRefCheck(){}}
-												onFocus={function noRefCheck(){}}
-												onInput={function noRefCheck(){}}
-												onInvalid={function noRefCheck(){}}
-												onSelect={function noRefCheck(){}}
-												placeholder="Search"
-												size="lg" 
+												id='example'
+												onBlur={function noRefCheck() {}}
+												onChange={function noRefCheck() {}}
+												onFocus={function noRefCheck() {}}
+												onInput={function noRefCheck() {}}
+												onInvalid={function noRefCheck() {}}
+												onSelect={function noRefCheck() {}}
+												placeholder='Search'
+												size='lg'
 												className='ms-2'
 											/>
 										</div>
@@ -78,7 +72,7 @@ const Skills = () => {
 					</div>
 					<div className='row'>
 						<div className='col-lg-12'>
-							<Card >
+							<Card>
 								<CardBody className='table-responsive'>
 									<table className='table table-modern'>
 										<thead>
@@ -98,13 +92,12 @@ const Skills = () => {
 												</td>
 												<td className='text-center'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
-														icon="Edit"
+														icon='Edit'
 														onClick={() => {
 															navigate(`../edit-skills`);
-														}}
-													>
+														}}>
 														Edit
 													</Button>
 												</td>
@@ -118,13 +111,12 @@ const Skills = () => {
 												</td>
 												<td className='text-center'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
-														icon="Edit"
+														icon='Edit'
 														onClick={() => {
 															navigate(`../edit-skills`);
-														}}
-													>
+														}}>
 														Edit
 													</Button>
 												</td>

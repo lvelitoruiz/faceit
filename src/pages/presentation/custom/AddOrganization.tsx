@@ -32,8 +32,8 @@ const AddOrganization = () => {
 												label='Name'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 											</FormGroup>
@@ -45,8 +45,8 @@ const AddOrganization = () => {
 												label='Phome Number'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 											</FormGroup>
@@ -58,8 +58,8 @@ const AddOrganization = () => {
 												label='Website'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 											</FormGroup>
@@ -71,8 +71,8 @@ const AddOrganization = () => {
 												label='Company Size'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 												{/* <Select
@@ -106,8 +106,8 @@ const AddOrganization = () => {
 												label='Indsutry'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 												{/* <Select
@@ -139,27 +139,25 @@ const AddOrganization = () => {
 												className='mb-4'
 												id='formPrefix'
 												label='Avatar Picture'>
-													<Input type='file' autoComplete='photo'/>
+												<Input type='file' autoComplete='photo' />
 											</FormGroup>
 										</div>
 									</div>
 									<div className='row align-items-center justify-content-center mt-5'>
 										<div className='col-lg-3'>
 											<Button
-												color="dark"
+												color='dark'
 												isOutline
 												size='lg'
-												className='w-100 mb-3 mb-lg-0'
-											>
+												className='w-100 mb-3 mb-lg-0'>
 												Cancel
 											</Button>
 										</div>
 										<div className='col-lg-3'>
 											<Button
-												color="dark"
+												color='dark'
 												size='lg'
-												className='w-100 mb-3 mb-lg-0'
-											>
+												className='w-100 mb-3 mb-lg-0'>
 												Create Organization
 											</Button>
 										</div>

@@ -29,12 +29,12 @@ const DashboardPage = () => {
 					</div>
 					<div className='row mt-lg-4'>
 						<div className='col-md-6 col-lg-3'>
-							<Card 
+							<Card
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
 									<div className='d-flex align-items-center'>
 										<div>
-											<h3 className="display-3 m-0">150</h3>
+											<h3 className='display-3 m-0'>150</h3>
 											<span className='h5 fw-bold'>Courses</span>
 										</div>
 									</div>
@@ -42,12 +42,12 @@ const DashboardPage = () => {
 							</Card>
 						</div>
 						<div className='col-md-6 col-lg-3'>
-							<Card 
+							<Card
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
 									<div className='d-flex align-items-center'>
 										<div>
-											<h3 className="display-3 m-0">500</h3>
+											<h3 className='display-3 m-0'>500</h3>
 											<span className='h5 fw-bold'>Students</span>
 										</div>
 									</div>
@@ -55,12 +55,12 @@ const DashboardPage = () => {
 							</Card>
 						</div>
 						<div className='col-md-6 col-lg-3'>
-							<Card 
+							<Card
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
 									<div className='d-flex align-items-center'>
 										<div>
-											<h3 className="display-3 m-0">20</h3>
+											<h3 className='display-3 m-0'>20</h3>
 											<span className='h5 fw-bold'>Organizations</span>
 										</div>
 									</div>
@@ -68,12 +68,12 @@ const DashboardPage = () => {
 							</Card>
 						</div>
 						<div className='col-md-6 col-lg-3'>
-							<Card 
+							<Card
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
 									<div className='d-flex align-items-center'>
 										<div>
-											<h3 className="display-3 m-0">150</h3>
+											<h3 className='display-3 m-0'>150</h3>
 											<span className='h5 fw-bold'>New Enrollments</span>
 										</div>
 									</div>
@@ -91,85 +91,73 @@ const DashboardPage = () => {
 					</div>
 					<div className='row mt-lg-2'>
 						<div className='col-md-6 col-lg-3'>
-							<Card 
+							<Card
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
-									<div className='d-flex align-items-center justify-content-between' 
-									onClick={() => {
-										navigate(`../${forms.add.path}`);
-									}}>
+									<div
+										className='d-flex align-items-center justify-content-between'
+										onClick={() => {
+											navigate(`../${forms.add.path}`);
+										}}>
 										<div>
-											<h3 className="display-3 m-0">Add</h3>
+											<h3 className='display-3 m-0'>Add</h3>
 											<span className='h5 fw-bold'>New User</span>
 										</div>
-										<Icon
-											icon='PersonAdd'
-											size='4x'
-											color='dark'
-										/>
+										<Icon icon='PersonAdd' size='4x' color='dark' />
 									</div>
 								</CardBody>
 							</Card>
 						</div>
 						<div className='col-md-6 col-lg-3'>
-							<Card 
+							<Card
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
-									<div className='d-flex align-items-center justify-content-between'
+									<div
+										className='d-flex align-items-center justify-content-between'
 										onClick={() => {
 											navigate(`../${userMenu.user.subMenu.students.path}`);
 										}}>
 										<div>
-											<h3 className="display-3 m-0">Manage</h3>
+											<h3 className='display-3 m-0'>Manage</h3>
 											<span className='h5 fw-bold'>Users</span>
 										</div>
-										<Icon
-											icon='Group'
-											size='4x'
-											color='dark'
-										/>
+										<Icon icon='Group' size='4x' color='dark' />
 									</div>
 								</CardBody>
 							</Card>
 						</div>
 						<div className='col-md-6 col-lg-3'>
-							<Card 
+							<Card
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
-									<div className='d-flex align-items-center justify-content-between'
+									<div
+										className='d-flex align-items-center justify-content-between'
 										onClick={() => {
 											navigate(`../${forms.addOrganization.path}`);
 										}}>
 										<div>
-											<h3 className="display-3 m-0">Add</h3>
+											<h3 className='display-3 m-0'>Add</h3>
 											<span className='h5 fw-bold'>New Organization</span>
 										</div>
-										<Icon
-											icon='AddBusiness'
-											size='4x'
-											color='dark'
-										/>
+										<Icon icon='AddBusiness' size='4x' color='dark' />
 									</div>
 								</CardBody>
 							</Card>
 						</div>
 						<div className='col-md-6 col-lg-3'>
-							<Card 
+							<Card
 								className={`bg-lg-dark rounded-2 shadow-3d-dark shadow-3d-hover cursor-pointer p-3`}>
 								<CardBody>
-									<div className='d-flex align-items-center justify-content-between'
+									<div
+										className='d-flex align-items-center justify-content-between'
 										onClick={() => {
 											navigate(`../${organizationMenu.organization.path}`);
 										}}>
 										<div>
-											<h3 className="display-3 m-0">Manage</h3>
+											<h3 className='display-3 m-0'>Manage</h3>
 											<span className='h5 fw-bold'>Organization</span>
 										</div>
-										<Icon
-											icon='Business'
-											size='4x'
-											color='dark'
-										/>
+										<Icon icon='Business' size='4x' color='dark' />
 									</div>
 								</CardBody>
 							</Card>
@@ -182,4 +170,3 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
-	

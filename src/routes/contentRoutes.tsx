@@ -1,5 +1,15 @@
 import React, { lazy } from 'react';
-import { dashboardMenu, demoPages, layoutMenu, userMenu, organizationMenu, forms, catalogMenu, skills, categories } from '../menu';
+import {
+	dashboardMenu,
+	demoPages,
+	layoutMenu,
+	userMenu,
+	organizationMenu,
+	forms,
+	catalogMenu,
+	skills,
+	categories,
+} from '../menu';
 import Login from '../pages/presentation/auth/Login';
 import Categories from '../pages/presentation/custom/Categories';
 

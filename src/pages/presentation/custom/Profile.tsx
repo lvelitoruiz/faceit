@@ -11,10 +11,8 @@ import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Input from '../../../components/bootstrap/forms/Input';
 import { useLocation } from 'react-router-dom';
 
-
 const Profile = () => {
-
-	const [ edit,setEdit ] = useState(true);
+	const [edit, setEdit] = useState(true);
 	const location: any = useLocation();
 	const [userInfo, setUserInfo] = useState<any>([]);
 
@@ -25,25 +23,25 @@ const Profile = () => {
 		}
 	}, []);
 
-	useEffect( () => {
-		setEdit(true)
-	},[])
+	useEffect(() => {
+		setEdit(true);
+	}, []);
 
-	const handleChange = ( status: string ) => {
-		if(status === "active") {
-			setEdit(true)
+	const handleChange = (status: string) => {
+		if (status === 'active') {
+			setEdit(true);
 		} else {
-			setEdit(false)
+			setEdit(false);
 		}
-	}
+	};
 
 	useEffect(() => {
-		console.log('this is the location',location.state);
-		if(location.state !== null) {
+		console.log('this is the location', location.state);
+		if (location.state !== null) {
 			const { editStatus } = location.state;
-			setEdit(editStatus)
+			setEdit(editStatus);
 		}
-	}, [location])
+	}, [location]);
 
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
@@ -54,11 +52,7 @@ const Profile = () => {
 							<Card className='card card-stretch-full'>
 								<CardBody className='p-0'>
 									<div className='border-bottom mb-4 pt-3 ps-2'>
-										<Button
-											color="link"
-											icon='ArrowBackIos'
-											className='mb-2'
-										>
+										<Button color='link' icon='ArrowBackIos' className='mb-2'>
 											Return
 										</Button>
 									</div>
@@ -76,8 +70,7 @@ const Profile = () => {
 												color='dark'
 												isOutline={!edit}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('active')}
-											>
+												onClick={() => handleChange('active')}>
 												Edit Information
 											</Button>
 										</div>
@@ -86,8 +79,7 @@ const Profile = () => {
 												color='dark'
 												isOutline={edit}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('inactive')}
-											>
+												onClick={() => handleChange('inactive')}>
 												Change Password
 											</Button>
 										</div>
@@ -97,14 +89,15 @@ const Profile = () => {
 						</div>
 						<div className='col-md-9 col-lg-10'>
 							{/* Edit information */}
-							{
-								(edit) ? 
+							{edit ? (
 								<div>
 									<div className='row align-items-center mb-3 mb-lg-3'>
 										<div className='col-lg-6'>
 											<div className='py-3'>
 												<div>STUDENT INFO</div>
-												<div className='display-4 fw-bold'>Edit Information</div>
+												<div className='display-4 fw-bold'>
+													Edit Information
+												</div>
 											</div>
 										</div>
 									</div>
@@ -158,8 +151,8 @@ const Profile = () => {
 															label='Phome Number'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -171,8 +164,8 @@ const Profile = () => {
 															label='Organization'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -184,8 +177,8 @@ const Profile = () => {
 															label='Group'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 															{/* <Select
@@ -219,8 +212,8 @@ const Profile = () => {
 															label='Time Zone'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 															{/* <Select
@@ -254,8 +247,8 @@ const Profile = () => {
 															label='Status'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 															{/* <Select
@@ -286,20 +279,18 @@ const Profile = () => {
 												<div className='row align-items-center justify-content-center mt-5'>
 													<div className='col-lg-3'>
 														<Button
-															color="dark"
+															color='dark'
 															isOutline
 															size='lg'
-															className='w-100 mb-3 mb-lg-0'
-														>
+															className='w-100 mb-3 mb-lg-0'>
 															Cancel
 														</Button>
 													</div>
 													<div className='col-lg-3'>
 														<Button
-															color="dark"
+															color='dark'
 															size='lg'
-															className='w-100 mb-3 mb-lg-0'
-														>
+															className='w-100 mb-3 mb-lg-0'>
 															Save Changes
 														</Button>
 													</div>
@@ -307,12 +298,16 @@ const Profile = () => {
 											</Card>
 										</div>
 									</div>
-								</div> : <div>
+								</div>
+							) : (
+								<div>
 									<div className='row align-items-center mb-3 mb-lg-3'>
 										<div className='col-lg-6'>
 											<div className='py-3'>
 												<div>STUDENT INFO</div>
-												<div className='display-4 fw-bold'>Change Password</div>
+												<div className='display-4 fw-bold'>
+													Change Password
+												</div>
 											</div>
 										</div>
 									</div>
@@ -327,8 +322,8 @@ const Profile = () => {
 															label='New Password'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -340,8 +335,8 @@ const Profile = () => {
 															label='Confirm New Password'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -350,20 +345,18 @@ const Profile = () => {
 												<div className='row align-items-center justify-content-center mt-5'>
 													<div className='col-lg-3'>
 														<Button
-															color="dark"
+															color='dark'
 															isOutline
 															size='lg'
-															className='w-100 mb-3 mb-lg-0'
-														>
+															className='w-100 mb-3 mb-lg-0'>
 															Cancel
 														</Button>
 													</div>
 													<div className='col-lg-3'>
 														<Button
-															color="dark"
+															color='dark'
 															size='lg'
-															className='w-100 mb-3 mb-lg-0'
-														>
+															className='w-100 mb-3 mb-lg-0'>
 															Save Changes
 														</Button>
 													</div>
@@ -372,11 +365,9 @@ const Profile = () => {
 										</div>
 									</div>
 								</div>
-							}
+							)}
 
 							{/* Change Password */}
-							
-
 						</div>
 					</div>
 				</div>

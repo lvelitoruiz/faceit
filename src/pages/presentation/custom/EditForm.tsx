@@ -11,33 +11,32 @@ import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Input from '../../../components/bootstrap/forms/Input';
 
 const EditForm = () => {
-	const [ edit,setEdit ] = useState(true);
-	const [ change,setChange ] = useState(false);
-	const [ enroll,setEnroll ] = useState(false);
+	const [edit, setEdit] = useState(true);
+	const [change, setChange] = useState(false);
+	const [enroll, setEnroll] = useState(false);
 
-	useEffect( () => {
-		setEdit(true)
-		setChange(false)
-		setEnroll(false)
-	},[])
+	useEffect(() => {
+		setEdit(true);
+		setChange(false);
+		setEnroll(false);
+	}, []);
 
-	const handleChange = ( status: string ) => {
-		if(status === "edit") {
-			setEdit(true)
-			setChange(false)
-			setEnroll(false)
-		} else if(status === 'change') {
-			setEdit(false)
-			setChange(true)
-			setEnroll(false)
+	const handleChange = (status: string) => {
+		if (status === 'edit') {
+			setEdit(true);
+			setChange(false);
+			setEnroll(false);
+		} else if (status === 'change') {
+			setEdit(false);
+			setChange(true);
+			setEnroll(false);
 		} else {
-			setEdit(false)
-			setChange(false)
-			setEnroll(true)
+			setEdit(false);
+			setChange(false);
+			setEnroll(true);
 		}
-	}
+	};
 
-	
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='py-lg-5'>
@@ -47,11 +46,7 @@ const EditForm = () => {
 							<Card className='card card-stretch-full'>
 								<CardBody className='p-0'>
 									<div className='border-bottom mb-4 pt-3 ps-2'>
-										<Button
-											color="link"
-											icon='ArrowBackIos'
-											className='mb-2'
-										>
+										<Button color='link' icon='ArrowBackIos' className='mb-2'>
 											Return
 										</Button>
 									</div>
@@ -69,8 +64,7 @@ const EditForm = () => {
 												color='dark'
 												isOutline={!edit}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('edit')}
-											>
+												onClick={() => handleChange('edit')}>
 												Edit Information
 											</Button>
 										</div>
@@ -79,8 +73,7 @@ const EditForm = () => {
 												color='dark'
 												isOutline={!change}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('change')}
-											>
+												onClick={() => handleChange('change')}>
 												Change Password
 											</Button>
 										</div>
@@ -89,8 +82,7 @@ const EditForm = () => {
 												color='dark'
 												isOutline={!enroll}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('enroll')}
-											>
+												onClick={() => handleChange('enroll')}>
 												Enrollments
 											</Button>
 										</div>
@@ -100,25 +92,25 @@ const EditForm = () => {
 						</div>
 						<div className='col-md-9 col-lg-10'>
 							{/* Edit information */}
-							{
-								(edit) ? 
+							{edit ? (
 								<div>
 									<div className='row align-items-center mb-3 mb-lg-3'>
 										<div className='col-lg-6'>
 											<div className='py-3'>
 												<div>STUDENT INFO</div>
-												<div className='display-4 fw-bold'>Edit Information</div>
+												<div className='display-4 fw-bold'>
+													Edit Information
+												</div>
 											</div>
 										</div>
 										<div className='col-lg-6'>
 											<div className='row align-items-center justify-content-end'>
 												<div className='col-md-5 col-lg-auto'>
 													<Button
-														color="dark"
+														color='dark'
 														isOutline
 														size='lg'
-														className='w-100 mb-3 mb-lg-0'
-													>
+														className='w-100 mb-3 mb-lg-0'>
 														Delete user Permanently
 													</Button>
 												</div>
@@ -136,8 +128,8 @@ const EditForm = () => {
 															label='First Name'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -149,8 +141,8 @@ const EditForm = () => {
 															label='Last Name'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -162,8 +154,8 @@ const EditForm = () => {
 															label='Email Address'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -175,8 +167,8 @@ const EditForm = () => {
 															label='Phome Number'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -188,8 +180,8 @@ const EditForm = () => {
 															label='Organization'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -201,8 +193,8 @@ const EditForm = () => {
 															label='Group'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 															{/* <Select
@@ -236,8 +228,8 @@ const EditForm = () => {
 															label='Time Zone'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 															{/* <Select
@@ -271,8 +263,8 @@ const EditForm = () => {
 															label='Status'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 															{/* <Select
@@ -303,20 +295,18 @@ const EditForm = () => {
 												<div className='row align-items-center justify-content-center mt-5'>
 													<div className='col-lg-3'>
 														<Button
-															color="dark"
+															color='dark'
 															isOutline
 															size='lg'
-															className='w-100 mb-3 mb-lg-0'
-														>
+															className='w-100 mb-3 mb-lg-0'>
 															Cancel
 														</Button>
 													</div>
 													<div className='col-lg-3'>
 														<Button
-															color="dark"
+															color='dark'
 															size='lg'
-															className='w-100 mb-3 mb-lg-0'
-														>
+															className='w-100 mb-3 mb-lg-0'>
 															Save Changes
 														</Button>
 													</div>
@@ -324,18 +314,21 @@ const EditForm = () => {
 											</Card>
 										</div>
 									</div>
-								</div> : ""
-							}
+								</div>
+							) : (
+								''
+							)}
 
 							{/* Change Password */}
-							{
-								(change) ? 
+							{change ? (
 								<div>
 									<div className='row align-items-center mb-3 mb-lg-3'>
 										<div className='col-lg-6'>
 											<div className='py-3'>
 												<div>STUDENT INFO</div>
-												<div className='display-4 fw-bold'>Change Password</div>
+												<div className='display-4 fw-bold'>
+													Change Password
+												</div>
 											</div>
 										</div>
 									</div>
@@ -350,8 +343,8 @@ const EditForm = () => {
 															label='New Password'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -363,8 +356,8 @@ const EditForm = () => {
 															label='Confirm New Password'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 														</FormGroup>
@@ -373,20 +366,18 @@ const EditForm = () => {
 												<div className='row align-items-center justify-content-center mt-5'>
 													<div className='col-lg-3'>
 														<Button
-															color="dark"
+															color='dark'
 															isOutline
 															size='lg'
-															className='w-100 mb-3 mb-lg-0'
-														>
+															className='w-100 mb-3 mb-lg-0'>
 															Cancel
 														</Button>
 													</div>
 													<div className='col-lg-3'>
 														<Button
-															color="dark"
+															color='dark'
 															size='lg'
-															className='w-100 mb-3 mb-lg-0'
-														>
+															className='w-100 mb-3 mb-lg-0'>
 															Save Changes
 														</Button>
 													</div>
@@ -394,12 +385,13 @@ const EditForm = () => {
 											</Card>
 										</div>
 									</div>
-								</div>: ""
-							}
+								</div>
+							) : (
+								''
+							)}
 
 							{/* Enrollments */}
-							{
-								(enroll) ?
+							{enroll ? (
 								<div>
 									<div className='row align-items-center mb-3 mb-lg-3'>
 										<div className='col-lg-6'>
@@ -413,22 +405,18 @@ const EditForm = () => {
 										<div className='col-md-12'>
 											<Card className='p-0 card card-stretch-full'>
 												<div className='border-bottom p-3 p-lg-5 d-flex align-items-center justify-content-between'>
-													<p className='mb-0 fs-5'>Cybersecutity Bootcamp</p>
-													<Button
-														color="dark"
-														isOutline
-														icon="Edit"
-													>
+													<p className='mb-0 fs-5'>
+														Cybersecutity Bootcamp
+													</p>
+													<Button color='dark' isOutline icon='Edit'>
 														Unenroll
 													</Button>
 												</div>
 												<div className='p-3 p-lg-5 d-flex align-items-center justify-content-between'>
-													<p className='mb-0 fs-5'>Cybersecutity Bootcamp</p>
-													<Button
-														color="dark"
-														isOutline
-														icon="Edit"
-													>
+													<p className='mb-0 fs-5'>
+														Cybersecutity Bootcamp
+													</p>
+													<Button color='dark' isOutline icon='Edit'>
 														Unenroll
 													</Button>
 												</div>
@@ -438,7 +426,9 @@ const EditForm = () => {
 									<div className='row align-items-center mb-3 mb-lg-3'>
 										<div className='col-lg-6'>
 											<div className='py-3'>
-												<div className='display-4 fw-bold'>Enroll in Course</div>
+												<div className='display-4 fw-bold'>
+													Enroll in Course
+												</div>
 											</div>
 										</div>
 									</div>
@@ -453,8 +443,8 @@ const EditForm = () => {
 															label='Courses'>
 															<Input
 																autoComplete='honorific-prefix'
-																onChange={function noRefCheck(){}}
-																value=""
+																onChange={function noRefCheck() {}}
+																value=''
 																className='w-100'
 															/>
 															{/* <Select
@@ -482,10 +472,7 @@ const EditForm = () => {
 														</FormGroup>
 													</div>
 													<div className='col-12'>
-														<Button 
-															color="dark"
-															size='lg'
-														>
+														<Button color='dark' size='lg'>
 															Enroll
 														</Button>
 													</div>
@@ -493,8 +480,10 @@ const EditForm = () => {
 											</Card>
 										</div>
 									</div>
-								</div> : ""
-							}
+								</div>
+							) : (
+								''
+							)}
 						</div>
 					</div>
 				</div>

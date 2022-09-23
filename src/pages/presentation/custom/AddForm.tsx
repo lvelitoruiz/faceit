@@ -32,8 +32,8 @@ const AddForm = () => {
 												label='First Name'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 											</FormGroup>
@@ -45,8 +45,8 @@ const AddForm = () => {
 												label='Last Name'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 											</FormGroup>
@@ -58,8 +58,8 @@ const AddForm = () => {
 												label='Email Address'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 											</FormGroup>
@@ -71,8 +71,8 @@ const AddForm = () => {
 												label='Password'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 											</FormGroup>
@@ -84,8 +84,8 @@ const AddForm = () => {
 												label='Phome Number'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 											</FormGroup>
@@ -97,8 +97,8 @@ const AddForm = () => {
 												label='Organization'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 												{/* <Select
@@ -132,8 +132,8 @@ const AddForm = () => {
 												label='Group'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 												{/* <Select
@@ -167,8 +167,8 @@ const AddForm = () => {
 												label='Time Zone'>
 												<Input
 													autoComplete='honorific-prefix'
-													onChange={function noRefCheck(){}}
-													value=""
+													onChange={function noRefCheck() {}}
+													value=''
 													className='w-100'
 												/>
 												{/* <Select
@@ -200,27 +200,25 @@ const AddForm = () => {
 												className='mb-4'
 												id='formPrefix'
 												label='Avatar Picture'>
-													<Input type='file' autoComplete='photo'/>
+												<Input type='file' autoComplete='photo' />
 											</FormGroup>
 										</div>
 									</div>
 									<div className='row align-items-center justify-content-center mt-5'>
 										<div className='col-lg-3'>
 											<Button
-												color="dark"
+												color='dark'
 												isOutline
 												size='lg'
-												className='w-100 mb-3 mb-lg-0'
-											>
+												className='w-100 mb-3 mb-lg-0'>
 												Cancel
 											</Button>
 										</div>
 										<div className='col-lg-3'>
 											<Button
-												color="dark"
+												color='dark'
 												size='lg'
-												className='w-100 mb-3 mb-lg-0'
-											>
+												className='w-100 mb-3 mb-lg-0'>
 												Create User
 											</Button>
 										</div>

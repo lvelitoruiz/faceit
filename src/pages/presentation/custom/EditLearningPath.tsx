@@ -12,42 +12,42 @@ import Icon from '../../../components/icon/Icon';
 import Img from '../../../assets/img/img.jpeg';
 
 const EditLearningPath = () => {
-	const [ edit,setEdit ] = useState(true);
-	const [ categories,setCategories ] = useState(false);
-	const [ images,setImages ] = useState(false);
-	const [ courses,setCourses ] = useState(false);
+	const [edit, setEdit] = useState(true);
+	const [categories, setCategories] = useState(false);
+	const [images, setImages] = useState(false);
+	const [courses, setCourses] = useState(false);
 
-	useEffect( () => {
-		setEdit(true)
-		setCategories(false)
-		setImages(false)
-		setCourses(false)
-	},[])
+	useEffect(() => {
+		setEdit(true);
+		setCategories(false);
+		setImages(false);
+		setCourses(false);
+	}, []);
 
-	const handleChange = ( status: string ) => {
-		if(status === "edit") {
-			setEdit(true)
-			setCategories(false)
-			setImages(false)
-			setCourses(false)
-		} else if(status === 'categories') {
-			setEdit(false)
-			setCategories(true)
-			setImages(false)
-			setCourses(false)
-		} else if(status === 'images') {
-			setEdit(false)
-			setCategories(false)
-			setImages(true)
-			setCourses(false)
+	const handleChange = (status: string) => {
+		if (status === 'edit') {
+			setEdit(true);
+			setCategories(false);
+			setImages(false);
+			setCourses(false);
+		} else if (status === 'categories') {
+			setEdit(false);
+			setCategories(true);
+			setImages(false);
+			setCourses(false);
+		} else if (status === 'images') {
+			setEdit(false);
+			setCategories(false);
+			setImages(true);
+			setCourses(false);
 		} else {
-			setEdit(false)
-			setCategories(false)
-			setImages(false)
-			setCourses(true)
+			setEdit(false);
+			setCategories(false);
+			setImages(false);
+			setCourses(true);
 		}
-	}
-	
+	};
+
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='py-lg-5'>
@@ -57,11 +57,7 @@ const EditLearningPath = () => {
 							<Card className='card card-stretch-full'>
 								<CardBody className='p-0'>
 									<div className='border-bottom mb-4 pt-3 ps-2'>
-										<Button
-											color="link"
-											icon='ArrowBackIos'
-											className='mb-2'
-										>
+										<Button color='link' icon='ArrowBackIos' className='mb-2'>
 											Return
 										</Button>
 									</div>
@@ -71,8 +67,7 @@ const EditLearningPath = () => {
 												color='dark'
 												isOutline={!edit}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('edit')}
-											>
+												onClick={() => handleChange('edit')}>
 												General Information
 											</Button>
 										</div>
@@ -81,8 +76,7 @@ const EditLearningPath = () => {
 												color='dark'
 												isOutline={!categories}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('categories')}
-											>
+												onClick={() => handleChange('categories')}>
 												Categories and Skills
 											</Button>
 										</div>
@@ -91,8 +85,7 @@ const EditLearningPath = () => {
 												color='dark'
 												isOutline={!images}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('images')}
-											>
+												onClick={() => handleChange('images')}>
 												Images
 											</Button>
 										</div>
@@ -101,8 +94,7 @@ const EditLearningPath = () => {
 												color='dark'
 												isOutline={!courses}
 												className='w-100 p-3 mb-4'
-												onClick={ () => handleChange('courses')}
-											>
+												onClick={() => handleChange('courses')}>
 												Courses and Paths
 											</Button>
 										</div>
@@ -132,8 +124,7 @@ const EditLearningPath = () => {
 							</div>
 							<div className='row'>
 								<div className='col-md-12'>
-									{
-										(edit) ?
+									{edit ? (
 										<div>
 											<Card>
 												<CardBody>
@@ -417,257 +408,274 @@ const EditLearningPath = () => {
 													</div>
 												</CardBody>
 											</Card>
-										</div> : ""
-									}
-									{
-										(categories) ?
+										</div>
+									) : (
+										''
+									)}
+									{categories ? (
 										<div>
 											<Card>
 												<CardBody>
-												<div className='row align-items-center mb-5'>
-											<div className='col-lg-6 mb-2'>
-												<p className='fw-bold m-0 fs-5'>Category</p>
-											</div>
-											<div className='col-lg-12'>
-												<div className='g-drop-search'>
-													<div className='g-drop-search--input'>
-														<p className='m-0'>Sofware Development, Mobile and Web Development <span className='more'>+3 more...</span></p>
-														<Icon
-															icon='KeyboardArrowDown'
-															size='lg'
-															className='ms-4'
-															/>
-													</div>
-													<div className='g-drop-search--content'>
-														<div className='d-flex align-items-center g-search'>
-															<Icon
-																icon='Search'
-																size='2x'
-																color='dark'
-																/>
-															<Input
-																id="example"
-																onBlur={function noRefCheck(){}}
-																onChange={function noRefCheck(){}}
-																onFocus={function noRefCheck(){}}
-																onInput={function noRefCheck(){}}
-																onInvalid={function noRefCheck(){}}
-																onSelect={function noRefCheck(){}}
-																placeholder="Search"
-																size="lg" 
-																className='ms-2'
-															/>
+													<div className='row align-items-center mb-5'>
+														<div className='col-lg-6 mb-2'>
+															<p className='fw-bold m-0 fs-5'>
+																Category
+															</p>
 														</div>
-														<div className='g-list-check'>
-															<ChecksGroup className='mb-3'>
-																<Checks
-																	id="example"
-																	label="Computer Science"
-																	name="example"
-																	onChange={function noRefCheck(){}}
-																	type="radio"
-																	value="radio value"
-																/>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Sofware Development"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																		className=''
+														<div className='col-lg-12'>
+															<div className='g-drop-search'>
+																<div className='g-drop-search--input'>
+																	<p className='m-0'>
+																		Sofware Development, Mobile
+																		and Web Development{' '}
+																		<span className='more'>
+																			+3 more...
+																		</span>
+																	</p>
+																	<Icon
+																		icon='KeyboardArrowDown'
+																		size='lg'
+																		className='ms-4'
 																	/>
 																</div>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Mobile and Web Development"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																	/>
+																<div className='g-drop-search--content'>
+																	<div className='d-flex align-items-center g-search'>
+																		<Icon
+																			icon='Search'
+																			size='2x'
+																			color='dark'
+																		/>
+																		<Input
+																			id='example'
+																			onBlur={function noRefCheck() {}}
+																			onChange={function noRefCheck() {}}
+																			onFocus={function noRefCheck() {}}
+																			onInput={function noRefCheck() {}}
+																			onInvalid={function noRefCheck() {}}
+																			onSelect={function noRefCheck() {}}
+																			placeholder='Search'
+																			size='lg'
+																			className='ms-2'
+																		/>
+																	</div>
+																	<div className='g-list-check'>
+																		<ChecksGroup className='mb-3'>
+																			<Checks
+																				id='example'
+																				label='Computer Science'
+																				name='example'
+																				onChange={function noRefCheck() {}}
+																				type='radio'
+																				value='radio value'
+																			/>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Sofware Development'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																					className=''
+																				/>
+																			</div>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Mobile and Web Development'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																			</div>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Algoritms'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																			</div>
+																		</ChecksGroup>
+																		<ChecksGroup>
+																			<Checks
+																				id='example'
+																				label='Computer Science'
+																				name='example'
+																				onChange={function noRefCheck() {}}
+																				type='radio'
+																				value='radio value'
+																			/>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Sofware Development'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																					className=''
+																				/>
+																			</div>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Mobile and Web Development'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																			</div>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Algoritms'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																			</div>
+																		</ChecksGroup>
+																	</div>
 																</div>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Algoritms"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																	/>
-																</div>
-															</ChecksGroup>
-															<ChecksGroup>
-																<Checks
-																	id="example"
-																	label="Computer Science"
-																	name="example"
-																	onChange={function noRefCheck(){}}
-																	type="radio"
-																	value="radio value"
-																/>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Sofware Development"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																		className=''
-																	/>
-																</div>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Mobile and Web Development"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																	/>
-																</div>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Algoritms"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																	/>
-																</div>
-															</ChecksGroup>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div className='row align-items-center'>
-											<div className='col-lg-6 mb-2'>
-												<p className='fw-bold m-0 fs-5'>Skills</p>
-											</div>
-											<div className='col-lg-12'>
-												<div className='g-drop-search'>
-													<div className='g-drop-search--input'>
-														<p className='m-0'>Sofware Development, Mobile and Web Development <span className='more'>+3 more...</span></p>
-														<Icon
-															icon='KeyboardArrowDown'
-															size='lg'
-															className='ms-4'
-															/>
-													</div>
-													<div className='g-drop-search--content active'>
-														<div className='d-flex align-items-center g-search'>
-															<Icon
-																icon='Search'
-																size='2x'
-																color='dark'
-																/>
-															<Input
-																id="example"
-																onBlur={function noRefCheck(){}}
-																onChange={function noRefCheck(){}}
-																onFocus={function noRefCheck(){}}
-																onInput={function noRefCheck(){}}
-																onInvalid={function noRefCheck(){}}
-																onSelect={function noRefCheck(){}}
-																placeholder="Search"
-																size="lg" 
-																className='ms-2'
-															/>
-														</div>
-														<div className='g-list-check'>
-															<ChecksGroup className='mb-3'>
-																<Checks
-																	id="example"
-																	label="Computer Science"
-																	name="example"
-																	onChange={function noRefCheck(){}}
-																	type="radio"
-																	value="radio value"
-																/>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Sofware Development"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																		className=''
-																	/>
-																</div>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Mobile and Web Development"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																	/>
-																</div>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Algoritms"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																	/>
-																</div>
-															</ChecksGroup>
-															<ChecksGroup>
-																<Checks
-																	id="example"
-																	label="Computer Science"
-																	name="example"
-																	onChange={function noRefCheck(){}}
-																	type="radio"
-																	value="radio value"
-																/>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Sofware Development"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																		className=''
-																	/>
-																</div>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Mobile and Web Development"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																	/>
-																</div>
-																<div className='ms-3'>
-																	<Checks
-																		id="example"
-																		label="Algoritms"
-																		name="example"
-																		onChange={function noRefCheck(){}}
-																		type="radio"
-																		value="radio value"
-																	/>
-																</div>
-															</ChecksGroup>
+															</div>
 														</div>
 													</div>
-												</div>
-											</div>
-										</div>
+													<div className='row align-items-center'>
+														<div className='col-lg-6 mb-2'>
+															<p className='fw-bold m-0 fs-5'>
+																Skills
+															</p>
+														</div>
+														<div className='col-lg-12'>
+															<div className='g-drop-search'>
+																<div className='g-drop-search--input'>
+																	<p className='m-0'>
+																		Sofware Development, Mobile
+																		and Web Development{' '}
+																		<span className='more'>
+																			+3 more...
+																		</span>
+																	</p>
+																	<Icon
+																		icon='KeyboardArrowDown'
+																		size='lg'
+																		className='ms-4'
+																	/>
+																</div>
+																<div className='g-drop-search--content active'>
+																	<div className='d-flex align-items-center g-search'>
+																		<Icon
+																			icon='Search'
+																			size='2x'
+																			color='dark'
+																		/>
+																		<Input
+																			id='example'
+																			onBlur={function noRefCheck() {}}
+																			onChange={function noRefCheck() {}}
+																			onFocus={function noRefCheck() {}}
+																			onInput={function noRefCheck() {}}
+																			onInvalid={function noRefCheck() {}}
+																			onSelect={function noRefCheck() {}}
+																			placeholder='Search'
+																			size='lg'
+																			className='ms-2'
+																		/>
+																	</div>
+																	<div className='g-list-check'>
+																		<ChecksGroup className='mb-3'>
+																			<Checks
+																				id='example'
+																				label='Computer Science'
+																				name='example'
+																				onChange={function noRefCheck() {}}
+																				type='radio'
+																				value='radio value'
+																			/>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Sofware Development'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																					className=''
+																				/>
+																			</div>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Mobile and Web Development'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																			</div>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Algoritms'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																			</div>
+																		</ChecksGroup>
+																		<ChecksGroup>
+																			<Checks
+																				id='example'
+																				label='Computer Science'
+																				name='example'
+																				onChange={function noRefCheck() {}}
+																				type='radio'
+																				value='radio value'
+																			/>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Sofware Development'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																					className=''
+																				/>
+																			</div>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Mobile and Web Development'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																			</div>
+																			<div className='ms-3'>
+																				<Checks
+																					id='example'
+																					label='Algoritms'
+																					name='example'
+																					onChange={function noRefCheck() {}}
+																					type='radio'
+																					value='radio value'
+																				/>
+																			</div>
+																		</ChecksGroup>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
 													<div className='row align-items-center justify-content-center mt-5'>
 														<div className='col-lg-3'>
 															<Button
@@ -687,12 +695,13 @@ const EditLearningPath = () => {
 															</Button>
 														</div>
 													</div>
-													</CardBody>
-												</Card>
-											</div> : ""
-									}
-									{
-										(images) ? 
+												</CardBody>
+											</Card>
+										</div>
+									) : (
+										''
+									)}
+									{images ? (
 										<div>
 											<Card>
 												<CardBody>
@@ -701,26 +710,43 @@ const EditLearningPath = () => {
 															<div className='border'>
 																<div className='d-flex justify-content-center align-items-end p-5'>
 																	<div className='p-4'>
-																		<img src={Img} alt='Company' width={350} />
-																		<p className='fw-bold mt-2'>Large (1024px)</p>
+																		<img
+																			src={Img}
+																			alt='Company'
+																			width={350}
+																		/>
+																		<p className='fw-bold mt-2'>
+																			Large (1024px)
+																		</p>
 																	</div>
 																	<div className='p-4'>
-																		<img src={Img} alt='Company' width={280} />
-																		<p className='fw-bold mt-2'>Large (768px)</p>
+																		<img
+																			src={Img}
+																			alt='Company'
+																			width={280}
+																		/>
+																		<p className='fw-bold mt-2'>
+																			Large (768px)
+																		</p>
 																	</div>
 																	<div className='p-4'>
-																		<img src={Img} alt='Company' width={160} />
-																		<p className='fw-bold mt-2'>Large (320px)</p>
+																		<img
+																			src={Img}
+																			alt='Company'
+																			width={160}
+																		/>
+																		<p className='fw-bold mt-2'>
+																			Large (320px)
+																		</p>
 																	</div>
 																</div>
 																<div className='d-flex justify-content-center align-items-end mb-5'>
 																	<Button
-																		color="dark"
+																		color='dark'
 																		isOutline
-																		icon="DeleteOutline"
+																		icon='DeleteOutline'
 																		size='lg'
-																		className='mb-3 mb-lg-0'
-																	>
+																		className='mb-3 mb-lg-0'>
 																		Delete Images
 																	</Button>
 																</div>
@@ -748,16 +774,20 @@ const EditLearningPath = () => {
 													</div>
 												</CardBody>
 											</Card>
-										</div> : ""
-									}
-									{
-										(courses) ? 
+										</div>
+									) : (
+										''
+									)}
+									{courses ? (
 										<div>
 											<Card>
 												<CardBody>
 													<div className='row'>
 														<div className='col-md-12'>
-															<p className="mb-2 fs-5">Select the courses or certificates you'd like to add to this path</p>
+															<p className='mb-2 fs-5'>
+																Select the courses or certificates
+																you'd like to add to this path
+															</p>
 														</div>
 														<div className='col-md-12'>
 															<Card>
@@ -769,17 +799,17 @@ const EditLearningPath = () => {
 																					icon='Search'
 																					size='2x'
 																					color='dark'
-																					/>
+																				/>
 																				<Input
-																					id="example"
-																					onBlur={function noRefCheck(){}}
-																					onChange={function noRefCheck(){}}
-																					onFocus={function noRefCheck(){}}
-																					onInput={function noRefCheck(){}}
-																					onInvalid={function noRefCheck(){}}
-																					onSelect={function noRefCheck(){}}
-																					placeholder="Search"
-																					size="lg" 
+																					id='example'
+																					onBlur={function noRefCheck() {}}
+																					onChange={function noRefCheck() {}}
+																					onFocus={function noRefCheck() {}}
+																					onInput={function noRefCheck() {}}
+																					onInvalid={function noRefCheck() {}}
+																					onSelect={function noRefCheck() {}}
+																					placeholder='Search'
+																					size='lg'
 																					className='ms-2'
 																				/>
 																			</div>
@@ -817,30 +847,52 @@ const EditLearningPath = () => {
 																				<div className='col-md-6'>
 																					<div className='rounded-3 border'>
 																						<div className='text-center'>
-																							<p className='m-0 p-3 border-bottom fs-4 fw-bold'>Courses and Certificates</p>
+																							<p className='m-0 p-3 border-bottom fs-4 fw-bold'>
+																								Courses
+																								and
+																								Certificates
+																							</p>
 																						</div>
-																						<div className='p-3' style={{ height: '400px', overflow: 'auto' }}>
+																						<div
+																							className='p-3'
+																							style={{
+																								height: '400px',
+																								overflow:
+																									'auto',
+																							}}>
 																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
 																								<div>
-																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																									<p className='m-0'>Certificate</p>
+																									<p className='m-0 fs-5 fw-bold'>
+																										IT
+																										Network
+																										Certificate
+																									</p>
+																									<p className='m-0'>
+																										Certificate
+																									</p>
 																								</div>
 																								<Icon
 																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									/>
+																								/>
 																							</div>
 																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
 																								<div>
-																									<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																									<p className='m-0'>Certificate</p>
+																									<p className='m-0 fs-5 fw-bold'>
+																										IT
+																										Network
+																										Certificate
+																									</p>
+																									<p className='m-0'>
+																										Certificate
+																									</p>
 																								</div>
 																								<Icon
 																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									/>
+																								/>
 																							</div>
 																						</div>
 																					</div>
@@ -848,9 +900,19 @@ const EditLearningPath = () => {
 																				<div className='col-md-6'>
 																					<div className='rounded-3 border'>
 																						<div className='text-center'>
-																							<p className='m-0 p-3 border-bottom fs-4 fw-bold'>Cybersecurity Learning Path</p>
+																							<p className='m-0 p-3 border-bottom fs-4 fw-bold'>
+																								Cybersecurity
+																								Learning
+																								Path
+																							</p>
 																						</div>
-																						<div className='p-3' style={{ height: '400px', overflow: 'auto' }}>
+																						<div
+																							className='p-3'
+																							style={{
+																								height: '400px',
+																								overflow:
+																									'auto',
+																							}}>
 																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
 																								<div className='d-flex align-items-center'>
 																									<Icon
@@ -858,17 +920,23 @@ const EditLearningPath = () => {
 																										size='2x'
 																										color='dark'
 																										className='me-3'
-																										/>
+																									/>
 																									<div>
-																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																										<p className='m-0'>Certificate</p>
+																										<p className='m-0 fs-5 fw-bold'>
+																											IT
+																											Network
+																											Certificate
+																										</p>
+																										<p className='m-0'>
+																											Certificate
+																										</p>
 																									</div>
 																								</div>
 																								<Icon
 																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									/>
+																								/>
 																							</div>
 																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
 																								<div className='d-flex align-items-center'>
@@ -877,17 +945,23 @@ const EditLearningPath = () => {
 																										size='2x'
 																										color='dark'
 																										className='me-3'
-																										/>
+																									/>
 																									<div>
-																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																										<p className='m-0'>Certificate</p>
+																										<p className='m-0 fs-5 fw-bold'>
+																											IT
+																											Network
+																											Certificate
+																										</p>
+																										<p className='m-0'>
+																											Certificate
+																										</p>
 																									</div>
 																								</div>
 																								<Icon
 																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									/>
+																								/>
 																							</div>
 																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
 																								<div className='d-flex align-items-center'>
@@ -896,17 +970,23 @@ const EditLearningPath = () => {
 																										size='2x'
 																										color='dark'
 																										className='me-3'
-																										/>
+																									/>
 																									<div>
-																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																										<p className='m-0'>Certificate</p>
+																										<p className='m-0 fs-5 fw-bold'>
+																											IT
+																											Network
+																											Certificate
+																										</p>
+																										<p className='m-0'>
+																											Certificate
+																										</p>
 																									</div>
 																								</div>
 																								<Icon
 																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									/>
+																								/>
 																							</div>
 																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
 																								<div className='d-flex align-items-center'>
@@ -915,17 +995,23 @@ const EditLearningPath = () => {
 																										size='2x'
 																										color='dark'
 																										className='me-3'
-																										/>
+																									/>
 																									<div>
-																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																										<p className='m-0'>Certificate</p>
+																										<p className='m-0 fs-5 fw-bold'>
+																											IT
+																											Network
+																											Certificate
+																										</p>
+																										<p className='m-0'>
+																											Certificate
+																										</p>
 																									</div>
 																								</div>
 																								<Icon
 																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									/>
+																								/>
 																							</div>
 																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
 																								<div className='d-flex align-items-center'>
@@ -934,17 +1020,23 @@ const EditLearningPath = () => {
 																										size='2x'
 																										color='dark'
 																										className='me-3'
-																										/>
+																									/>
 																									<div>
-																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																										<p className='m-0'>Certificate</p>
+																										<p className='m-0 fs-5 fw-bold'>
+																											IT
+																											Network
+																											Certificate
+																										</p>
+																										<p className='m-0'>
+																											Certificate
+																										</p>
 																									</div>
 																								</div>
 																								<Icon
 																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									/>
+																								/>
 																							</div>
 																							<div className='bg-dark bg-opacity-10 p-2 rounded-1 d-flex align-items-center justify-content-between mb-3'>
 																								<div className='d-flex align-items-center'>
@@ -953,17 +1045,23 @@ const EditLearningPath = () => {
 																										size='2x'
 																										color='dark'
 																										className='me-3'
-																										/>
+																									/>
 																									<div>
-																										<p className='m-0 fs-5 fw-bold'>IT Network Certificate</p>
-																										<p className='m-0'>Certificate</p>
+																										<p className='m-0 fs-5 fw-bold'>
+																											IT
+																											Network
+																											Certificate
+																										</p>
+																										<p className='m-0'>
+																											Certificate
+																										</p>
 																									</div>
 																								</div>
 																								<Icon
 																									icon='Dehaze'
 																									size='2x'
 																									color='dark'
-																									/>
+																								/>
 																							</div>
 																						</div>
 																					</div>
@@ -996,8 +1094,10 @@ const EditLearningPath = () => {
 													</div>
 												</CardBody>
 											</Card>
-										</div> : ""
-									}
+										</div>
+									) : (
+										''
+									)}
 								</div>
 							</div>
 						</div>
