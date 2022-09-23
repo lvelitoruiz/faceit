@@ -294,7 +294,6 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 															formik.setErrors({});
 														}}
 													/>
-
 													<Input
 														type='password'
 														name='loginPassword'
@@ -420,6 +419,116 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 										</>
 									)}
 									{/* END :: Social Login */}
+								</form>
+							</CardBody>
+						</Card>
+					</div>
+				</div>
+				<div className='row h-100 align-items-center justify-content-center'>
+					<div className='col-xl-6 col-lg-6 col-md-8 shadow-3d-container'>
+						<Card className='shadow-3d-dark' data-tour='login-page'>
+							<CardBody>
+								<div className='text-center mt-5'>
+									<Link
+										to='/'
+										className={classNames(
+											'text-decoration-none  fw-bold display-2',
+											{
+												'text-dark': !darkModeStatus,
+												'text-light': darkModeStatus,
+											},
+										)}>
+										<img src={Logo1} alt='logo' height={120} />
+									</Link>
+								</div>
+								<div className='text-center h1 fw-bold mt-3 mb-5'>Register</div>
+								<form className='row g-4 align-items-center justify-content-center mb-4'>
+									{singUpStatus ? (
+										<>
+										</>
+									) : (
+										<>
+											<div className='col-lg-9'>
+												<FormGroup
+													id='loginUsername'
+													isFloating
+													label='Name'>
+													<Input
+														autoComplete='username'
+														name="loginUsername"
+														onBlur={formik.handleBlur}
+														onFocus={() => {
+															formik.setErrors({});
+														}}
+														className='mt-4'
+													/>
+												</FormGroup>
+												<FormGroup
+													id='loginUsername'
+													isFloating
+													label='Email'>
+													<Input
+														autoComplete='username'
+														name="loginUsername"
+														isValid={formik.isValid}
+														onBlur={formik.handleBlur}
+														onFocus={() => {
+															formik.setErrors({});
+														}}
+														className='mt-4'
+													/>
+												</FormGroup>
+												<FormGroup
+													id='loginUsername'
+													isFloating
+													label='Password'>
+													<Input
+														name='loginPassword'
+														autoComplete='current-password'
+														value={formik.values.loginPassword}
+														isTouched={formik.touched.loginPassword}
+														invalidFeedback={
+															formik.errors.loginPassword
+														}
+														validFeedback='Looks good!'
+														isValid={formik.isValid}
+														onChange={formik.handleChange}
+														onBlur={formik.handleBlur}
+														className='mt-4'
+													/>
+												</FormGroup>
+												<FormGroup
+													id='loginUsername'
+													isFloating
+													label='Confirm password'>
+													<Input
+														name='loginPassword'
+														autoComplete='current-password'
+														value={formik.values.loginPassword}
+														isTouched={formik.touched.loginPassword}
+														invalidFeedback={
+															formik.errors.loginPassword
+														}
+														validFeedback='Looks good!'
+														isValid={formik.isValid}
+														onChange={formik.handleChange}
+														onBlur={formik.handleBlur}
+														className='mt-4'
+													/>
+												</FormGroup>
+											</div>
+											<div className='col-lg-9 my-5'>
+												<div>
+													<Button
+														color='dark'
+														className='w-100 py-3 fw-bold'
+														onClick={formik.handleSubmit}>
+														Register
+													</Button>
+												</div>
+											</div>
+										</>
+									)}
 								</form>
 							</CardBody>
 						</Card>
