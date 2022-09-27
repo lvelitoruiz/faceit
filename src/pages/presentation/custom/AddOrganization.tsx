@@ -6,8 +6,61 @@ import Card, { CardBody } from '../../../components/bootstrap/Card';
 import Input from '../../../components/bootstrap/forms/Input';
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Button from '../../../components/bootstrap/Button';
+import { useFormik } from 'formik';
+import axios from 'axios';
 
 const AddOrganization = () => {
+
+	const formik = useFormik({
+		enableReinitialize: true,
+		initialValues: {
+			name: "",
+			description: "",
+			phone: "",
+			website: "",
+			company_size: "",
+			industry: "",
+			profile_url: ""
+		},
+		validate: (values) => {
+			const errors: { name?: string; description?: string; phone?: string; website?: string; company_size?: string; industry?: string; profile_url?: string } = {};
+
+			return errors;
+		},
+		validateOnChange: false,
+		onSubmit: (values) => {
+			createGroup();
+		},
+	});
+
+	const createGroup = () => {
+		let token = localStorage.getItem("access_token");
+		axios
+		.post('https://accelered-api.whiz.pe/api/groups', {
+			name: formik.values.name,
+			description: formik.values.description,
+			phone: formik.values.phone,
+			web_url: formik.values.website,
+			company_size: formik.values.company_size,
+			industry: formik.values.industry,
+			profile_url: formik.values.profile_url
+		},{
+			headers: {
+				'Authorization': `Bearer ${token}`
+			}
+		})
+		.then((response) => {
+			console.log('**** this is the response ***',response);
+			// setUserInfo(response.data);
+			// setPost(jwt_decode(response.data.access_token));
+		}).catch( function(error) {
+			console.log(error)
+			// console.log(error);
+			// setNoUser(true);
+			// setErrors(false);
+		});
+	}
+	
 	return (
 		<PageWrapper title={userMenu.user.subMenu.organizationAdmin.text}>
 			<Page className='container'>
@@ -31,9 +84,9 @@ const AddOrganization = () => {
 												id='formPrefix'
 												label='Name'>
 												<Input
-													autoComplete='honorific-prefix'
-													onChange={function noRefCheck() {}}
-													value=''
+													name='name'
+													value={formik.values.name}
+                                                    onChange={formik.handleChange}
 													className='w-100'
 												/>
 											</FormGroup>
@@ -42,11 +95,24 @@ const AddOrganization = () => {
 											<FormGroup
 												className='mb-4'
 												id='formPrefix'
-												label='Phome Number'>
+												label='Description'>
 												<Input
-													autoComplete='honorific-prefix'
-													onChange={function noRefCheck() {}}
-													value=''
+													name='description'
+													value={formik.values.description}
+                                                    onChange={formik.handleChange}
+													className='w-100'
+												/>
+											</FormGroup>
+										</div>
+										<div className='col-lg-6'>
+											<FormGroup
+												className='mb-4'
+												id='formPrefix'
+												label='Phone Number'>
+												<Input
+													name='phone'
+													value={formik.values.phone}
+                                                    onChange={formik.handleChange}
 													className='w-100'
 												/>
 											</FormGroup>
@@ -57,9 +123,9 @@ const AddOrganization = () => {
 												id='formPrefix'
 												label='Website'>
 												<Input
-													autoComplete='honorific-prefix'
-													onChange={function noRefCheck() {}}
-													value=''
+													name='website'
+													value={formik.values.website}
+                                                    onChange={formik.handleChange}
 													className='w-100'
 												/>
 											</FormGroup>
@@ -70,9 +136,9 @@ const AddOrganization = () => {
 												id='formPrefix'
 												label='Company Size'>
 												<Input
-													autoComplete='honorific-prefix'
-													onChange={function noRefCheck() {}}
-													value=''
+													name='company_size'
+													value={formik.values.company_size}
+                                                    onChange={formik.handleChange}
 													className='w-100'
 												/>
 												{/* <Select
@@ -103,11 +169,11 @@ const AddOrganization = () => {
 											<FormGroup
 												className='mb-4'
 												id='formPrefix'
-												label='Indsutry'>
+												label='Industry'>
 												<Input
-													autoComplete='honorific-prefix'
-													onChange={function noRefCheck() {}}
-													value=''
+													name='industry'
+													value={formik.values.industry}
+                                                    onChange={formik.handleChange}
 													className='w-100'
 												/>
 												{/* <Select
@@ -132,6 +198,19 @@ const AddOrganization = () => {
 														Six
 													</Option>
 												</Select> */}
+											</FormGroup>
+										</div>
+										<div className='col-lg-6'>
+											<FormGroup
+												className='mb-4'
+												id='formPrefix'
+												label='Profile Url'>
+												<Input
+													name='profile_url'
+													value={formik.values.profile_url}
+                                                    onChange={formik.handleChange}
+													className='w-100'
+												/>
 											</FormGroup>
 										</div>
 										<div className='col-lg-12'>
@@ -157,7 +236,8 @@ const AddOrganization = () => {
 											<Button
 												color='dark'
 												size='lg'
-												className='w-100 mb-3 mb-lg-0'>
+												className='w-100 mb-3 mb-lg-0'
+												onClick={formik.handleSubmit}>
 												Create Organization
 											</Button>
 										</div>

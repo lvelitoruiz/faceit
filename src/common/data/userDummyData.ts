@@ -152,6 +152,8 @@ const USERS: { [key: string]: IUserProps } = {
 
 export const ROLE: string = "3d1ee2af-cc28-4615-891f-cd71530975fc";
 
+export const ROLEG: string = "7b612f56-b0f5-42ed-9237-4f27b15af5a4";
+
 export function getUserDataWithUsername(username: string): IUserProps {
 	// @ts-ignore
 	return USERS[Object.keys(USERS).filter((f) => USERS[f].username.toString() === username)];
